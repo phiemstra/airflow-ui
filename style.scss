@@ -1,0 +1,26 @@
+/**
+ * Base stylesheet for the 2017 Airflow UI
+ * Uses SASS to compile.
+ * Quickly install SASS in MacOS by typing: sudo gem install sass
+ * You can easily watch files using: sass --watch style.scss:style.css --sourcemap=none
+ */
+
+@import "scss/bootstrap";
+@import "fonts/fonts";
+
+$primary-color:   #FFFD38;
+$primary-gray:    #000000;
+
+body {
+    font-family: Ubuntu, sans-serif;
+    font-size: 16px; // 1rem
+    color: $primary-gray;
+}
+
+
+header {
+    background-color: $primary-gray;
+}
+.logo {
+    max-width: 20rem;
+}
