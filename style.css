@@ -5960,10 +5960,39 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 body {
   font-family: Ubuntu, sans-serif;
   font-size: 16px;
-  color: #000000; }
+  color: black; }
 
 header {
-  background-color: #000000; }
-
-.logo {
-  max-width: 20rem; }
+  position: relative;
+  background-color: black;
+  color: white; }
+  header::after {
+    display: block;
+    content: "";
+    clear: both; }
+  header > div {
+    display: inline-block;
+    float: left; }
+  header .logo {
+    width: 18rem;
+    padding: 2rem; }
+  header .server-time {
+    font-size: 1.5rem;
+    position: absolute;
+    left: 50%;
+    top: 2rem;
+    padding: 0 0.5rem;
+    border: 1px solid red;
+    transform: translateX(-50%); }
+    @media (max-width: 767px) {
+      header .server-time {
+        display: none; } }
+  header .user-info {
+    float: right;
+    text-align: right;
+    padding: 1rem; }
+    header .user-info > div > a {
+      color: white;
+      margin-left: 1rem; }
+      header .user-info > div > a[href*=logout] {
+        color: #FFFD38; }

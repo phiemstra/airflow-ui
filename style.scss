@@ -9,18 +9,58 @@
 @import "fonts/fonts";
 
 $primary-color:   #FFFD38;
-$primary-gray:    #000000;
+$primary-spacer:  1rem;
 
 body {
     font-family: Ubuntu, sans-serif;
     font-size: 16px; // 1rem
-    color: $primary-gray;
+    color: black;
 }
 
 
 header {
-    background-color: $primary-gray;
-}
-.logo {
-    max-width: 20rem;
+    @include clearfix;
+    position: relative;
+    background-color: black;
+    color: white;
+    
+    > div {
+        display: inline-block;
+        float: left;
+    }
+    
+    .logo {
+        width: 18rem;
+        padding: 2rem;
+    }
+    
+    .server-time {
+        font-size: 1.5rem;
+        position: absolute;
+        left: 50%;
+        top: 2rem;
+        padding: 0 ($primary-spacer / 2);
+        border: 1px solid red;
+        transform: translateX(-50%);
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+    }
+    
+    .user-info {
+        float: right;
+        text-align: right;
+        padding: $primary-spacer;
+        
+        > div > a {
+            color: white;
+            margin-left: $primary-spacer;
+            
+            &[href*=logout] {
+                color: $primary-color;
+                
+            }
+        }
+    }
+    
 }
