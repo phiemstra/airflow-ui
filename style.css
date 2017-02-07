@@ -5996,18 +5996,30 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 
 body,
 html {
-  font-family: Ubuntu, sans-serif;
-  font-size: 16px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 15px;
   color: black;
   height: 100%;
   overflow: auto; }
 
+body {
+  padding-top: 6rem; }
+  @media (max-width: 767px) {
+    body {
+      padding-top: 15rem; } }
+
 h1, h2, h3, h4 {
   margin-bottom: 1rem; }
 
+button {
+  transition: none; }
+
 header {
-  position: relative;
-  min-height: 5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  height: 5rem;
   background-color: black;
   color: white; }
   header::after {
@@ -6059,7 +6071,7 @@ header {
 .sidebar {
   background-color: rgba(0, 0, 0, 0.7);
   width: 16rem;
-  position: absolute;
+  position: fixed;
   top: 5rem;
   bottom: 0;
   overflow: hidden;
@@ -6068,6 +6080,28 @@ header {
     .sidebar {
       top: 10rem;
       width: 2.6rem; } }
+  .sidebar hr {
+    border-color: white; }
+  .sidebar .sidebar-toggle {
+    display: inline-block;
+    border: 1px solid white;
+    padding: 0 .2rem .4rem .2rem;
+    margin: .8rem .8rem 0; }
+    .sidebar .sidebar-toggle::after {
+      display: block;
+      content: "";
+      clear: both; }
+    .sidebar .sidebar-toggle:hover {
+      background-color: #ddd; }
+    .sidebar .sidebar-toggle:before {
+      display: inline-block;
+      font-family: 'Material Icons';
+      text-transform: none;
+      content: "menu";
+      padding: 0 .5rem;
+      transform: translate(0, 5px);
+      font-size: 1.4rem;
+      color: white; }
   .sidebar > nav > ul {
     list-style: none;
     padding: 0;

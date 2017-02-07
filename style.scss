@@ -5,6 +5,8 @@
  * You can easily watch files using: sass --watch style.scss:style.css --sourcemap=none
  */
 
+$primary-font:          'Ubuntu', sans-serif;
+$primary-font-size:     15px;
 $primary-color:         #FFFD38;
 $brand-primary:         $primary-color;
 $brand-danger:          #d33232;
@@ -33,11 +35,19 @@ $sidebar-width-sm:      2.6rem;
 
 body,
 html {
-    font-family: Ubuntu, sans-serif;
-    font-size: 16px; // 1rem
+    font-family: $primary-font;
+    font-size: $primary-font-size;
     color: black;
     height: 100%;
     overflow: auto;
+}
+
+body {
+    padding-top: $header-height + $primary-spacer;
+    
+    @include media-breakpoint-down(sm) {
+        padding-top: $header-height * 3;
+    }
 }
 
 h1,h2,h3,h4 {
@@ -48,12 +58,16 @@ button {
     @extend .btn;
     @extend .btn-primary;
     @extend .btn-sm;
+    transition: none;
 }
 
 header {
     @include clearfix;
-    position: relative;
-    min-height: $header-height;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    height: $header-height;
     background-color: black;
     color: white;
     
@@ -114,7 +128,7 @@ header {
 .sidebar {
     background-color: rgba(0,0,0,0.7);
     width: $sidebar-width;    
-    position: absolute;
+    position: fixed;
     top: $header-height;
     bottom: 0;
     overflow: hidden;
@@ -123,6 +137,26 @@ header {
     @include media-breakpoint-down(sm) {
         top: $header-height * 2;
         width: $sidebar-width-sm;
+    }
+    
+    hr {
+        border-color: white;
+    }
+    
+    .sidebar-toggle {
+        @include clearfix;
+        display: inline-block;
+        border: 1px solid white;
+        padding: 0 .2rem .4rem .2rem;
+        margin: .8rem .8rem 0;
+        
+        &:hover {
+            background-color: #ddd;
+        }
+        &:before {
+            @include icon('menu');
+            color: white;
+        }
     }
     
     > nav > ul {
