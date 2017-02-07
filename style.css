@@ -5957,30 +5957,37 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased; }
 
-body {
+body,
+html {
   font-family: Ubuntu, sans-serif;
   font-size: 16px;
-  color: black; }
+  color: black;
+  height: 100%;
+  overflow: auto; }
 
 header {
   position: relative;
+  min-height: 5rem;
   background-color: black;
   color: white; }
   header::after {
     display: block;
     content: "";
     clear: both; }
+  @media (max-width: 767px) {
+    header {
+      min-height: 10rem; } }
   header > div {
     display: inline-block;
     float: left; }
   header .logo {
-    width: 18rem;
-    padding: 2rem; }
+    width: 17rem;
+    padding: 1.25rem; }
   header .server-time {
     font-size: 1.5rem;
     position: absolute;
     left: 50%;
-    top: 2rem;
+    top: 1.5rem;
     padding: 0 0.5rem;
     border: 1px solid red;
     transform: translateX(-50%); }
@@ -5990,9 +5997,126 @@ header {
   header .user-info {
     float: right;
     text-align: right;
-    padding: 1rem; }
+    padding: 1rem;
+    text-transform: uppercase; }
     header .user-info > div > a {
       color: white;
       margin-left: 1rem; }
+      header .user-info > div > a:hover {
+        text-decoration: none; }
       header .user-info > div > a[href*=logout] {
         color: #FFFD38; }
+        header .user-info > div > a[href*=logout]:after {
+          display: inline-block;
+          font-family: 'Material Icons';
+          text-transform: none;
+          content: "person";
+          padding: 0 .5rem;
+          transform: translate(0, 5px);
+          font-size: 1.4rem;
+          color: gray; }
+
+.sidebar {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 16rem;
+  position: absolute;
+  top: 5rem;
+  bottom: 0;
+  overflow: hidden;
+  transition: width 160ms ease-in; }
+  @media (max-width: 767px) {
+    .sidebar {
+      top: 10rem;
+      width: 2.6rem; } }
+  .sidebar > nav > ul {
+    list-style: none;
+    padding: 0;
+    padding-top: 1rem; }
+    .sidebar > nav > ul > li > a {
+      display: block;
+      text-transform: uppercase;
+      line-height: 1rem;
+      min-width: 16rem;
+      color: white;
+      padding: 1rem 0;
+      padding-left: 0.5rem; }
+      @media (max-width: 767px) {
+        .sidebar > nav > ul > li > a {
+          padding-left: 0.25rem; } }
+      .sidebar > nav > ul > li > a:hover {
+        text-decoration: none;
+        background-color: rgba(255, 255, 255, 0.4); }
+      .sidebar > nav > ul > li > a:focus, .sidebar > nav > ul > li > a:active, .sidebar > nav > ul > li > a.active {
+        background-color: #FFFD38; }
+      .sidebar > nav > ul > li > a:before {
+        display: inline-block;
+        font-family: 'Material Icons';
+        text-transform: none;
+        content: "personal_video";
+        padding: 0 .5rem;
+        transform: translate(0, 5px);
+        font-size: 1.4rem; }
+      .sidebar > nav > ul > li > a[href*=live-view]:before {
+        display: inline-block;
+        font-family: 'Material Icons';
+        text-transform: none;
+        content: "remove_red_eye";
+        padding: 0 .5rem;
+        transform: translate(0, 5px);
+        font-size: 1.4rem; }
+      .sidebar > nav > ul > li > a[href*=videos]:before {
+        display: inline-block;
+        font-family: 'Material Icons';
+        text-transform: none;
+        content: "cloud_circle";
+        padding: 0 .5rem;
+        transform: translate(0, 5px);
+        font-size: 1.4rem; }
+      .sidebar > nav > ul > li > a[href*=playlists]:before {
+        display: inline-block;
+        font-family: 'Material Icons';
+        text-transform: none;
+        content: "list";
+        padding: 0 .5rem;
+        transform: translate(0, 5px);
+        font-size: 1.4rem; }
+      .sidebar > nav > ul > li > a[href*=scheduler]:before {
+        display: inline-block;
+        font-family: 'Material Icons';
+        text-transform: none;
+        content: "date_range";
+        padding: 0 .5rem;
+        transform: translate(0, 5px);
+        font-size: 1.4rem; }
+      .sidebar > nav > ul > li > a[href*=grids]:before {
+        display: inline-block;
+        font-family: 'Material Icons';
+        text-transform: none;
+        content: "border_clear";
+        padding: 0 .5rem;
+        transform: translate(0, 5px);
+        font-size: 1.4rem; }
+      .sidebar > nav > ul > li > a[href*=download-automator]:before {
+        display: inline-block;
+        font-family: 'Material Icons';
+        text-transform: none;
+        content: "cloud_download";
+        padding: 0 .5rem;
+        transform: translate(0, 5px);
+        font-size: 1.4rem; }
+      .sidebar > nav > ul > li > a[href*=atem]:before {
+        display: inline-block;
+        font-family: 'Material Icons';
+        text-transform: none;
+        content: "keyboard_hide";
+        padding: 0 .5rem;
+        transform: translate(0, 5px);
+        font-size: 1.4rem; }
+      .sidebar > nav > ul > li > a[href*=log]:before {
+        display: inline-block;
+        font-family: 'Material Icons';
+        text-transform: none;
+        content: "fingerprint";
+        padding: 0 .5rem;
+        transform: translate(0, 5px);
+        font-size: 1.4rem; }

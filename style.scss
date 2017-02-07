@@ -10,19 +10,40 @@
 
 $primary-color:   #FFFD38;
 $primary-spacer:  1rem;
+$header-height:   5rem;
+$sidebar-width:   16rem;
 
-body {
+@mixin icon($icon) {
+    display: inline-block;
+    font-family: 'Material Icons';
+    text-transform: none;
+    content: $icon;
+    padding: 0 .5rem;
+    transform: translate(0, 5px);
+    font-size: 1.4rem;
+}
+
+body,
+html {
     font-family: Ubuntu, sans-serif;
     font-size: 16px; // 1rem
     color: black;
+    height: 100%;
+    overflow: auto;
 }
 
 
 header {
     @include clearfix;
     position: relative;
+    min-height: $header-height;
     background-color: black;
     color: white;
+    
+    @include media-breakpoint-down(sm) {
+        min-height: $header-height * 2;
+    }
+
     
     > div {
         display: inline-block;
@@ -30,18 +51,19 @@ header {
     }
     
     .logo {
-        width: 18rem;
-        padding: 2rem;
+        width: 17rem;
+        padding: $header-height / 4;
     }
     
     .server-time {
         font-size: 1.5rem;
         position: absolute;
         left: 50%;
-        top: 2rem;
+        top: $primary-spacer * 1.5;
         padding: 0 ($primary-spacer / 2);
         border: 1px solid red;
         transform: translateX(-50%);
+        
         @include media-breakpoint-down(sm) {
             display: none;
         }
@@ -51,16 +73,101 @@ header {
         float: right;
         text-align: right;
         padding: $primary-spacer;
+        text-transform: uppercase;
         
         > div > a {
             color: white;
             margin-left: $primary-spacer;
             
+            &:hover {
+                text-decoration: none;
+            }
+            
             &[href*=logout] {
                 color: $primary-color;
-                
+                &:after {
+                    @include icon("person");
+                    color: gray;
+                }
             }
         }
     }
-    
 }
+
+.sidebar {
+    background-color: rgba(0,0,0,0.7);
+    width: $sidebar-width;    
+    position: absolute;
+    top: $header-height;
+    bottom: 0;
+    overflow: hidden;
+    transition: width 160ms ease-in;
+    
+    @include media-breakpoint-down(sm) {
+        top: $header-height * 2;
+        width: 2.6rem;
+    }
+    
+    > nav > ul {
+        list-style: none;
+        padding: 0;
+        padding-top: $primary-spacer;
+        
+        > li {
+            > a {
+                display: block;
+                text-transform: uppercase;
+                line-height: 1rem;
+                min-width: $sidebar-width;
+                color: white;
+                padding: ($primary-spacer) 0;
+                padding-left: ($primary-spacer / 2);
+                
+                @include media-breakpoint-down(sm) {
+                    padding-left: ($primary-spacer / 4);
+                }
+                
+                &:hover {
+                    text-decoration: none;
+                    background-color: rgba(255,255,255,0.4);
+                }
+                
+                &:focus,
+                &:active,
+                &.active {
+                    background-color: $primary-color;
+                }
+                
+                &:before {
+                    @include icon("personal_video");
+                }
+                
+                &[href*=live-view]:before {
+                    @include icon("remove_red_eye");
+                }
+                &[href*=videos]:before {
+                    @include icon("cloud_circle");
+                }
+                &[href*=playlists]:before {
+                    @include icon("list");
+                }
+                &[href*=scheduler]:before {
+                    @include icon("date_range");
+                }
+                &[href*=grids]:before {
+                    @include icon("border_clear");
+                }
+                &[href*=download-automator]:before {
+                    @include icon("cloud_download");
+                }
+                &[href*=atem]:before {
+                    @include icon("keyboard_hide");
+                }
+                &[href*=log]:before {
+                    @include icon("fingerprint");
+                }
+            }
+        }
+    }
+}
+
