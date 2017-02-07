@@ -5,13 +5,21 @@
  * You can easily watch files using: sass --watch style.scss:style.css --sourcemap=none
  */
 
+$primary-color:         #FFFD38;
+$brand-primary:         $primary-color;
+$brand-danger:          #d33232;
+$brand-success:         #22dd3f;
+$brand-info:            #21edf5;
+$btn-primary-color:     black;
+
+
+$primary-spacer:        1rem;
+$header-height:         5rem;
+$sidebar-width:         16rem;
+$sidebar-width-sm:      2.6rem;
+
 @import "scss/bootstrap";
 @import "fonts/fonts";
-
-$primary-color:   #FFFD38;
-$primary-spacer:  1rem;
-$header-height:   5rem;
-$sidebar-width:   16rem;
 
 @mixin icon($icon) {
     display: inline-block;
@@ -32,6 +40,15 @@ html {
     overflow: auto;
 }
 
+h1,h2,h3,h4 {
+    margin-bottom: $primary-spacer;
+}
+
+button {
+    @extend .btn;
+    @extend .btn-primary;
+    @extend .btn-sm;
+}
 
 header {
     @include clearfix;
@@ -105,7 +122,7 @@ header {
     
     @include media-breakpoint-down(sm) {
         top: $header-height * 2;
-        width: 2.6rem;
+        width: $sidebar-width-sm;
     }
     
     > nav > ul {
@@ -136,6 +153,7 @@ header {
                 &:active,
                 &.active {
                     background-color: $primary-color;
+                    color: black;
                 }
                 
                 &:before {
@@ -171,3 +189,28 @@ header {
     }
 }
 
+main {
+    padding: $primary-spacer;
+    padding-left: $sidebar-width + $primary-spacer;
+    
+    @include media-breakpoint-down(sm) {
+        padding-left: $sidebar-width-sm + $primary-spacer;
+    }
+    
+    .card {
+        margin-bottom: $primary-spacer;
+        
+        > .card-header {
+//            text-transform: uppercase;
+        }
+    }
+    
+    table {
+        @extend .table;
+        @extend .table-hover;
+        @extend .table-responsive;
+        > thead {
+            @extend .thead-inverse;
+        }
+    }
+}
