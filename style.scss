@@ -63,10 +63,7 @@ h1,h2,h3,h4 {
     margin-bottom: $primary-spacer;
 }
 
-button,
-input[type=file],
-input[type=submit], 
-input[type=button] {
+button {
     @extend .btn;
     @extend .btn-primary;
     @extend .btn-sm;
@@ -93,6 +90,11 @@ input[type=button] {
     &:active,
     &:focus {
         background-color: darken($primary-color, 14%);
+    }
+    
+    &.btn-outline-primary,
+    &.btn-outline-primary:hover {
+        color: if(lightness($primary-color) > 50, black, $primary-color);
     }
 }
 
@@ -328,9 +330,18 @@ form {
     label + input {
         margin-left: $primary-spacer
     }
+    
+    input[type=file],
+    input[type=submit], 
+    input[type=button] {
+        @extend button;
+    }
+    
+    textarea,
+    input[type=name],
+    input[type=password],
     input[type=text],
     input[type=number],
-    textarea,
     input[type=date] {
         padding: 1.5rem .4rem .5rem;
         border: 0px;
@@ -344,11 +355,6 @@ form {
         &::placeholder {
             @extend .placeholder;
         }
-//        &:not([value=""]):before {
-//            content: "t";
-//            display: block;
-//        }
-
         &:focus {
             outline: none;
             &::placeholder {

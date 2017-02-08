@@ -113,7 +113,9 @@ img {
 svg:not(:root) {
   overflow: hidden; }
 
-button,
+button, form input[type=file],
+form input[type=submit],
+form input[type=button],
 input,
 optgroup,
 select,
@@ -123,28 +125,38 @@ textarea {
   line-height: 1.15;
   margin: 0; }
 
-button,
+button, form input[type=file],
+form input[type=submit],
+form input[type=button],
 input {
   overflow: visible; }
 
-button,
+button, form input[type=file],
+form input[type=submit],
+form input[type=button],
 select {
   text-transform: none; }
 
-button,
+button, form input[type=file],
+form input[type=submit],
+form input[type=button],
 html [type="button"],
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button; }
 
-button::-moz-focus-inner,
+button::-moz-focus-inner, form input[type=file]::-moz-focus-inner,
+form input[type=submit]::-moz-focus-inner,
+form input[type=button]::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0; }
 
-button:-moz-focusring,
+button:-moz-focusring, form input[type=file]:-moz-focusring,
+form input[type=submit]:-moz-focusring,
+form input[type=button]:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
@@ -304,6 +316,9 @@ img {
 a,
 area,
 button,
+form input[type=file],
+form input[type=submit],
+form input[type=button],
 [role="button"],
 input,
 label,
@@ -330,12 +345,17 @@ label {
   display: inline-block;
   margin-bottom: .5rem; }
 
-button:focus {
+button:focus, form input[type=file]:focus,
+form input[type=submit]:focus,
+form input[type=button]:focus {
   outline: 1px dotted;
   outline: 5px auto -webkit-focus-ring-color; }
 
 input,
 button,
+form input[type=file],
+form input[type=submit],
+form input[type=button],
 select,
 textarea {
   line-height: inherit; }
@@ -1715,15 +1735,15 @@ select.form-control:focus::-ms-value {
   .input-group-sm > .form-control-static.input-group-addon,
   .input-group-sm > .input-group-btn > .form-control-static.btn,
   .input-group-sm > .input-group-btn > button.form-control-static,
-  .input-group-sm > .input-group-btn > input.form-control-static[type=file],
-  .input-group-sm > .input-group-btn > input.form-control-static[type=submit],
-  .input-group-sm > .input-group-btn > input.form-control-static[type=button], .form-control-static.form-control-lg, .input-group-lg > .form-control-static.form-control,
+  form .input-group-sm > .input-group-btn > input.form-control-static[type=file],
+  form .input-group-sm > .input-group-btn > input.form-control-static[type=submit],
+  form .input-group-sm > .input-group-btn > input.form-control-static[type=button], .form-control-static.form-control-lg, .input-group-lg > .form-control-static.form-control,
   .input-group-lg > .form-control-static.input-group-addon,
   .input-group-lg > .input-group-btn > .form-control-static.btn,
   .input-group-lg > .input-group-btn > button.form-control-static,
-  .input-group-lg > .input-group-btn > input.form-control-static[type=file],
-  .input-group-lg > .input-group-btn > input.form-control-static[type=submit],
-  .input-group-lg > .input-group-btn > input.form-control-static[type=button] {
+  form .input-group-lg > .input-group-btn > input.form-control-static[type=file],
+  form .input-group-lg > .input-group-btn > input.form-control-static[type=submit],
+  form .input-group-lg > .input-group-btn > input.form-control-static[type=button] {
     padding-right: 0;
     padding-left: 0; }
 
@@ -1731,9 +1751,9 @@ select.form-control:focus::-ms-value {
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn,
 .input-group-sm > .input-group-btn > button,
-.input-group-sm > .input-group-btn > input[type=file],
-.input-group-sm > .input-group-btn > input[type=submit],
-.input-group-sm > .input-group-btn > input[type=button] {
+form .input-group-sm > .input-group-btn > input[type=file],
+form .input-group-sm > .input-group-btn > input[type=submit],
+form .input-group-sm > .input-group-btn > input[type=button] {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   border-radius: 0; }
@@ -1747,9 +1767,9 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.for
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn,
 .input-group-lg > .input-group-btn > button,
-.input-group-lg > .input-group-btn > input[type=file],
-.input-group-lg > .input-group-btn > input[type=submit],
-.input-group-lg > .input-group-btn > input[type=button] {
+form .input-group-lg > .input-group-btn > input[type=file],
+form .input-group-lg > .input-group-btn > input[type=submit],
+form .input-group-lg > .input-group-btn > input[type=button] {
   padding: 0.75rem 1.5rem;
   font-size: 1.25rem;
   border-radius: 0; }
@@ -1905,10 +1925,9 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     .form-inline .has-feedback .form-control-feedback {
       top: 0; } }
 
-.btn, button,
-input[type=file],
-input[type=submit],
-input[type=button] {
+.btn, button, form input[type=file],
+form input[type=submit],
+form input[type=button] {
   display: inline-block;
   font-weight: normal;
   line-height: 1.25;
@@ -1921,129 +1940,124 @@ input[type=button] {
   font-size: 1rem;
   border-radius: 0;
   transition: all 0.2s ease-in-out; }
-  .btn:focus, button:focus,
-  input[type=file]:focus,
-  input[type=submit]:focus,
-  input[type=button]:focus, .btn:hover, button:hover,
-  input[type=file]:hover,
-  input[type=submit]:hover,
-  input[type=button]:hover {
+  .btn:focus, button:focus, form input[type=file]:focus,
+  form input[type=submit]:focus,
+  form input[type=button]:focus, .btn:hover, button:hover, form input[type=file]:hover,
+  form input[type=submit]:hover,
+  form input[type=button]:hover {
     text-decoration: none; }
-  .btn:focus, button:focus,
-  input[type=file]:focus,
-  input[type=submit]:focus,
-  input[type=button]:focus, .btn.focus, button.focus,
-  input.focus[type=file],
-  input.focus[type=submit],
-  input.focus[type=button] {
+  .btn:focus, button:focus, form input[type=file]:focus,
+  form input[type=submit]:focus,
+  form input[type=button]:focus, .btn.focus, button.focus, form input.focus[type=file],
+  form input.focus[type=submit],
+  form input.focus[type=button] {
     outline: 0;
     box-shadow: 0 0 0 2px rgba(255, 253, 56, 0.25); }
-  .btn.disabled, button.disabled,
-  input.disabled[type=file],
-  input.disabled[type=submit],
-  input.disabled[type=button], .btn:disabled, button:disabled,
-  input[type=file]:disabled,
-  input[type=submit]:disabled,
-  input[type=button]:disabled {
+  .btn.disabled, button.disabled, form input.disabled[type=file],
+  form input.disabled[type=submit],
+  form input.disabled[type=button], .btn:disabled, button:disabled, form input[type=file]:disabled,
+  form input[type=submit]:disabled,
+  form input[type=button]:disabled {
     cursor: not-allowed;
     opacity: .65; }
-  .btn:active, button:active,
-  input[type=file]:active,
-  input[type=submit]:active,
-  input[type=button]:active, .btn.active, button.active,
-  input.active[type=file],
-  input.active[type=submit],
-  input.active[type=button] {
+  .btn:active, button:active, form input[type=file]:active,
+  form input[type=submit]:active,
+  form input[type=button]:active, .btn.active, button.active, form input.active[type=file],
+  form input.active[type=submit],
+  form input.active[type=button] {
     background-image: none; }
 
 a.btn.disabled,
 fieldset[disabled] a.btn {
   pointer-events: none; }
 
-.btn-primary, button,
-input[type=file],
-input[type=submit],
-input[type=button] {
+.btn-primary, button, form input[type=file],
+form input[type=submit],
+form input[type=button] {
   color: black;
   background-color: #FFFD38;
   border-color: #FFFD38; }
-  .btn-primary:hover, button:hover,
-  input[type=file]:hover,
-  input[type=submit]:hover,
-  input[type=button]:hover {
+  .btn-primary:hover, button:hover, form input[type=file]:hover,
+  form input[type=submit]:hover,
+  form input[type=button]:hover {
     color: black;
     background-color: #fffc05;
     border-color: #faf700; }
-  .btn-primary:focus, button:focus,
-  input[type=file]:focus,
-  input[type=submit]:focus,
-  input[type=button]:focus, .btn-primary.focus, button.focus,
-  input.focus[type=file],
-  input.focus[type=submit],
-  input.focus[type=button] {
+  .btn-primary:focus, button:focus, form input[type=file]:focus,
+  form input[type=submit]:focus,
+  form input[type=button]:focus, .btn-primary.focus, button.focus, form input.focus[type=file],
+  form input.focus[type=submit],
+  form input.focus[type=button] {
     box-shadow: 0 0 0 2px rgba(255, 253, 56, 0.5); }
-  .btn-primary.disabled, button.disabled,
-  input.disabled[type=file],
-  input.disabled[type=submit],
-  input.disabled[type=button], .btn-primary:disabled, button:disabled,
-  input[type=file]:disabled,
-  input[type=submit]:disabled,
-  input[type=button]:disabled {
+  .btn-primary.disabled, button.disabled, form input.disabled[type=file],
+  form input.disabled[type=submit],
+  form input.disabled[type=button], .btn-primary:disabled, button:disabled, form input[type=file]:disabled,
+  form input[type=submit]:disabled,
+  form input[type=button]:disabled {
     background-color: #FFFD38;
     border-color: #FFFD38; }
-  .btn-primary:active, button:active,
-  input[type=file]:active,
-  input[type=submit]:active,
-  input[type=button]:active, .btn-primary.active, button.active,
-  input.active[type=file],
-  input.active[type=submit],
-  input.active[type=button], .show > .btn-primary.dropdown-toggle, .show > button.dropdown-toggle,
-  .show > input.dropdown-toggle[type=file],
-  .show > input.dropdown-toggle[type=submit],
-  .show > input.dropdown-toggle[type=button] {
+  .btn-primary:active, button:active, form input[type=file]:active,
+  form input[type=submit]:active,
+  form input[type=button]:active, .btn-primary.active, button.active, form input.active[type=file],
+  form input.active[type=submit],
+  form input.active[type=button], .show > .btn-primary.dropdown-toggle, .show > button.dropdown-toggle, form .show > input.dropdown-toggle[type=file],
+  form .show > input.dropdown-toggle[type=submit],
+  form .show > input.dropdown-toggle[type=button] {
     color: black;
     background-color: #fffc05;
     background-image: none;
     border-color: #faf700; }
 
-.btn-secondary, .btn-group button, .btn-group
-input[type=file], .btn-group
-input[type=submit], .btn-group
-input[type=button] {
+.btn-secondary, .btn-group button, .btn-group form input[type=file], form .btn-group input[type=file],
+.btn-group form input[type=submit],
+form .btn-group input[type=submit],
+.btn-group form input[type=button],
+form .btn-group input[type=button] {
   color: #292b2c;
   background-color: #fff;
   border-color: #ccc; }
-  .btn-secondary:hover, .btn-group button:hover, .btn-group
-  input[type=file]:hover, .btn-group
-  input[type=submit]:hover, .btn-group
-  input[type=button]:hover {
+  .btn-secondary:hover, .btn-group button:hover, .btn-group form input[type=file]:hover, form .btn-group input[type=file]:hover,
+  .btn-group form input[type=submit]:hover,
+  form .btn-group input[type=submit]:hover,
+  .btn-group form input[type=button]:hover,
+  form .btn-group input[type=button]:hover {
     color: #292b2c;
     background-color: #e6e6e6;
     border-color: #adadad; }
-  .btn-secondary:focus, .btn-group button:focus, .btn-group
-  input[type=file]:focus, .btn-group
-  input[type=submit]:focus, .btn-group
-  input[type=button]:focus, .btn-secondary.focus, .btn-group button.focus, .btn-group
-  input.focus[type=file], .btn-group
-  input.focus[type=submit], .btn-group
-  input.focus[type=button] {
+  .btn-secondary:focus, .btn-group button:focus, .btn-group form input[type=file]:focus, form .btn-group input[type=file]:focus,
+  .btn-group form input[type=submit]:focus,
+  form .btn-group input[type=submit]:focus,
+  .btn-group form input[type=button]:focus,
+  form .btn-group input[type=button]:focus, .btn-secondary.focus, .btn-group button.focus, .btn-group form input.focus[type=file], form .btn-group input.focus[type=file],
+  .btn-group form input.focus[type=submit],
+  form .btn-group input.focus[type=submit],
+  .btn-group form input.focus[type=button],
+  form .btn-group input.focus[type=button] {
     box-shadow: 0 0 0 2px rgba(204, 204, 204, 0.5); }
-  .btn-secondary.disabled, .btn-group button.disabled, .btn-group
-  input.disabled[type=file], .btn-group
-  input.disabled[type=submit], .btn-group
-  input.disabled[type=button], .btn-secondary:disabled, .btn-group button:disabled, .btn-group
-  input[type=file]:disabled, .btn-group
-  input[type=submit]:disabled, .btn-group
-  input[type=button]:disabled {
+  .btn-secondary.disabled, .btn-group button.disabled, .btn-group form input.disabled[type=file], form .btn-group input.disabled[type=file],
+  .btn-group form input.disabled[type=submit],
+  form .btn-group input.disabled[type=submit],
+  .btn-group form input.disabled[type=button],
+  form .btn-group input.disabled[type=button], .btn-secondary:disabled, .btn-group button:disabled, .btn-group form input[type=file]:disabled, form .btn-group input[type=file]:disabled,
+  .btn-group form input[type=submit]:disabled,
+  form .btn-group input[type=submit]:disabled,
+  .btn-group form input[type=button]:disabled,
+  form .btn-group input[type=button]:disabled {
     background-color: #fff;
     border-color: #ccc; }
-  .btn-secondary:active, .btn-group button:active, .btn-group
-  input[type=file]:active, .btn-group
-  input[type=submit]:active, .btn-group
-  input[type=button]:active, .btn-secondary.active, .btn-group button.active, .btn-group
-  input.active[type=file], .btn-group
-  input.active[type=submit], .btn-group
-  input.active[type=button], .show > .btn-secondary.dropdown-toggle, .btn-group .show > button.dropdown-toggle, .btn-group .show > input.dropdown-toggle[type=file], .btn-group .show > input.dropdown-toggle[type=submit], .btn-group .show > input.dropdown-toggle[type=button] {
+  .btn-secondary:active, .btn-group button:active, .btn-group form input[type=file]:active, form .btn-group input[type=file]:active,
+  .btn-group form input[type=submit]:active,
+  form .btn-group input[type=submit]:active,
+  .btn-group form input[type=button]:active,
+  form .btn-group input[type=button]:active, .btn-secondary.active, .btn-group button.active, .btn-group form input.active[type=file], form .btn-group input.active[type=file],
+  .btn-group form input.active[type=submit],
+  form .btn-group input.active[type=submit],
+  .btn-group form input.active[type=button],
+  form .btn-group input.active[type=button], .show > .btn-secondary.dropdown-toggle, .btn-group .show > button.dropdown-toggle, .btn-group form .show > input.dropdown-toggle[type=file], form .btn-group .show > input.dropdown-toggle[type=file],
+  .btn-group form .show > input.dropdown-toggle[type=submit],
+  form .btn-group .show > input.dropdown-toggle[type=submit],
+  .btn-group form .show > input.dropdown-toggle[type=button],
+  form .btn-group .show > input.dropdown-toggle[type=button] {
     color: #292b2c;
     background-color: #e6e6e6;
     background-image: none;
@@ -2258,21 +2272,18 @@ input[type=button] {
     .btn-link:disabled:focus, .btn-link:disabled:hover {
       text-decoration: none; }
 
-.btn-lg, .btn-group-lg > .btn, .btn-group-lg > button,
-.btn-group-lg > input[type=file],
-.btn-group-lg > input[type=submit],
-.btn-group-lg > input[type=button] {
+.btn-lg, .btn-group-lg > .btn, .btn-group-lg > button, form .btn-group-lg > input[type=file],
+form .btn-group-lg > input[type=submit],
+form .btn-group-lg > input[type=button] {
   padding: 0.75rem 1.5rem;
   font-size: 1.25rem;
   border-radius: 0; }
 
-.btn-sm, .btn-group-sm > .btn, .btn-group-sm > button,
-.btn-group-sm > input[type=file],
-.btn-group-sm > input[type=submit],
-.btn-group-sm > input[type=button], button,
-input[type=file],
-input[type=submit],
-input[type=button] {
+.btn-sm, .btn-group-sm > .btn, .btn-group-sm > button, form .btn-group-sm > input[type=file],
+form .btn-group-sm > input[type=submit],
+form .btn-group-sm > input[type=button], button, form input[type=file],
+form input[type=submit],
+form input[type=button] {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   border-radius: 0; }
@@ -2294,121 +2305,160 @@ input[type="button"].btn-block {
   position: relative;
   display: inline-flex;
   vertical-align: middle; }
-  .btn-group > .btn, .btn-group > button,
-  .btn-group > input[type=file],
-  .btn-group > input[type=submit],
-  .btn-group > input[type=button],
+  .btn-group > .btn, .btn-group > button, form .btn-group > input[type=file],
+  form .btn-group > input[type=submit],
+  form .btn-group > input[type=button],
   .btn-group-vertical > .btn,
   .btn-group-vertical > button,
-  .btn-group-vertical > input[type=file],
-  .btn-group-vertical > input[type=submit],
-  .btn-group-vertical > input[type=button] {
+  form .btn-group-vertical > input[type=file],
+  form .btn-group-vertical > input[type=submit],
+  form .btn-group-vertical > input[type=button] {
     position: relative;
     flex: 0 1 auto; }
-    .btn-group > .btn:hover, .btn-group > button:hover,
-    .btn-group > input[type=file]:hover,
-    .btn-group > input[type=submit]:hover,
-    .btn-group > input[type=button]:hover,
+    .btn-group > .btn:hover, .btn-group > button:hover, form .btn-group > input[type=file]:hover,
+    form .btn-group > input[type=submit]:hover,
+    form .btn-group > input[type=button]:hover,
     .btn-group-vertical > .btn:hover,
     .btn-group-vertical > button:hover,
-    .btn-group-vertical > input[type=file]:hover,
-    .btn-group-vertical > input[type=submit]:hover,
-    .btn-group-vertical > input[type=button]:hover {
+    form .btn-group-vertical > input[type=file]:hover,
+    form .btn-group-vertical > input[type=submit]:hover,
+    form .btn-group-vertical > input[type=button]:hover {
       z-index: 2; }
-    .btn-group > .btn:focus, .btn-group > button:focus,
-    .btn-group > input[type=file]:focus,
-    .btn-group > input[type=submit]:focus,
-    .btn-group > input[type=button]:focus, .btn-group > .btn:active, .btn-group > button:active,
-    .btn-group > input[type=file]:active,
-    .btn-group > input[type=submit]:active,
-    .btn-group > input[type=button]:active, .btn-group > .btn.active, .btn-group > button.active,
-    .btn-group > input.active[type=file],
-    .btn-group > input.active[type=submit],
-    .btn-group > input.active[type=button],
+    .btn-group > .btn:focus, .btn-group > button:focus, form .btn-group > input[type=file]:focus,
+    form .btn-group > input[type=submit]:focus,
+    form .btn-group > input[type=button]:focus, .btn-group > .btn:active, .btn-group > button:active, form .btn-group > input[type=file]:active,
+    form .btn-group > input[type=submit]:active,
+    form .btn-group > input[type=button]:active, .btn-group > .btn.active, .btn-group > button.active, form .btn-group > input.active[type=file],
+    form .btn-group > input.active[type=submit],
+    form .btn-group > input.active[type=button],
     .btn-group-vertical > .btn:focus,
     .btn-group-vertical > button:focus,
-    .btn-group-vertical > input[type=file]:focus,
-    .btn-group-vertical > input[type=submit]:focus,
-    .btn-group-vertical > input[type=button]:focus,
+    form .btn-group-vertical > input[type=file]:focus,
+    form .btn-group-vertical > input[type=submit]:focus,
+    form .btn-group-vertical > input[type=button]:focus,
     .btn-group-vertical > .btn:active,
     .btn-group-vertical > button:active,
-    .btn-group-vertical > input[type=file]:active,
-    .btn-group-vertical > input[type=submit]:active,
-    .btn-group-vertical > input[type=button]:active,
+    form .btn-group-vertical > input[type=file]:active,
+    form .btn-group-vertical > input[type=submit]:active,
+    form .btn-group-vertical > input[type=button]:active,
     .btn-group-vertical > .btn.active,
     .btn-group-vertical > button.active,
-    .btn-group-vertical > input.active[type=file],
-    .btn-group-vertical > input.active[type=submit],
-    .btn-group-vertical > input.active[type=button] {
+    form .btn-group-vertical > input.active[type=file],
+    form .btn-group-vertical > input.active[type=submit],
+    form .btn-group-vertical > input.active[type=button] {
       z-index: 2; }
-  .btn-group .btn + .btn, .btn-group button + .btn,
-  .btn-group input[type=file] + .btn,
-  .btn-group input[type=submit] + .btn,
-  .btn-group input[type=button] + .btn, .btn-group .btn + button, .btn-group button + button,
-  .btn-group input[type=file] + button,
-  .btn-group input[type=submit] + button,
-  .btn-group input[type=button] + button,
-  .btn-group .btn + input[type=file],
-  .btn-group button + input[type=file],
-  .btn-group input[type=file] + input[type=file],
-  .btn-group input[type=submit] + input[type=file],
-  .btn-group input[type=button] + input[type=file],
-  .btn-group .btn + input[type=submit],
-  .btn-group button + input[type=submit],
-  .btn-group input[type=file] + input[type=submit],
-  .btn-group input[type=submit] + input[type=submit],
-  .btn-group input[type=button] + input[type=submit],
-  .btn-group .btn + input[type=button],
-  .btn-group button + input[type=button],
-  .btn-group input[type=file] + input[type=button],
-  .btn-group input[type=submit] + input[type=button],
-  .btn-group input[type=button] + input[type=button],
+  .btn-group .btn + .btn, .btn-group button + .btn, .btn-group form input[type=file] + .btn, form .btn-group input[type=file] + .btn,
+  .btn-group form input[type=submit] + .btn,
+  form .btn-group input[type=submit] + .btn,
+  .btn-group form input[type=button] + .btn,
+  form .btn-group input[type=button] + .btn, .btn-group .btn + button, .btn-group button + button, .btn-group form input[type=file] + button, form .btn-group input[type=file] + button,
+  .btn-group form input[type=submit] + button,
+  form .btn-group input[type=submit] + button,
+  .btn-group form input[type=button] + button,
+  form .btn-group input[type=button] + button, .btn-group form .btn + input[type=file], form .btn-group .btn + input[type=file], .btn-group form button + input[type=file], form .btn-group button + input[type=file], .btn-group form input[type=file] + input[type=file], form .btn-group input[type=file] + input[type=file],
+  .btn-group form input[type=submit] + input[type=file],
+  form .btn-group input[type=submit] + input[type=file],
+  .btn-group form input[type=button] + input[type=file],
+  form .btn-group input[type=button] + input[type=file],
+  .btn-group form .btn + input[type=submit],
+  form .btn-group .btn + input[type=submit],
+  .btn-group form button + input[type=submit],
+  form .btn-group button + input[type=submit],
+  .btn-group form input[type=file] + input[type=submit],
+  form .btn-group input[type=file] + input[type=submit],
+  .btn-group form input[type=submit] + input[type=submit],
+  form .btn-group input[type=submit] + input[type=submit],
+  .btn-group form input[type=button] + input[type=submit],
+  form .btn-group input[type=button] + input[type=submit],
+  .btn-group form .btn + input[type=button],
+  form .btn-group .btn + input[type=button],
+  .btn-group form button + input[type=button],
+  form .btn-group button + input[type=button],
+  .btn-group form input[type=file] + input[type=button],
+  form .btn-group input[type=file] + input[type=button],
+  .btn-group form input[type=submit] + input[type=button],
+  form .btn-group input[type=submit] + input[type=button],
+  .btn-group form input[type=button] + input[type=button],
+  form .btn-group input[type=button] + input[type=button],
   .btn-group .btn + .btn-group,
   .btn-group button + .btn-group,
-  .btn-group input[type=file] + .btn-group,
-  .btn-group input[type=submit] + .btn-group,
-  .btn-group input[type=button] + .btn-group,
+  .btn-group form input[type=file] + .btn-group,
+  form .btn-group input[type=file] + .btn-group,
+  .btn-group form input[type=submit] + .btn-group,
+  form .btn-group input[type=submit] + .btn-group,
+  .btn-group form input[type=button] + .btn-group,
+  form .btn-group input[type=button] + .btn-group,
   .btn-group .btn-group + .btn,
   .btn-group .btn-group + button,
-  .btn-group .btn-group + input[type=file],
-  .btn-group .btn-group + input[type=submit],
-  .btn-group .btn-group + input[type=button],
+  .btn-group form .btn-group + input[type=file],
+  form .btn-group .btn-group + input[type=file],
+  .btn-group form .btn-group + input[type=submit],
+  form .btn-group .btn-group + input[type=submit],
+  .btn-group form .btn-group + input[type=button],
+  form .btn-group .btn-group + input[type=button],
   .btn-group .btn-group + .btn-group,
   .btn-group-vertical .btn + .btn,
   .btn-group-vertical button + .btn,
-  .btn-group-vertical input[type=file] + .btn,
-  .btn-group-vertical input[type=submit] + .btn,
-  .btn-group-vertical input[type=button] + .btn,
+  .btn-group-vertical form input[type=file] + .btn,
+  form .btn-group-vertical input[type=file] + .btn,
+  .btn-group-vertical form input[type=submit] + .btn,
+  form .btn-group-vertical input[type=submit] + .btn,
+  .btn-group-vertical form input[type=button] + .btn,
+  form .btn-group-vertical input[type=button] + .btn,
   .btn-group-vertical .btn + button,
   .btn-group-vertical button + button,
-  .btn-group-vertical input[type=file] + button,
-  .btn-group-vertical input[type=submit] + button,
-  .btn-group-vertical input[type=button] + button,
-  .btn-group-vertical .btn + input[type=file],
-  .btn-group-vertical button + input[type=file],
-  .btn-group-vertical input[type=file] + input[type=file],
-  .btn-group-vertical input[type=submit] + input[type=file],
-  .btn-group-vertical input[type=button] + input[type=file],
-  .btn-group-vertical .btn + input[type=submit],
-  .btn-group-vertical button + input[type=submit],
-  .btn-group-vertical input[type=file] + input[type=submit],
-  .btn-group-vertical input[type=submit] + input[type=submit],
-  .btn-group-vertical input[type=button] + input[type=submit],
-  .btn-group-vertical .btn + input[type=button],
-  .btn-group-vertical button + input[type=button],
-  .btn-group-vertical input[type=file] + input[type=button],
-  .btn-group-vertical input[type=submit] + input[type=button],
-  .btn-group-vertical input[type=button] + input[type=button],
+  .btn-group-vertical form input[type=file] + button,
+  form .btn-group-vertical input[type=file] + button,
+  .btn-group-vertical form input[type=submit] + button,
+  form .btn-group-vertical input[type=submit] + button,
+  .btn-group-vertical form input[type=button] + button,
+  form .btn-group-vertical input[type=button] + button,
+  .btn-group-vertical form .btn + input[type=file],
+  form .btn-group-vertical .btn + input[type=file],
+  .btn-group-vertical form button + input[type=file],
+  form .btn-group-vertical button + input[type=file],
+  .btn-group-vertical form input[type=file] + input[type=file],
+  form .btn-group-vertical input[type=file] + input[type=file],
+  .btn-group-vertical form input[type=submit] + input[type=file],
+  form .btn-group-vertical input[type=submit] + input[type=file],
+  .btn-group-vertical form input[type=button] + input[type=file],
+  form .btn-group-vertical input[type=button] + input[type=file],
+  .btn-group-vertical form .btn + input[type=submit],
+  form .btn-group-vertical .btn + input[type=submit],
+  .btn-group-vertical form button + input[type=submit],
+  form .btn-group-vertical button + input[type=submit],
+  .btn-group-vertical form input[type=file] + input[type=submit],
+  form .btn-group-vertical input[type=file] + input[type=submit],
+  .btn-group-vertical form input[type=submit] + input[type=submit],
+  form .btn-group-vertical input[type=submit] + input[type=submit],
+  .btn-group-vertical form input[type=button] + input[type=submit],
+  form .btn-group-vertical input[type=button] + input[type=submit],
+  .btn-group-vertical form .btn + input[type=button],
+  form .btn-group-vertical .btn + input[type=button],
+  .btn-group-vertical form button + input[type=button],
+  form .btn-group-vertical button + input[type=button],
+  .btn-group-vertical form input[type=file] + input[type=button],
+  form .btn-group-vertical input[type=file] + input[type=button],
+  .btn-group-vertical form input[type=submit] + input[type=button],
+  form .btn-group-vertical input[type=submit] + input[type=button],
+  .btn-group-vertical form input[type=button] + input[type=button],
+  form .btn-group-vertical input[type=button] + input[type=button],
   .btn-group-vertical .btn + .btn-group,
   .btn-group-vertical button + .btn-group,
-  .btn-group-vertical input[type=file] + .btn-group,
-  .btn-group-vertical input[type=submit] + .btn-group,
-  .btn-group-vertical input[type=button] + .btn-group,
+  .btn-group-vertical form input[type=file] + .btn-group,
+  form .btn-group-vertical input[type=file] + .btn-group,
+  .btn-group-vertical form input[type=submit] + .btn-group,
+  form .btn-group-vertical input[type=submit] + .btn-group,
+  .btn-group-vertical form input[type=button] + .btn-group,
+  form .btn-group-vertical input[type=button] + .btn-group,
   .btn-group-vertical .btn-group + .btn,
   .btn-group-vertical .btn-group + button,
-  .btn-group-vertical .btn-group + input[type=file],
-  .btn-group-vertical .btn-group + input[type=submit],
-  .btn-group-vertical .btn-group + input[type=button],
+  .btn-group-vertical form .btn-group + input[type=file],
+  form .btn-group-vertical .btn-group + input[type=file],
+  .btn-group-vertical form .btn-group + input[type=submit],
+  form .btn-group-vertical .btn-group + input[type=submit],
+  .btn-group-vertical form .btn-group + input[type=button],
+  form .btn-group-vertical .btn-group + input[type=button],
   .btn-group-vertical .btn-group + .btn-group {
     margin-left: -1px; }
 
@@ -2418,28 +2468,24 @@ input[type="button"].btn-block {
   .btn-toolbar .input-group {
     width: auto; }
 
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle),
-.btn-group > input[type=file]:not(:first-child):not(:last-child):not(.dropdown-toggle),
-.btn-group > input[type=submit]:not(:first-child):not(:last-child):not(.dropdown-toggle),
-.btn-group > input[type=button]:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle), form .btn-group > input[type=file]:not(:first-child):not(:last-child):not(.dropdown-toggle),
+form .btn-group > input[type=submit]:not(:first-child):not(:last-child):not(.dropdown-toggle),
+form .btn-group > input[type=button]:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0; }
 
-.btn-group > .btn:first-child, .btn-group > button:first-child,
-.btn-group > input[type=file]:first-child,
-.btn-group > input[type=submit]:first-child,
-.btn-group > input[type=button]:first-child {
+.btn-group > .btn:first-child, .btn-group > button:first-child, form .btn-group > input[type=file]:first-child,
+form .btn-group > input[type=submit]:first-child,
+form .btn-group > input[type=button]:first-child {
   margin-left: 0; }
-  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > button:first-child:not(:last-child):not(.dropdown-toggle),
-  .btn-group > input[type=file]:first-child:not(:last-child):not(.dropdown-toggle),
-  .btn-group > input[type=submit]:first-child:not(:last-child):not(.dropdown-toggle),
-  .btn-group > input[type=button]:first-child:not(:last-child):not(.dropdown-toggle) {
+  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > button:first-child:not(:last-child):not(.dropdown-toggle), form .btn-group > input[type=file]:first-child:not(:last-child):not(.dropdown-toggle),
+  form .btn-group > input[type=submit]:first-child:not(:last-child):not(.dropdown-toggle),
+  form .btn-group > input[type=button]:first-child:not(:last-child):not(.dropdown-toggle) {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0; }
 
-.btn-group > .btn:last-child:not(:first-child), .btn-group > button:last-child:not(:first-child),
-.btn-group > input[type=file]:last-child:not(:first-child),
-.btn-group > input[type=submit]:last-child:not(:first-child),
-.btn-group > input[type=button]:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child), .btn-group > button:last-child:not(:first-child), form .btn-group > input[type=file]:last-child:not(:first-child),
+form .btn-group > input[type=submit]:last-child:not(:first-child),
+form .btn-group > input[type=button]:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
@@ -2447,24 +2493,21 @@ input[type="button"].btn-block {
 .btn-group > .btn-group {
   float: left; }
 
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group > .btn-group:not(:first-child):not(:last-child) > button,
-.btn-group > .btn-group:not(:first-child):not(:last-child) > input[type=file],
-.btn-group > .btn-group:not(:first-child):not(:last-child) > input[type=submit],
-.btn-group > .btn-group:not(:first-child):not(:last-child) > input[type=button] {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group > .btn-group:not(:first-child):not(:last-child) > button, form .btn-group > .btn-group:not(:first-child):not(:last-child) > input[type=file],
+form .btn-group > .btn-group:not(:first-child):not(:last-child) > input[type=submit],
+form .btn-group > .btn-group:not(:first-child):not(:last-child) > input[type=button] {
   border-radius: 0; }
 
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group > .btn-group:first-child:not(:last-child) > button:last-child,
-.btn-group > .btn-group:first-child:not(:last-child) > input[type=file]:last-child,
-.btn-group > .btn-group:first-child:not(:last-child) > input[type=submit]:last-child,
-.btn-group > .btn-group:first-child:not(:last-child) > input[type=button]:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group > .btn-group:first-child:not(:last-child) > button:last-child, form .btn-group > .btn-group:first-child:not(:last-child) > input[type=file]:last-child,
+form .btn-group > .btn-group:first-child:not(:last-child) > input[type=submit]:last-child,
+form .btn-group > .btn-group:first-child:not(:last-child) > input[type=button]:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
 
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group > .btn-group:last-child:not(:first-child) > button:first-child,
-.btn-group > .btn-group:last-child:not(:first-child) > input[type=file]:first-child,
-.btn-group > .btn-group:last-child:not(:first-child) > input[type=submit]:first-child,
-.btn-group > .btn-group:last-child:not(:first-child) > input[type=button]:first-child {
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group > .btn-group:last-child:not(:first-child) > button:first-child, form .btn-group > .btn-group:last-child:not(:first-child) > input[type=file]:first-child,
+form .btn-group > .btn-group:last-child:not(:first-child) > input[type=submit]:first-child,
+form .btn-group > .btn-group:last-child:not(:first-child) > input[type=button]:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
 
@@ -2472,32 +2515,27 @@ input[type="button"].btn-block {
 .btn-group.open .dropdown-toggle {
   outline: 0; }
 
-.btn + .dropdown-toggle-split, button + .dropdown-toggle-split,
-input[type=file] + .dropdown-toggle-split,
-input[type=submit] + .dropdown-toggle-split,
-input[type=button] + .dropdown-toggle-split {
+.btn + .dropdown-toggle-split, button + .dropdown-toggle-split, form input[type=file] + .dropdown-toggle-split,
+form input[type=submit] + .dropdown-toggle-split,
+form input[type=button] + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem; }
-  .btn + .dropdown-toggle-split::after, button + .dropdown-toggle-split::after,
-  input[type=file] + .dropdown-toggle-split::after,
-  input[type=submit] + .dropdown-toggle-split::after,
-  input[type=button] + .dropdown-toggle-split::after {
+  .btn + .dropdown-toggle-split::after, button + .dropdown-toggle-split::after, form input[type=file] + .dropdown-toggle-split::after,
+  form input[type=submit] + .dropdown-toggle-split::after,
+  form input[type=button] + .dropdown-toggle-split::after {
     margin-left: 0; }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > button + .dropdown-toggle-split,
-.btn-group-sm > input[type=file] + .dropdown-toggle-split,
-.btn-group-sm > input[type=submit] + .dropdown-toggle-split,
-.btn-group-sm > input[type=button] + .dropdown-toggle-split, button + .dropdown-toggle-split,
-input[type=file] + .dropdown-toggle-split,
-input[type=submit] + .dropdown-toggle-split,
-input[type=button] + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > button + .dropdown-toggle-split, form .btn-group-sm > input[type=file] + .dropdown-toggle-split,
+form .btn-group-sm > input[type=submit] + .dropdown-toggle-split,
+form .btn-group-sm > input[type=button] + .dropdown-toggle-split, button + .dropdown-toggle-split, form input[type=file] + .dropdown-toggle-split,
+form input[type=submit] + .dropdown-toggle-split,
+form input[type=button] + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem; }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > button + .dropdown-toggle-split,
-.btn-group-lg > input[type=file] + .dropdown-toggle-split,
-.btn-group-lg > input[type=submit] + .dropdown-toggle-split,
-.btn-group-lg > input[type=button] + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > button + .dropdown-toggle-split, form .btn-group-lg > input[type=file] + .dropdown-toggle-split,
+form .btn-group-lg > input[type=submit] + .dropdown-toggle-split,
+form .btn-group-lg > input[type=button] + .dropdown-toggle-split {
   padding-right: 1.125rem;
   padding-left: 1.125rem; }
 
@@ -2506,106 +2544,95 @@ input[type=button] + .dropdown-toggle-split {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center; }
-  .btn-group-vertical .btn, .btn-group-vertical button,
-  .btn-group-vertical input[type=file],
-  .btn-group-vertical input[type=submit],
-  .btn-group-vertical input[type=button],
+  .btn-group-vertical .btn, .btn-group-vertical button, .btn-group-vertical form input[type=file], form .btn-group-vertical input[type=file],
+  .btn-group-vertical form input[type=submit],
+  form .btn-group-vertical input[type=submit],
+  .btn-group-vertical form input[type=button],
+  form .btn-group-vertical input[type=button],
   .btn-group-vertical .btn-group {
     width: 100%; }
-  .btn-group-vertical > .btn + .btn, .btn-group-vertical > button + .btn,
-  .btn-group-vertical > input[type=file] + .btn,
-  .btn-group-vertical > input[type=submit] + .btn,
-  .btn-group-vertical > input[type=button] + .btn, .btn-group-vertical > .btn + button, .btn-group-vertical > button + button,
-  .btn-group-vertical > input[type=file] + button,
-  .btn-group-vertical > input[type=submit] + button,
-  .btn-group-vertical > input[type=button] + button,
-  .btn-group-vertical > .btn + input[type=file],
-  .btn-group-vertical > button + input[type=file],
-  .btn-group-vertical > input[type=file] + input[type=file],
-  .btn-group-vertical > input[type=submit] + input[type=file],
-  .btn-group-vertical > input[type=button] + input[type=file],
-  .btn-group-vertical > .btn + input[type=submit],
-  .btn-group-vertical > button + input[type=submit],
-  .btn-group-vertical > input[type=file] + input[type=submit],
-  .btn-group-vertical > input[type=submit] + input[type=submit],
-  .btn-group-vertical > input[type=button] + input[type=submit],
-  .btn-group-vertical > .btn + input[type=button],
-  .btn-group-vertical > button + input[type=button],
-  .btn-group-vertical > input[type=file] + input[type=button],
-  .btn-group-vertical > input[type=submit] + input[type=button],
-  .btn-group-vertical > input[type=button] + input[type=button],
+  .btn-group-vertical > .btn + .btn, .btn-group-vertical > button + .btn, form .btn-group-vertical > input[type=file] + .btn,
+  form .btn-group-vertical > input[type=submit] + .btn,
+  form .btn-group-vertical > input[type=button] + .btn, .btn-group-vertical > .btn + button, .btn-group-vertical > button + button, form .btn-group-vertical > input[type=file] + button,
+  form .btn-group-vertical > input[type=submit] + button,
+  form .btn-group-vertical > input[type=button] + button, form .btn-group-vertical > .btn + input[type=file], form .btn-group-vertical > button + input[type=file], form .btn-group-vertical > input[type=file] + input[type=file],
+  form .btn-group-vertical > input[type=submit] + input[type=file],
+  form .btn-group-vertical > input[type=button] + input[type=file],
+  form .btn-group-vertical > .btn + input[type=submit],
+  form .btn-group-vertical > button + input[type=submit],
+  form .btn-group-vertical > input[type=file] + input[type=submit],
+  form .btn-group-vertical > input[type=submit] + input[type=submit],
+  form .btn-group-vertical > input[type=button] + input[type=submit],
+  form .btn-group-vertical > .btn + input[type=button],
+  form .btn-group-vertical > button + input[type=button],
+  form .btn-group-vertical > input[type=file] + input[type=button],
+  form .btn-group-vertical > input[type=submit] + input[type=button],
+  form .btn-group-vertical > input[type=button] + input[type=button],
   .btn-group-vertical > .btn + .btn-group,
   .btn-group-vertical > button + .btn-group,
-  .btn-group-vertical > input[type=file] + .btn-group,
-  .btn-group-vertical > input[type=submit] + .btn-group,
-  .btn-group-vertical > input[type=button] + .btn-group,
+  form .btn-group-vertical > input[type=file] + .btn-group,
+  form .btn-group-vertical > input[type=submit] + .btn-group,
+  form .btn-group-vertical > input[type=button] + .btn-group,
   .btn-group-vertical > .btn-group + .btn,
   .btn-group-vertical > .btn-group + button,
-  .btn-group-vertical > .btn-group + input[type=file],
-  .btn-group-vertical > .btn-group + input[type=submit],
-  .btn-group-vertical > .btn-group + input[type=button],
+  form .btn-group-vertical > .btn-group + input[type=file],
+  form .btn-group-vertical > .btn-group + input[type=submit],
+  form .btn-group-vertical > .btn-group + input[type=button],
   .btn-group-vertical > .btn-group + .btn-group {
     margin-top: -1px;
     margin-left: 0; }
 
-.btn-group-vertical > .btn:not(:first-child):not(:last-child), .btn-group-vertical > button:not(:first-child):not(:last-child),
-.btn-group-vertical > input[type=file]:not(:first-child):not(:last-child),
-.btn-group-vertical > input[type=submit]:not(:first-child):not(:last-child),
-.btn-group-vertical > input[type=button]:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child), .btn-group-vertical > button:not(:first-child):not(:last-child), form .btn-group-vertical > input[type=file]:not(:first-child):not(:last-child),
+form .btn-group-vertical > input[type=submit]:not(:first-child):not(:last-child),
+form .btn-group-vertical > input[type=button]:not(:first-child):not(:last-child) {
   border-radius: 0; }
-.btn-group-vertical > .btn:first-child:not(:last-child), .btn-group-vertical > button:first-child:not(:last-child),
-.btn-group-vertical > input[type=file]:first-child:not(:last-child),
-.btn-group-vertical > input[type=submit]:first-child:not(:last-child),
-.btn-group-vertical > input[type=button]:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child), .btn-group-vertical > button:first-child:not(:last-child), form .btn-group-vertical > input[type=file]:first-child:not(:last-child),
+form .btn-group-vertical > input[type=submit]:first-child:not(:last-child),
+form .btn-group-vertical > input[type=button]:first-child:not(:last-child) {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
-.btn-group-vertical > .btn:last-child:not(:first-child), .btn-group-vertical > button:last-child:not(:first-child),
-.btn-group-vertical > input[type=file]:last-child:not(:first-child),
-.btn-group-vertical > input[type=submit]:last-child:not(:first-child),
-.btn-group-vertical > input[type=button]:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child), .btn-group-vertical > button:last-child:not(:first-child), form .btn-group-vertical > input[type=file]:last-child:not(:first-child),
+form .btn-group-vertical > input[type=submit]:last-child:not(:first-child),
+form .btn-group-vertical > input[type=button]:last-child:not(:first-child) {
   border-top-right-radius: 0;
   border-top-left-radius: 0; }
 
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button,
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > input[type=file],
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > input[type=submit],
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > input[type=button] {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button, form .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > input[type=file],
+form .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > input[type=submit],
+form .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > input[type=button] {
   border-radius: 0; }
 
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child,
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > input[type=file]:last-child,
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > input[type=submit]:last-child,
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > input[type=button]:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child, form .btn-group-vertical > .btn-group:first-child:not(:last-child) > input[type=file]:last-child,
+form .btn-group-vertical > .btn-group:first-child:not(:last-child) > input[type=submit]:last-child,
+form .btn-group-vertical > .btn-group:first-child:not(:last-child) > input[type=button]:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child,
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > input[type=file]:first-child,
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > input[type=submit]:first-child,
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > input[type=button]:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child, form .btn-group-vertical > .btn-group:last-child:not(:first-child) > input[type=file]:first-child,
+form .btn-group-vertical > .btn-group:last-child:not(:first-child) > input[type=submit]:first-child,
+form .btn-group-vertical > .btn-group:last-child:not(:first-child) > input[type=button]:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0; }
 
-[data-toggle="buttons"] > .btn input[type="radio"], [data-toggle="buttons"] > button input[type="radio"],
-[data-toggle="buttons"] > input[type=file] input[type="radio"],
-[data-toggle="buttons"] > input[type=submit] input[type="radio"],
-[data-toggle="buttons"] > input[type=button] input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="radio"], [data-toggle="buttons"] > button input[type="radio"], form [data-toggle="buttons"] > input[type=file] input[type="radio"],
+form [data-toggle="buttons"] > input[type=submit] input[type="radio"],
+form [data-toggle="buttons"] > input[type=button] input[type="radio"],
 [data-toggle="buttons"] > .btn input[type="checkbox"],
 [data-toggle="buttons"] > button input[type="checkbox"],
-[data-toggle="buttons"] > input[type=file] input[type="checkbox"],
-[data-toggle="buttons"] > input[type=submit] input[type="checkbox"],
-[data-toggle="buttons"] > input[type=button] input[type="checkbox"],
+form [data-toggle="buttons"] > input[type=file] input[type="checkbox"],
+form [data-toggle="buttons"] > input[type=submit] input[type="checkbox"],
+form [data-toggle="buttons"] > input[type=button] input[type="checkbox"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
 [data-toggle="buttons"] > .btn-group > button input[type="radio"],
-[data-toggle="buttons"] > .btn-group > input[type=file] input[type="radio"],
-[data-toggle="buttons"] > .btn-group > input[type=submit] input[type="radio"],
-[data-toggle="buttons"] > .btn-group > input[type=button] input[type="radio"],
+form [data-toggle="buttons"] > .btn-group > input[type=file] input[type="radio"],
+form [data-toggle="buttons"] > .btn-group > input[type=submit] input[type="radio"],
+form [data-toggle="buttons"] > .btn-group > input[type=button] input[type="radio"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"],
 [data-toggle="buttons"] > .btn-group > button input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > input[type=file] input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > input[type=submit] input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > input[type=button] input[type="checkbox"] {
+form [data-toggle="buttons"] > .btn-group > input[type=file] input[type="checkbox"],
+form [data-toggle="buttons"] > .btn-group > input[type=submit] input[type="checkbox"],
+form [data-toggle="buttons"] > .btn-group > input[type=button] input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none; }
@@ -2654,9 +2681,9 @@ input[type=button] + .dropdown-toggle-split {
   .input-group-sm > .input-group-addon,
   .input-group-sm > .input-group-btn > .input-group-addon.btn,
   .input-group-sm > .input-group-btn > button.input-group-addon,
-  .input-group-sm > .input-group-btn > input.input-group-addon[type=file],
-  .input-group-sm > .input-group-btn > input.input-group-addon[type=submit],
-  .input-group-sm > .input-group-btn > input.input-group-addon[type=button] {
+  form .input-group-sm > .input-group-btn > input.input-group-addon[type=file],
+  form .input-group-sm > .input-group-btn > input.input-group-addon[type=submit],
+  form .input-group-sm > .input-group-btn > input.input-group-addon[type=button] {
     padding: 0.25rem 0.5rem;
     font-size: 0.875rem;
     border-radius: 0; }
@@ -2664,9 +2691,9 @@ input[type=button] + .dropdown-toggle-split {
   .input-group-lg > .input-group-addon,
   .input-group-lg > .input-group-btn > .input-group-addon.btn,
   .input-group-lg > .input-group-btn > button.input-group-addon,
-  .input-group-lg > .input-group-btn > input.input-group-addon[type=file],
-  .input-group-lg > .input-group-btn > input.input-group-addon[type=submit],
-  .input-group-lg > .input-group-btn > input.input-group-addon[type=button] {
+  form .input-group-lg > .input-group-btn > input.input-group-addon[type=file],
+  form .input-group-lg > .input-group-btn > input.input-group-addon[type=submit],
+  form .input-group-lg > .input-group-btn > input.input-group-addon[type=button] {
     padding: 0.75rem 1.5rem;
     font-size: 1.25rem;
     border-radius: 0; }
@@ -2678,25 +2705,25 @@ input[type=button] + .dropdown-toggle-split {
 .input-group-addon:not(:last-child),
 .input-group-btn:not(:last-child) > .btn,
 .input-group-btn:not(:last-child) > button,
-.input-group-btn:not(:last-child) > input[type=file],
-.input-group-btn:not(:last-child) > input[type=submit],
-.input-group-btn:not(:last-child) > input[type=button],
+form .input-group-btn:not(:last-child) > input[type=file],
+form .input-group-btn:not(:last-child) > input[type=submit],
+form .input-group-btn:not(:last-child) > input[type=button],
 .input-group-btn:not(:last-child) > .btn-group > .btn,
 .input-group-btn:not(:last-child) > .btn-group > button,
-.input-group-btn:not(:last-child) > .btn-group > input[type=file],
-.input-group-btn:not(:last-child) > .btn-group > input[type=submit],
-.input-group-btn:not(:last-child) > .btn-group > input[type=button],
+form .input-group-btn:not(:last-child) > .btn-group > input[type=file],
+form .input-group-btn:not(:last-child) > .btn-group > input[type=submit],
+form .input-group-btn:not(:last-child) > .btn-group > input[type=button],
 .input-group-btn:not(:last-child) > .dropdown-toggle,
 .input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:not(:first-child) > button:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:not(:first-child) > input[type=file]:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:not(:first-child) > input[type=submit]:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:not(:first-child) > input[type=button]:not(:last-child):not(.dropdown-toggle),
+form .input-group-btn:not(:first-child) > input[type=file]:not(:last-child):not(.dropdown-toggle),
+form .input-group-btn:not(:first-child) > input[type=submit]:not(:last-child):not(.dropdown-toggle),
+form .input-group-btn:not(:first-child) > input[type=button]:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn,
 .input-group-btn:not(:first-child) > .btn-group:not(:last-child) > button,
-.input-group-btn:not(:first-child) > .btn-group:not(:last-child) > input[type=file],
-.input-group-btn:not(:first-child) > .btn-group:not(:last-child) > input[type=submit],
-.input-group-btn:not(:first-child) > .btn-group:not(:last-child) > input[type=button] {
+form .input-group-btn:not(:first-child) > .btn-group:not(:last-child) > input[type=file],
+form .input-group-btn:not(:first-child) > .btn-group:not(:last-child) > input[type=submit],
+form .input-group-btn:not(:first-child) > .btn-group:not(:last-child) > input[type=button] {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
 
@@ -2707,25 +2734,25 @@ input[type=button] + .dropdown-toggle-split {
 .input-group-addon:not(:first-child),
 .input-group-btn:not(:first-child) > .btn,
 .input-group-btn:not(:first-child) > button,
-.input-group-btn:not(:first-child) > input[type=file],
-.input-group-btn:not(:first-child) > input[type=submit],
-.input-group-btn:not(:first-child) > input[type=button],
+form .input-group-btn:not(:first-child) > input[type=file],
+form .input-group-btn:not(:first-child) > input[type=submit],
+form .input-group-btn:not(:first-child) > input[type=button],
 .input-group-btn:not(:first-child) > .btn-group > .btn,
 .input-group-btn:not(:first-child) > .btn-group > button,
-.input-group-btn:not(:first-child) > .btn-group > input[type=file],
-.input-group-btn:not(:first-child) > .btn-group > input[type=submit],
-.input-group-btn:not(:first-child) > .btn-group > input[type=button],
+form .input-group-btn:not(:first-child) > .btn-group > input[type=file],
+form .input-group-btn:not(:first-child) > .btn-group > input[type=submit],
+form .input-group-btn:not(:first-child) > .btn-group > input[type=button],
 .input-group-btn:not(:first-child) > .dropdown-toggle,
 .input-group-btn:not(:last-child) > .btn:not(:first-child),
 .input-group-btn:not(:last-child) > button:not(:first-child),
-.input-group-btn:not(:last-child) > input[type=file]:not(:first-child),
-.input-group-btn:not(:last-child) > input[type=submit]:not(:first-child),
-.input-group-btn:not(:last-child) > input[type=button]:not(:first-child),
+form .input-group-btn:not(:last-child) > input[type=file]:not(:first-child),
+form .input-group-btn:not(:last-child) > input[type=submit]:not(:first-child),
+form .input-group-btn:not(:last-child) > input[type=button]:not(:first-child),
 .input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .btn,
 .input-group-btn:not(:last-child) > .btn-group:not(:first-child) > button,
-.input-group-btn:not(:last-child) > .btn-group:not(:first-child) > input[type=file],
-.input-group-btn:not(:last-child) > .btn-group:not(:first-child) > input[type=submit],
-.input-group-btn:not(:last-child) > .btn-group:not(:first-child) > input[type=button] {
+form .input-group-btn:not(:last-child) > .btn-group:not(:first-child) > input[type=file],
+form .input-group-btn:not(:last-child) > .btn-group:not(:first-child) > input[type=submit],
+form .input-group-btn:not(:last-child) > .btn-group:not(:first-child) > input[type=button] {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
 
@@ -2736,69 +2763,55 @@ input[type=button] + .dropdown-toggle-split {
   position: relative;
   font-size: 0;
   white-space: nowrap; }
-  .input-group-btn > .btn, .input-group-btn > button,
-  .input-group-btn > input[type=file],
-  .input-group-btn > input[type=submit],
-  .input-group-btn > input[type=button] {
+  .input-group-btn > .btn, .input-group-btn > button, form .input-group-btn > input[type=file],
+  form .input-group-btn > input[type=submit],
+  form .input-group-btn > input[type=button] {
     position: relative;
     flex: 1; }
-    .input-group-btn > .btn + .btn, .input-group-btn > button + .btn,
-    .input-group-btn > input[type=file] + .btn,
-    .input-group-btn > input[type=submit] + .btn,
-    .input-group-btn > input[type=button] + .btn, .input-group-btn > .btn + button, .input-group-btn > button + button,
-    .input-group-btn > input[type=file] + button,
-    .input-group-btn > input[type=submit] + button,
-    .input-group-btn > input[type=button] + button,
-    .input-group-btn > .btn + input[type=file],
-    .input-group-btn > button + input[type=file],
-    .input-group-btn > input[type=file] + input[type=file],
-    .input-group-btn > input[type=submit] + input[type=file],
-    .input-group-btn > input[type=button] + input[type=file],
-    .input-group-btn > .btn + input[type=submit],
-    .input-group-btn > button + input[type=submit],
-    .input-group-btn > input[type=file] + input[type=submit],
-    .input-group-btn > input[type=submit] + input[type=submit],
-    .input-group-btn > input[type=button] + input[type=submit],
-    .input-group-btn > .btn + input[type=button],
-    .input-group-btn > button + input[type=button],
-    .input-group-btn > input[type=file] + input[type=button],
-    .input-group-btn > input[type=submit] + input[type=button],
-    .input-group-btn > input[type=button] + input[type=button] {
+    .input-group-btn > .btn + .btn, .input-group-btn > button + .btn, form .input-group-btn > input[type=file] + .btn,
+    form .input-group-btn > input[type=submit] + .btn,
+    form .input-group-btn > input[type=button] + .btn, .input-group-btn > .btn + button, .input-group-btn > button + button, form .input-group-btn > input[type=file] + button,
+    form .input-group-btn > input[type=submit] + button,
+    form .input-group-btn > input[type=button] + button, form .input-group-btn > .btn + input[type=file], form .input-group-btn > button + input[type=file], form .input-group-btn > input[type=file] + input[type=file],
+    form .input-group-btn > input[type=submit] + input[type=file],
+    form .input-group-btn > input[type=button] + input[type=file],
+    form .input-group-btn > .btn + input[type=submit],
+    form .input-group-btn > button + input[type=submit],
+    form .input-group-btn > input[type=file] + input[type=submit],
+    form .input-group-btn > input[type=submit] + input[type=submit],
+    form .input-group-btn > input[type=button] + input[type=submit],
+    form .input-group-btn > .btn + input[type=button],
+    form .input-group-btn > button + input[type=button],
+    form .input-group-btn > input[type=file] + input[type=button],
+    form .input-group-btn > input[type=submit] + input[type=button],
+    form .input-group-btn > input[type=button] + input[type=button] {
       margin-left: -1px; }
-    .input-group-btn > .btn:focus, .input-group-btn > button:focus,
-    .input-group-btn > input[type=file]:focus,
-    .input-group-btn > input[type=submit]:focus,
-    .input-group-btn > input[type=button]:focus, .input-group-btn > .btn:active, .input-group-btn > button:active,
-    .input-group-btn > input[type=file]:active,
-    .input-group-btn > input[type=submit]:active,
-    .input-group-btn > input[type=button]:active, .input-group-btn > .btn:hover, .input-group-btn > button:hover,
-    .input-group-btn > input[type=file]:hover,
-    .input-group-btn > input[type=submit]:hover,
-    .input-group-btn > input[type=button]:hover {
+    .input-group-btn > .btn:focus, .input-group-btn > button:focus, form .input-group-btn > input[type=file]:focus,
+    form .input-group-btn > input[type=submit]:focus,
+    form .input-group-btn > input[type=button]:focus, .input-group-btn > .btn:active, .input-group-btn > button:active, form .input-group-btn > input[type=file]:active,
+    form .input-group-btn > input[type=submit]:active,
+    form .input-group-btn > input[type=button]:active, .input-group-btn > .btn:hover, .input-group-btn > button:hover, form .input-group-btn > input[type=file]:hover,
+    form .input-group-btn > input[type=submit]:hover,
+    form .input-group-btn > input[type=button]:hover {
       z-index: 3; }
-  .input-group-btn:not(:last-child) > .btn, .input-group-btn:not(:last-child) > button,
-  .input-group-btn:not(:last-child) > input[type=file],
-  .input-group-btn:not(:last-child) > input[type=submit],
-  .input-group-btn:not(:last-child) > input[type=button],
+  .input-group-btn:not(:last-child) > .btn, .input-group-btn:not(:last-child) > button, form .input-group-btn:not(:last-child) > input[type=file],
+  form .input-group-btn:not(:last-child) > input[type=submit],
+  form .input-group-btn:not(:last-child) > input[type=button],
   .input-group-btn:not(:last-child) > .btn-group {
     margin-right: -1px; }
-  .input-group-btn:not(:first-child) > .btn, .input-group-btn:not(:first-child) > button,
-  .input-group-btn:not(:first-child) > input[type=file],
-  .input-group-btn:not(:first-child) > input[type=submit],
-  .input-group-btn:not(:first-child) > input[type=button],
+  .input-group-btn:not(:first-child) > .btn, .input-group-btn:not(:first-child) > button, form .input-group-btn:not(:first-child) > input[type=file],
+  form .input-group-btn:not(:first-child) > input[type=submit],
+  form .input-group-btn:not(:first-child) > input[type=button],
   .input-group-btn:not(:first-child) > .btn-group {
     z-index: 2;
     margin-left: -1px; }
-    .input-group-btn:not(:first-child) > .btn:focus, .input-group-btn:not(:first-child) > button:focus,
-    .input-group-btn:not(:first-child) > input[type=file]:focus,
-    .input-group-btn:not(:first-child) > input[type=submit]:focus,
-    .input-group-btn:not(:first-child) > input[type=button]:focus, .input-group-btn:not(:first-child) > .btn:active, .input-group-btn:not(:first-child) > button:active,
-    .input-group-btn:not(:first-child) > input[type=file]:active,
-    .input-group-btn:not(:first-child) > input[type=submit]:active,
-    .input-group-btn:not(:first-child) > input[type=button]:active, .input-group-btn:not(:first-child) > .btn:hover, .input-group-btn:not(:first-child) > button:hover,
-    .input-group-btn:not(:first-child) > input[type=file]:hover,
-    .input-group-btn:not(:first-child) > input[type=submit]:hover,
-    .input-group-btn:not(:first-child) > input[type=button]:hover,
+    .input-group-btn:not(:first-child) > .btn:focus, .input-group-btn:not(:first-child) > button:focus, form .input-group-btn:not(:first-child) > input[type=file]:focus,
+    form .input-group-btn:not(:first-child) > input[type=submit]:focus,
+    form .input-group-btn:not(:first-child) > input[type=button]:focus, .input-group-btn:not(:first-child) > .btn:active, .input-group-btn:not(:first-child) > button:active, form .input-group-btn:not(:first-child) > input[type=file]:active,
+    form .input-group-btn:not(:first-child) > input[type=submit]:active,
+    form .input-group-btn:not(:first-child) > input[type=button]:active, .input-group-btn:not(:first-child) > .btn:hover, .input-group-btn:not(:first-child) > button:hover, form .input-group-btn:not(:first-child) > input[type=file]:hover,
+    form .input-group-btn:not(:first-child) > input[type=submit]:hover,
+    form .input-group-btn:not(:first-child) > input[type=button]:hover,
     .input-group-btn:not(:first-child) > .btn-group:focus,
     .input-group-btn:not(:first-child) > .btn-group:active,
     .input-group-btn:not(:first-child) > .btn-group:hover {
@@ -3530,10 +3543,9 @@ input[type=button] + .dropdown-toggle-split {
   .badge:empty {
     display: none; }
 
-.btn .badge, button .badge,
-input[type=file] .badge,
-input[type=submit] .badge,
-input[type=button] .badge {
+.btn .badge, button .badge, form input[type=file] .badge,
+form input[type=submit] .badge,
+form input[type=button] .badge {
   position: relative;
   top: -1px; }
 
@@ -3730,18 +3742,33 @@ a.badge:focus, a.badge:hover {
   background-color: #dff0d8; }
 
 a.list-group-item-success,
-button.list-group-item-success {
+button.list-group-item-success,
+form input.list-group-item-success[type=file],
+form input.list-group-item-success[type=submit],
+form input.list-group-item-success[type=button] {
   color: #3c763d; }
   a.list-group-item-success .list-group-item-heading,
-  button.list-group-item-success .list-group-item-heading {
+  button.list-group-item-success .list-group-item-heading,
+  form input.list-group-item-success[type=file] .list-group-item-heading,
+  form input.list-group-item-success[type=submit] .list-group-item-heading,
+  form input.list-group-item-success[type=button] .list-group-item-heading {
     color: inherit; }
   a.list-group-item-success:focus, a.list-group-item-success:hover,
   button.list-group-item-success:focus,
-  button.list-group-item-success:hover {
+  form input.list-group-item-success[type=file]:focus,
+  form input.list-group-item-success[type=submit]:focus,
+  form input.list-group-item-success[type=button]:focus,
+  button.list-group-item-success:hover,
+  form input.list-group-item-success[type=file]:hover,
+  form input.list-group-item-success[type=submit]:hover,
+  form input.list-group-item-success[type=button]:hover {
     color: #3c763d;
     background-color: #d0e9c6; }
   a.list-group-item-success.active,
-  button.list-group-item-success.active {
+  button.list-group-item-success.active,
+  form input.list-group-item-success.active[type=file],
+  form input.list-group-item-success.active[type=submit],
+  form input.list-group-item-success.active[type=button] {
     color: #fff;
     background-color: #3c763d;
     border-color: #3c763d; }
@@ -3751,18 +3778,33 @@ button.list-group-item-success {
   background-color: #d9edf7; }
 
 a.list-group-item-info,
-button.list-group-item-info {
+button.list-group-item-info,
+form input.list-group-item-info[type=file],
+form input.list-group-item-info[type=submit],
+form input.list-group-item-info[type=button] {
   color: #31708f; }
   a.list-group-item-info .list-group-item-heading,
-  button.list-group-item-info .list-group-item-heading {
+  button.list-group-item-info .list-group-item-heading,
+  form input.list-group-item-info[type=file] .list-group-item-heading,
+  form input.list-group-item-info[type=submit] .list-group-item-heading,
+  form input.list-group-item-info[type=button] .list-group-item-heading {
     color: inherit; }
   a.list-group-item-info:focus, a.list-group-item-info:hover,
   button.list-group-item-info:focus,
-  button.list-group-item-info:hover {
+  form input.list-group-item-info[type=file]:focus,
+  form input.list-group-item-info[type=submit]:focus,
+  form input.list-group-item-info[type=button]:focus,
+  button.list-group-item-info:hover,
+  form input.list-group-item-info[type=file]:hover,
+  form input.list-group-item-info[type=submit]:hover,
+  form input.list-group-item-info[type=button]:hover {
     color: #31708f;
     background-color: #c4e3f3; }
   a.list-group-item-info.active,
-  button.list-group-item-info.active {
+  button.list-group-item-info.active,
+  form input.list-group-item-info.active[type=file],
+  form input.list-group-item-info.active[type=submit],
+  form input.list-group-item-info.active[type=button] {
     color: #fff;
     background-color: #31708f;
     border-color: #31708f; }
@@ -3772,18 +3814,33 @@ button.list-group-item-info {
   background-color: #fcf8e3; }
 
 a.list-group-item-warning,
-button.list-group-item-warning {
+button.list-group-item-warning,
+form input.list-group-item-warning[type=file],
+form input.list-group-item-warning[type=submit],
+form input.list-group-item-warning[type=button] {
   color: #8a6d3b; }
   a.list-group-item-warning .list-group-item-heading,
-  button.list-group-item-warning .list-group-item-heading {
+  button.list-group-item-warning .list-group-item-heading,
+  form input.list-group-item-warning[type=file] .list-group-item-heading,
+  form input.list-group-item-warning[type=submit] .list-group-item-heading,
+  form input.list-group-item-warning[type=button] .list-group-item-heading {
     color: inherit; }
   a.list-group-item-warning:focus, a.list-group-item-warning:hover,
   button.list-group-item-warning:focus,
-  button.list-group-item-warning:hover {
+  form input.list-group-item-warning[type=file]:focus,
+  form input.list-group-item-warning[type=submit]:focus,
+  form input.list-group-item-warning[type=button]:focus,
+  button.list-group-item-warning:hover,
+  form input.list-group-item-warning[type=file]:hover,
+  form input.list-group-item-warning[type=submit]:hover,
+  form input.list-group-item-warning[type=button]:hover {
     color: #8a6d3b;
     background-color: #faf2cc; }
   a.list-group-item-warning.active,
-  button.list-group-item-warning.active {
+  button.list-group-item-warning.active,
+  form input.list-group-item-warning.active[type=file],
+  form input.list-group-item-warning.active[type=submit],
+  form input.list-group-item-warning.active[type=button] {
     color: #fff;
     background-color: #8a6d3b;
     border-color: #8a6d3b; }
@@ -3793,18 +3850,33 @@ button.list-group-item-warning {
   background-color: #f2dede; }
 
 a.list-group-item-danger,
-button.list-group-item-danger {
+button.list-group-item-danger,
+form input.list-group-item-danger[type=file],
+form input.list-group-item-danger[type=submit],
+form input.list-group-item-danger[type=button] {
   color: #a94442; }
   a.list-group-item-danger .list-group-item-heading,
-  button.list-group-item-danger .list-group-item-heading {
+  button.list-group-item-danger .list-group-item-heading,
+  form input.list-group-item-danger[type=file] .list-group-item-heading,
+  form input.list-group-item-danger[type=submit] .list-group-item-heading,
+  form input.list-group-item-danger[type=button] .list-group-item-heading {
     color: inherit; }
   a.list-group-item-danger:focus, a.list-group-item-danger:hover,
   button.list-group-item-danger:focus,
-  button.list-group-item-danger:hover {
+  form input.list-group-item-danger[type=file]:focus,
+  form input.list-group-item-danger[type=submit]:focus,
+  form input.list-group-item-danger[type=button]:focus,
+  button.list-group-item-danger:hover,
+  form input.list-group-item-danger[type=file]:hover,
+  form input.list-group-item-danger[type=submit]:hover,
+  form input.list-group-item-danger[type=button]:hover {
     color: #a94442;
     background-color: #ebcccc; }
   a.list-group-item-danger.active,
-  button.list-group-item-danger.active {
+  button.list-group-item-danger.active,
+  form input.list-group-item-danger.active[type=file],
+  form input.list-group-item-danger.active[type=submit],
+  form input.list-group-item-danger.active[type=button] {
     color: #fff;
     background-color: #a94442;
     border-color: #a94442; }
@@ -3823,7 +3895,9 @@ button.list-group-item-danger {
     cursor: pointer;
     opacity: .75; }
 
-button.close {
+button.close, form input.close[type=file],
+form input.close[type=submit],
+form input.close[type=button] {
   padding: 0;
   cursor: pointer;
   background: transparent;
@@ -6372,40 +6446,42 @@ body {
 h1, h2, h3, h4 {
   margin-bottom: 1rem; }
 
-button,
-input[type=file],
-input[type=submit],
-input[type=button] {
+button, form input[type=file],
+form input[type=submit],
+form input[type=button] {
   cursor: pointer;
   transition: none;
   font-weight: normal;
   text-transform: uppercase; }
-  .btn-group button, .btn-group
-  input[type=file], .btn-group
-  input[type=submit], .btn-group
-  input[type=button] {
+  .btn-group button, .btn-group form input[type=file], form .btn-group input[type=file],
+  .btn-group form input[type=submit],
+  form .btn-group input[type=submit],
+  .btn-group form input[type=button],
+  form .btn-group input[type=button] {
     padding: 0.5rem 1rem;
     font-size: 1.25rem; }
-  button > .i,
-  input[type=file] > .i,
-  input[type=submit] > .i,
-  input[type=button] > .i {
+  button > .i, form input[type=file] > .i,
+  form input[type=submit] > .i,
+  form input[type=button] > .i {
     transform: translate(0, 0.075rem);
     font-size: inherit; }
-  button:hover,
-  input[type=file]:hover,
-  input[type=submit]:hover,
-  input[type=button]:hover {
+  button:hover, form input[type=file]:hover,
+  form input[type=submit]:hover,
+  form input[type=button]:hover {
     background-color: #fffe9e;
     border-color: #fffe9e; }
-  button:active, button:focus,
-  input[type=file]:active,
-  input[type=file]:focus,
-  input[type=submit]:active,
-  input[type=submit]:focus,
-  input[type=button]:active,
-  input[type=button]:focus {
+  button:active, form input[type=file]:active,
+  form input[type=submit]:active,
+  form input[type=button]:active, button:focus, form input[type=file]:focus,
+  form input[type=submit]:focus,
+  form input[type=button]:focus {
     background-color: #f0ed00; }
+  button.btn-outline-primary, form input.btn-outline-primary[type=file],
+  form input.btn-outline-primary[type=submit],
+  form input.btn-outline-primary[type=button], button.btn-outline-primary:hover, form input.btn-outline-primary[type=file]:hover,
+  form input.btn-outline-primary[type=submit]:hover,
+  form input.btn-outline-primary[type=button]:hover {
+    color: black; }
 
 header {
   position: fixed;
@@ -6637,28 +6713,36 @@ main {
 
 form label + input {
   margin-left: 1rem; }
+form textarea,
+form input[type=name],
+form input[type=password],
 form input[type=text],
 form input[type=number],
-form textarea,
 form input[type=date] {
   padding: 1.5rem .4rem .5rem;
   border: 0px;
   border-bottom: 1px solid gray;
   font-family: "Ubuntu", sans-serif; }
-  .placeholder, form input[type=text]::placeholder,
+  .placeholder, form textarea::placeholder,
+  form input[type=name]::placeholder,
+  form input[type=password]::placeholder,
+  form input[type=text]::placeholder,
   form input[type=number]::placeholder,
-  form textarea::placeholder,
   form input[type=date]::placeholder {
     color: gray;
     transition: all 160ms ease; }
+  form textarea:focus,
+  form input[type=name]:focus,
+  form input[type=password]:focus,
   form input[type=text]:focus,
   form input[type=number]:focus,
-  form textarea:focus,
   form input[type=date]:focus {
     outline: none; }
+    form textarea:focus::placeholder,
+    form input[type=name]:focus::placeholder,
+    form input[type=password]:focus::placeholder,
     form input[type=text]:focus::placeholder,
     form input[type=number]:focus::placeholder,
-    form textarea:focus::placeholder,
     form input[type=date]:focus::placeholder {
       color: #2c2c2c;
       transform: translateY(-1.5rem);
