@@ -128,12 +128,14 @@ header {
 }
 
 .sidebar {
-    background-color: rgba(0,0,0,0.7);
-    width: $sidebar-width;    
     position: fixed;
     top: $header-height;
     bottom: 0;
+    z-index: 11;
+    background-color: rgba(0,0,0,0.7);
+    width: $sidebar-width; 
     overflow: hidden;
+    overflow-y: auto;
     transition: width $primary-speed $primary-timing-function;
     
     @include media-breakpoint-down(sm) {

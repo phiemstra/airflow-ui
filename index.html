@@ -229,10 +229,22 @@
             function toggleSidebar() {
                 document.querySelector('.sidebar')
                     .classList.toggle('tucked')
-                console.log('Test')
+            }
+            function windowResize() {
+                window.requestAnimationFrame(function() {
+                    if(window.outerWidth <= 768)
+                        document.querySelector('.sidebar')
+                            .classList.add('tucked')
+                    if(window.outerWidth > 768)
+                        document.querySelector('.sidebar')
+                            .classList.remove('tucked')
+
+                })
             }
             document.getElementById('sidebar-toggle')
                 .addEventListener('click', toggleSidebar)
+            window
+                .addEventListener('resize', windowResize)
         })()
     </script>
     

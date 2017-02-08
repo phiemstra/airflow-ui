@@ -6070,12 +6070,14 @@ header {
           color: gray; }
 
 .sidebar {
-  background-color: rgba(0, 0, 0, 0.7);
-  width: 16rem;
   position: fixed;
   top: 5rem;
   bottom: 0;
+  z-index: 11;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 16rem;
   overflow: hidden;
+  overflow-y: auto;
   transition: width 160ms ease; }
   @media (max-width: 767px) {
     .sidebar {
