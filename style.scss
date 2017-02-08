@@ -6,16 +6,23 @@
  */
 
 $primary-font:              'Ubuntu', sans-serif;
-$primary-font-size:         15px;
+$primary-font-size:         16px;
 $primary-color:             #FFFD38;
 $primary-speed:             160ms;
 $primary-timing-function:   ease;
+
+$secondary-color:           #1c41db;
+
+$border-radius:          0;
+$border-radius-lg:       0;
+$border-radius-sm:       0;
+
 $brand-primary:             $primary-color;
 $brand-danger:              #d33232;
 $brand-success:             #22dd3f;
 $brand-info:                #21edf5;
+$link-color:                $secondary-color;
 $btn-primary-color:         black;
-
 
 $primary-spacer:        1rem;
 $header-height:         5rem;
@@ -56,11 +63,37 @@ h1,h2,h3,h4 {
     margin-bottom: $primary-spacer;
 }
 
-button {
+button,
+input[type=file],
+input[type=submit], 
+input[type=button] {
     @extend .btn;
     @extend .btn-primary;
     @extend .btn-sm;
+    
+    cursor: pointer;
     transition: none;
+    font-weight: normal;
+    text-transform: uppercase;
+    
+    @at-root .btn-group & {
+        @extend .btn-secondary;
+        padding: 0.5rem 1rem;
+        font-size: 1.25rem;
+    }
+    
+    > .i {
+        transform: translate(0, 0.075rem);
+        font-size: inherit;
+    }
+    &:hover {
+        background-color: lighten($primary-color, 20%);
+        border-color: lighten($primary-color, 20%);
+    }
+    &:active,
+    &:focus {
+        background-color: darken($primary-color, 14%);
+    }
 }
 
 header {
@@ -105,6 +138,7 @@ header {
     .user-info {
         float: right;
         text-align: right;
+        font-size: .8rem;
         padding: $primary-spacer;
         text-transform: uppercase;
         
@@ -182,7 +216,7 @@ header {
                 line-height: 1rem;
                 min-width: $sidebar-width;
                 color: white;
-                padding: ($primary-spacer) 0;
+                padding: ($primary-spacer) 0 ($primary-spacer * 1.2) 0;
                 padding-left: ($primary-spacer / 2);
                 
                 @include media-breakpoint-down(sm) {
@@ -247,16 +281,88 @@ main {
         padding-left: $sidebar-width-sm + $primary-spacer;
     }
     
-    .card {
+    .card,
+    .block {
         margin-bottom: $primary-spacer;
+        .card-header {
+            font-weight: normal;
+            border: 0;
+            text-transform: uppercase;
+            
+            @at-root h4.card-header {
+                font-size: 1.25rem;
+            }
+        }
+    }
+    
+    .nav-link {
+        color: black;
+        border: 0!important
+    }
+    .tab-block {
+        display: none;
+        
+        &.active {
+            display: block;
+        }
+    }
+    
+    .progress-bar {
+        background-color: $secondary-color;
     }
     
     table {
         @extend .table;
         @extend .table-hover;
         @extend .table-responsive;
-        > thead {
-            @extend .thead-inverse;
+        td {
+            vertical-align: middle;
+            & .btn-group {
+                float: right;
+            }
         }
     }
+}
+
+form {
+    label + input {
+        margin-left: $primary-spacer
+    }
+    input[type=text],
+    input[type=number],
+    textarea,
+    input[type=date] {
+        padding: 1.5rem .4rem .5rem;
+        border: 0px;
+        border-bottom: 1px solid gray;
+        font-family: $primary-font;
+        
+        @at-root .placeholder {
+            color: gray;
+            transition: all $primary-speed $primary-timing-function;
+        }
+        &::placeholder {
+            @extend .placeholder;
+        }
+//        &:not([value=""]):before {
+//            content: "t";
+//            display: block;
+//        }
+
+        &:focus {
+            outline: none;
+            &::placeholder {
+                color: #2c2c2c;
+                transform: translateY(-1.5rem);
+                font-size: .8rem;
+            }
+        }
+    }
+    input[type=radio],
+    input[type=checkbox] {
+        & + label {
+            margin-left: .5rem;
+        }
+    }
+
 }

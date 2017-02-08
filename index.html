@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Base Airflow UI</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <link rel="stylesheet" href="style.css">
+    
 </head>
 
 <body>
@@ -49,10 +51,7 @@
     <main>
         <div class="container">
           
-            <div class="card live-view">
-                <div class="card-header">
-                    Live View
-                </div>
+            <div class="card">
                 <div class="card-block">
                     <figure style="width: 10rem;height: 7rem;border:1px solid black;">
                         
@@ -61,32 +60,89 @@
                 </div>
             </div>
            
-            <div class="card live-view">
+            <div class="card">
+                <h4 class="card-header">Elements Preview</h4>
                 <div class="card-header">
-                    Form Fields
+                    <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item">
+                            <a href="#nav-tab1" class="nav-link active">Forms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#nav-tab2" class="nav-link">Buttons</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#nav-tab3" class="nav-link">Tab</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="card-block">
+                
+                <div id="nav-tab1" class="card-block tab-block active">
+                    <form action="#">
+                       
+                        <div class="block">
+                            <input type="file">
+                        </div>
+                        <div class="block">
+                            <select name="athing" id="athing">
+                                <option value="1">1</option>
+                                <option value="2">1</option>
+                                <option value="3">1</option>
+                            </select>
+                        </div>
+                        <div class="block">
+                            <input type="text" placeholder="Text testing">
+                        </div>
+                        <div class="block">
+                            <input type="radio" value="true" id="radio1"><label for="radio1">Testradio</label>
+                        </div>
+                        <div class="block">
+                            <input type="checkbox" value="true" id="checbox1"><label for="checbox1">Testradio</label>
+                        </div>
+                        <div class="block">
+                            <input type="number" placeholder="Number testing">
+                        </div>
+                        <div class="block">
+                            <input type="date" placeholder="Date testing">
+                        </div>
+                        <div class="block">
+                            <textarea maxlength="20" cols="80" rows="10" placeholder="Textarea testing"></textarea>
+                        </div>
+                        <div class="block">
+                            <input type="submit" value="Submit">
+                        </div>
+                        
+                    </form>
+                </div>
+                <div id="nav-tab2" class="card-block tab-block">
                     <p>
-                        <button>Test</button>
-                        <button class="btn-secondary">Test</button>
-                        <button class="btn-info">Test</button>
-                        <button class="btn-success">Test</button>
-                        <button class="btn-danger">Test</button>
+                        <button>Home</button>
+                        <button class="btn-secondary">Playlist</button>
+                        <button class="btn-info">Refresh</button>
+                        <button class="btn-success">Go</button>
+                        <button class="btn-danger">On-air</button>
                     </p>
                 
                     <p>
-                        <button class="btn-lg">Test</button>
-                        <button class="btn-lg btn-secondary">Test</button>
-                        <button class="btn-lg btn-info">Test</button>
-                        <button class="btn-lg btn-success">Test</button>
-                        <button class="btn-lg btn-danger">Test</button>
+                        <button><i class="i">home</i> Home</button>
+                        <button class="btn-secondary"><i class="i">list </i>Playlist</button>
+                        <button class="btn-info"><i class="i">refresh </i>Refresh</button>
+                        <button class="btn-success">Go</button>
+                        <button class="btn-danger">Stop</button>
+                    </p>
+                
+                    <p>
+                        <button class="btn-lg"><i class="i">home</i></button>
+                        <button class="btn-lg btn-secondary"><i class="i">list</i></button>
+                        <button class="btn-lg btn-info"><i class="i">refresh</i></button>
+                        <button class="btn-lg btn-success"><i class="i">add_circle</i></button>
+                        <button class="btn-lg btn-danger"><i class="i">cancel</i></button>
                     </p>
                     
                     <p>
-                        <button class="btn-lg btn-outline-primary">Test</button>
-                        <button class="btn-lg btn-outline-secondary">Test</button>
-                        <button class="btn-lg btn-outline-info">Test</button>
-                        <button class="btn-lg btn-outline-success">Test</button>
+                        <button class="btn-lg btn-outline-primary"><i class="i">home</i> Home</button>
+                        <button class="btn-lg btn-outline-secondary"><i class="i">list </i>Playlist</button>
+                        <button class="btn-lg btn-outline-info"><i class="i">refresh </i>Refresh</button>
+                        <button class="btn-lg btn-outline-success">Go</button>
                         <button class="btn-lg btn-outline-danger">Test</button>
                     </p>
                     
@@ -94,24 +150,23 @@
                         Hier komen meer elementen
                     </p>
                 </div>
+                <div id="nav-tab3" class="card-block tab-block">3</div>
             </div>
            
-            <div class="card card-table">
-                <div class="card-header">
-                    Clocks
-                </div>
+            <div class="card">
+                <h4 class="card-header">Clocks</h4>
                 <div class="card-block">
                     
                     <table>
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>Properties</th>
-                                <th>Status</th>
-                                <th>Length</th>
-                                <th>Gap</th>
-                                <th></th>
+                                <th style="width: 10%">#</th>
+                                <th style="width: 10%">Name</th>
+                                <th style="width: 10%">Properties</th>
+                                <th style="width: 10%">Status</th>
+                                <th style="width: 10%">Length</th>
+                                <th style="width: 10%">Gap</th>
+                                <th style="width: 20%"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -148,10 +203,10 @@
                                 </td>
                                 <td>
                                     <div class="btn-group">
-                                        <button><i class="i">compare_arrows</i></button>
-                                        <button><i class="i">view_headline</i></button>
-                                        <button><i class="i">delete</i></button>
-                                        <button><i class="i">edit</i></button>
+                                        <button class="btn-lg"><i class="i">compare_arrows</i></button>
+                                        <button class="btn-lg"><i class="i">view_headline</i></button>
+                                        <button class="btn-lg"><i class="i">delete</i></button>
+                                        <button class="btn-lg"><i class="i">edit</i></button>
                                     </div>
                                 </td>
                             </tr>
@@ -168,10 +223,10 @@
                                 </td>
                                 <td>
                                     <div class="btn-group">
-                                        <button><i class="i">compare_arrows</i></button>
-                                        <button><i class="i">view_headline</i></button>
-                                        <button><i class="i">delete</i></button>
-                                        <button><i class="i">edit</i></button>
+                                        <button class="btn-lg"><i class="i">compare_arrows</i></button>
+                                        <button class="btn-lg"><i class="i">view_headline</i></button>
+                                        <button class="btn-lg"><i class="i">delete</i></button>
+                                        <button class="btn-lg"><i class="i">edit</i></button>
                                     </div>
                                 </td>
                             </tr>
@@ -188,10 +243,10 @@
                                 </td>
                                 <td>
                                     <div class="btn-group">
-                                        <button><i class="i">compare_arrows</i></button>
-                                        <button><i class="i">view_headline</i></button>
-                                        <button><i class="i">delete</i></button>
-                                        <button><i class="i">edit</i></button>
+                                        <button class="btn-lg"><i class="i">compare_arrows</i></button>
+                                        <button class="btn-lg"><i class="i">view_headline</i></button>
+                                        <button class="btn-lg"><i class="i">delete</i></button>
+                                        <button class="btn-lg"><i class="i">edit</i></button>
                                     </div>
                                 </td>
                             </tr>
@@ -208,10 +263,10 @@
                                 </td>
                                 <td>
                                     <div class="btn-group">
-                                        <button><i class="i">compare_arrows</i></button>
-                                        <button><i class="i">view_headline</i></button>
-                                        <button><i class="i">delete</i></button>
-                                        <button><i class="i">edit</i></button>
+                                        <button class="btn-lg"><i class="i">compare_arrows</i></button>
+                                        <button class="btn-lg"><i class="i">view_headline</i></button>
+                                        <button class="btn-lg"><i class="i">delete</i></button>
+                                        <button class="btn-lg"><i class="i">edit</i></button>
                                     </div>
                                 </td>
                             </tr>
@@ -224,30 +279,31 @@
         </div>
     </main>
     
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/nodep-date-input-polyfill.dist.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script>
         (function() {
-            function toggleSidebar() {
-                document.querySelector('.sidebar')
-                    .classList.toggle('tucked')
-            }
-            function windowResize() {
+            $(window).on('load resize', function() {
                 window.requestAnimationFrame(function() {
-                    if(window.outerWidth <= 768)
-                        document.querySelector('.sidebar')
-                            .classList.add('tucked')
-                    if(window.outerWidth > 768)
-                        document.querySelector('.sidebar')
-                            .classList.remove('tucked')
-
+                    if($(window).width() > 768)
+                        $('.sidebar').removeClass('tucked')
+                    if($(window).width() <= 768)
+                        $('.sidebar').addClass('tucked')
                 })
-            }
-            document.getElementById('sidebar-toggle')
-                .addEventListener('click', toggleSidebar)
-            window
-                .addEventListener('resize', windowResize)
+            })
+            
+            $('#sidebar-toggle').click(function() {
+                $('.sidebar').toggleClass('tucked')
+            })
+            
+            $('.nav-tabs a').click(function(event) {
+                event.preventDefault()
+                $(this).tab('show')
+            })
         })()
     </script>
-    
 </body>
 
 </html>
