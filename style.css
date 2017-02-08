@@ -5979,7 +5979,8 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   font-style: normal;
   font-weight: 400;
   src: local("Material Icons"), local("MaterialIcons-Regular"), url(fonts/2fcrYFNaTjcS6g4U3t-Y5UEw0lE80llgEseQY3FEmqw.woff2) format("woff2"); }
-.material-icons {
+.material-icons,
+.i {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
@@ -6063,7 +6064,7 @@ header {
           font-family: 'Material Icons';
           text-transform: none;
           content: "person";
-          padding: 0 .5rem;
+          padding: 0 1rem 0 .3rem;
           transform: translate(0, 5px);
           font-size: 1.4rem;
           color: gray; }
@@ -6075,37 +6076,47 @@ header {
   top: 5rem;
   bottom: 0;
   overflow: hidden;
-  transition: width 160ms ease-in; }
+  transition: width 160ms ease; }
   @media (max-width: 767px) {
     .sidebar {
-      top: 10rem;
-      width: 2.6rem; } }
+      top: 10rem; } }
+  .sidebar.tucked {
+    width: 3rem; }
   .sidebar hr {
     border-color: white; }
   .sidebar .sidebar-toggle {
     display: inline-block;
-    border: 1px solid white;
-    padding: 0 .2rem .4rem .2rem;
-    margin: .8rem .8rem 0; }
+    padding: .4rem .8rem .2rem;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none; }
     .sidebar .sidebar-toggle::after {
       display: block;
       content: "";
       clear: both; }
-    .sidebar .sidebar-toggle:hover {
-      background-color: #ddd; }
-    .sidebar .sidebar-toggle:before {
+    .sidebar.tucked .sidebar-toggle:before {
       display: inline-block;
       font-family: 'Material Icons';
       text-transform: none;
       content: "menu";
-      padding: 0 .5rem;
+      padding: 0 1rem 0 .3rem;
       transform: translate(0, 5px);
       font-size: 1.4rem;
+      padding: 0;
+      color: white; }
+    .sidebar .sidebar-toggle:before {
+      display: inline-block;
+      font-family: 'Material Icons';
+      text-transform: none;
+      content: "close";
+      padding: 0 1rem 0 .3rem;
+      transform: translate(0, 5px);
+      font-size: 1.4rem;
+      padding: 0;
       color: white; }
   .sidebar > nav > ul {
     list-style: none;
-    padding: 0;
-    padding-top: 1rem; }
+    padding: 0; }
     .sidebar > nav > ul > li > a {
       display: block;
       text-transform: uppercase;
@@ -6128,7 +6139,7 @@ header {
         font-family: 'Material Icons';
         text-transform: none;
         content: "personal_video";
-        padding: 0 .5rem;
+        padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
       .sidebar > nav > ul > li > a[href*=live-view]:before {
@@ -6136,7 +6147,7 @@ header {
         font-family: 'Material Icons';
         text-transform: none;
         content: "remove_red_eye";
-        padding: 0 .5rem;
+        padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
       .sidebar > nav > ul > li > a[href*=videos]:before {
@@ -6144,7 +6155,7 @@ header {
         font-family: 'Material Icons';
         text-transform: none;
         content: "cloud_circle";
-        padding: 0 .5rem;
+        padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
       .sidebar > nav > ul > li > a[href*=playlists]:before {
@@ -6152,7 +6163,7 @@ header {
         font-family: 'Material Icons';
         text-transform: none;
         content: "list";
-        padding: 0 .5rem;
+        padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
       .sidebar > nav > ul > li > a[href*=scheduler]:before {
@@ -6160,7 +6171,7 @@ header {
         font-family: 'Material Icons';
         text-transform: none;
         content: "date_range";
-        padding: 0 .5rem;
+        padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
       .sidebar > nav > ul > li > a[href*=grids]:before {
@@ -6168,7 +6179,7 @@ header {
         font-family: 'Material Icons';
         text-transform: none;
         content: "border_clear";
-        padding: 0 .5rem;
+        padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
       .sidebar > nav > ul > li > a[href*=download-automator]:before {
@@ -6176,7 +6187,7 @@ header {
         font-family: 'Material Icons';
         text-transform: none;
         content: "cloud_download";
-        padding: 0 .5rem;
+        padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
       .sidebar > nav > ul > li > a[href*=atem]:before {
@@ -6184,7 +6195,7 @@ header {
         font-family: 'Material Icons';
         text-transform: none;
         content: "keyboard_hide";
-        padding: 0 .5rem;
+        padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
       .sidebar > nav > ul > li > a[href*=log]:before {
@@ -6192,13 +6203,16 @@ header {
         font-family: 'Material Icons';
         text-transform: none;
         content: "fingerprint";
-        padding: 0 .5rem;
+        padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
 
 main {
   padding: 1rem;
-  padding-left: 17rem; }
+  padding-left: 17rem;
+  transition: padding-left 160ms ease; }
+  .tucked + main {
+    padding-left: 3rem; }
   @media (max-width: 767px) {
     main {
       padding-left: 3.6rem; } }
