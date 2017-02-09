@@ -53,19 +53,203 @@
         <div class="container">
           
             <div class="card">
+                <h4 class="card-header">Live Preview</h4>
                 <div class="card-block">
                     <p class="text-muted">The current item highlights automatically. The page will refresh as soon as the clock has ended.</p>
                     <div class="row">
-                            <div class="col-2">
-                                <figure style="width: 10rem;height: 7rem;border:1px solid black;">
+                            <div class="col-3">
+                                <figure class="live-preview">
+                                    <img src="screen.png" alt="">
+                                    <figcaption>
+                                        <button>Refresh</button>
+                                    </figcaption>
                                 </figure>
-                                <button>Refresh</button>
                             </div>                    
-                            <div class="col">
-                                
+                            <div class="col-9">
+                                <div class="row card-block">
+                                    <div class="col-3"><strong>Current clock:</strong></div>
+                                    <div class="col-6">Mainplaylist - 09-02-2017 15:00</div>
+                                    <div class="col-3"><button class="btn-secondary"><i class="i">list</i></button></div>
+                                </div>
+                                <div class="row card-block">
+                                    <div class="col-3"><strong>Next clock:</strong></div>
+                                    <div class="col-6">Mainplaylist - 09-02-2017 16:00</div>
+                                    <div class="col-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    <table>
+                        <thead>
+                            <th style="width: 15%">Template</th>
+                            <th style="width: 25%">Title</th>
+                            <th style="width: 15%">Length</th>
+                            <th style="width: 15%">Start time</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>LOL News (100)</td>
+                                <td>Dit is een test </td>
+                                <td>00:00:11</td>
+                                <td>00:26:26</td>
+                            </tr>
+                            <tr>
+                                <td>LOL News (100)</td>
+                                <td> </td>
+                                <td>00:00:11</td>
+                                <td>00:26:31</td>
+                            </tr>
+                            <tr>
+                                <td>Fullscreen Video (2)</td>
+                                <td>Dit is een test </td>
+                                <td>00:00:14</td>
+                                <td>00:26:33</td>
+                            </tr>
+                            <tr>
+                                <td>LOL News (100)</td>
+                                <td>Dit is een test </td>
+                                <td>00:00:11</td>
+                                <td>00:26:44</td>
+                            </tr>
+                            <tr>
+                                <td>LOL News (100)</td>
+                                <td>Dit is een test </td>
+                                <td>00:00:15</td>
+                                <td>00:27:16</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+           
+            <div class="card">
+                <div class="card-block">
+                <h4 class="card-title">Videos</h4>
+                    
+                    <div class="row card-block">
+                       
+                        <div class="col-7 d-flex align-items-end">
+                            <button class="btn-secondary"><i class="i">&#xE147</i> Add</button>
+                            <button class="btn-secondary"><i class="i">&#xE147</i> Batch upload</button>
+                        </div>
+                        <div class="col">
+                            <form action="#">
+                                <input type="text" placeholder="Search">
+                                <i class="i">search</i>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">Filter</div>
+                        <div class="card-block">
+                            <div class="row">
+                                <div class="col-2">
+                                    <strong>Filter op type: </strong>
+                                </div>
+                                <div class="col">
+                                    <label><input type="checkbox"> Videoclips</label> 
+                                    <label><input type="checkbox"> Programma's</label> 
+                                    <label><input type="checkbox"> Filler</label> 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <strong>Filter op tag: </strong>
+                                </div>
+                                <div class="col">
+                                    <label><input type="checkbox"> Auto</label> <br>
+                                    <label><input type="checkbox"> Pop</label> <br>
+                                    <label><input type="checkbox"> New</label> <br>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <table>
+                        <thead>
+                            <th style="width: 2%"></th>
+                            <th style="width: 10%">Preview</th>
+                            <th style="width: 20%">Name</th>
+                            <th style="width: 10%">Times played</th>
+                            <th style="width: 15%">Tags</th>
+                            <th style="width: 15%"></th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><i class="i">&#xE063</i></td>
+                                <td><figure>
+                                    <img src="19.gif" alt="">
+                                    <figcaption>05:22</figcaption>
+                                </figure></td>
+                                <td>Lorde - Royals (US Version)</td>
+                                <td>43</td>
+                                <td>New, Pop, Auto</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-secondary">
+                                            <i class="i">&#xe417</i>
+                                        </button>
+                                        <button class="btn btn-secondary">
+                                            <i class="i">&#xe872</i>
+                                        </button>
+                                        <button class="btn btn-secondary">
+                                            <i class="i">&#xe254</i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><i class="i">&#xE063</i></td>
+                                <td><figure>
+                                    <img src="19.gif" alt="">
+                                    <figcaption>05:22</figcaption>
+                                </figure></td>
+                                <td>Lorde - Royals (US Version)</td>
+                                <td>43</td>
+                                <td>New, Pop, Auto</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-secondary">
+                                            <i class="i">&#xe417</i>
+                                        </button>
+                                        <button class="btn btn-secondary">
+                                            <i class="i">&#xe872</i>
+                                        </button>
+                                        <button class="btn btn-secondary">
+                                            <i class="i">&#xe254</i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><i class="i">&#xE063</i></td>
+                                <td><figure>
+                                    <img src="19.gif" alt="">
+                                    <figcaption>05:22</figcaption>
+                                </figure></td>
+                                <td>Lorde - Royals (US Version)</td>
+                                <td>43</td>
+                                <td>New, Pop, Auto</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-secondary">
+                                            <i class="i">&#xe417</i>
+                                        </button>
+                                        <button class="btn btn-secondary">
+                                            <i class="i">&#xe872</i>
+                                        </button>
+                                        <button class="btn btn-secondary">
+                                            <i class="i">&#xe254</i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
             </div>
            
             <div class="card">

@@ -10,12 +10,14 @@ $primary-font-size:         16px;
 $primary-color:             #FFFD38;
 $primary-speed:             160ms;
 $primary-timing-function:   ease;
+$primary-gray:              darkgray;
+$primary-black:             #333;
 
 $secondary-color:           #1c41db;
 
-$border-radius:          0;
-$border-radius-lg:       0;
-$border-radius-sm:       0;
+$border-radius:             0;
+$border-radius-lg:          0;
+$border-radius-sm:          0;
 
 $brand-primary:             $primary-color;
 $brand-danger:              #d33232;
@@ -24,10 +26,10 @@ $brand-info:                #21edf5;
 $link-color:                $secondary-color;
 $btn-primary-color:         black;
 
-$primary-spacer:        1rem;
-$header-height:         5rem;
-$sidebar-width:         16rem;
-$sidebar-width-sm:      2.6rem;
+$primary-spacer:            1rem;
+$header-height:             5rem;
+$sidebar-width:             16rem;
+$sidebar-width-sm:          2.6rem;
 
 @import "scss/bootstrap";
 @import "fonts/fonts";
@@ -61,6 +63,25 @@ body {
 
 h1,h2,h3,h4 {
     margin-bottom: $primary-spacer;
+}
+
+figure {
+    @extend .figure;
+    
+    img {
+        @extend .figure-img;
+//        margin-bottom: $primary-spacer / 2;
+    }
+    
+    figcaption {
+        @extend .figure-caption;
+        text-align: center;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 button {

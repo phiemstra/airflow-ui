@@ -518,14 +518,14 @@ mark,
   max-width: 100%;
   height: auto; }
 
-.figure {
+.figure, figure {
   display: inline-block; }
 
-.figure-img {
+.figure-img, figure img {
   margin-bottom: 0.5rem;
   line-height: 1; }
 
-.figure-caption {
+.figure-caption, figure figcaption {
   font-size: 90%;
   color: #636c72; }
 
@@ -6447,6 +6447,13 @@ body {
 
 h1, h2, h3, h4 {
   margin-bottom: 1rem; }
+
+figure figcaption {
+  text-align: center; }
+
+img {
+  max-width: 100%;
+  height: auto; }
 
 button, form input[type=file],
 form input[type=submit],
