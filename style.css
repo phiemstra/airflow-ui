@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * Base stylesheet for the 2017 Airflow UI
  * Uses SASS to compile.
@@ -6434,8 +6435,12 @@ html {
   font-family: "Ubuntu", sans-serif;
   font-size: 16px;
   color: black;
+  background-image: url(bg.png);
+  background-size: 100% 100%;
+  background-repeat: repeat-x;
   height: 100%;
-  overflow: auto; }
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; }
 
 body {
   padding-top: 6rem; }
@@ -6532,7 +6537,7 @@ header {
           display: inline-block;
           font-family: 'Material Icons';
           text-transform: none;
-          content: "person";
+          content: "";
           padding: 0 1rem 0 .3rem;
           transform: translate(0, 5px);
           font-size: 1.4rem;
@@ -6547,6 +6552,7 @@ header {
   width: 16rem;
   overflow: hidden;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   transition: width 160ms ease; }
   @media (max-width: 767px) {
     .sidebar {
@@ -6569,7 +6575,7 @@ header {
       display: inline-block;
       font-family: 'Material Icons';
       text-transform: none;
-      content: "menu";
+      content: "";
       padding: 0 1rem 0 .3rem;
       transform: translate(0, 5px);
       font-size: 1.4rem;
@@ -6579,7 +6585,7 @@ header {
       display: inline-block;
       font-family: 'Material Icons';
       text-transform: none;
-      content: "close";
+      content: "";
       padding: 0 1rem 0 .3rem;
       transform: translate(0, 5px);
       font-size: 1.4rem;
@@ -6609,7 +6615,7 @@ header {
         display: inline-block;
         font-family: 'Material Icons';
         text-transform: none;
-        content: "personal_video";
+        content: "";
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
@@ -6617,7 +6623,7 @@ header {
         display: inline-block;
         font-family: 'Material Icons';
         text-transform: none;
-        content: "remove_red_eye";
+        content: "";
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
@@ -6625,7 +6631,7 @@ header {
         display: inline-block;
         font-family: 'Material Icons';
         text-transform: none;
-        content: "cloud_circle";
+        content: "";
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
@@ -6633,7 +6639,7 @@ header {
         display: inline-block;
         font-family: 'Material Icons';
         text-transform: none;
-        content: "list";
+        content: "";
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
@@ -6641,7 +6647,7 @@ header {
         display: inline-block;
         font-family: 'Material Icons';
         text-transform: none;
-        content: "date_range";
+        content: "";
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
@@ -6649,7 +6655,7 @@ header {
         display: inline-block;
         font-family: 'Material Icons';
         text-transform: none;
-        content: "border_clear";
+        content: "";
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
@@ -6657,7 +6663,7 @@ header {
         display: inline-block;
         font-family: 'Material Icons';
         text-transform: none;
-        content: "cloud_download";
+        content: "";
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
@@ -6665,7 +6671,7 @@ header {
         display: inline-block;
         font-family: 'Material Icons';
         text-transform: none;
-        content: "keyboard_hide";
+        content: "";
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
@@ -6673,10 +6679,12 @@ header {
         display: inline-block;
         font-family: 'Material Icons';
         text-transform: none;
-        content: "fingerprint";
+        content: "";
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
+      .sidebar > nav > ul > li > a[href*=live-view]:before, .sidebar > nav > ul > li > a[href*=videos]:before, .sidebar > nav > ul > li > a[href*=playlists]:before, .sidebar > nav > ul > li > a[href*=scheduler]:before, .sidebar > nav > ul > li > a[href*=grids]:before, .sidebar > nav > ul > li > a[href*=download-automator]:before, .sidebar > nav > ul > li > a[href*=atem]:before, .sidebar > nav > ul > li > a[href*=log]:before {
+        padding: 0 1.1rem 0 .3rem; }
 
 main {
   padding: 1rem;
@@ -6706,13 +6714,19 @@ main {
       display: block; }
   main .progress-bar {
     background-color: #1c41db; }
-  main table td {
-    vertical-align: middle; }
-    main table td .btn-group {
-      float: right; }
+  main table {
+    /* Tables have are set to 'fixed' by default. This means they should achieve full 100% width by giving the th elements a % of width */ }
+    main table th {
+      border-top: 0; }
+    main table td {
+      vertical-align: middle; }
+      main table td .btn-group {
+        float: right; }
 
 form label + input {
   margin-left: 1rem; }
+form input[type=file] {
+  width: 13rem; }
 form textarea,
 form input[type=name],
 form input[type=password],

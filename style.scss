@@ -47,8 +47,12 @@ html {
     font-family: $primary-font;
     font-size: $primary-font-size;
     color: black;
+    background-image: url(bg.png);
+    background-size: 100% 100%;
+    background-repeat: repeat-x;
     height: 100%;
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -155,7 +159,7 @@ header {
             &[href*=logout] {
                 color: $primary-color;
                 &:after {
-                    @include icon("person");
+                    @include icon("\E7FD");
                     color: gray;
                 }
             }
@@ -172,6 +176,7 @@ header {
     width: $sidebar-width; 
     overflow: hidden;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     transition: width $primary-speed $primary-timing-function;
     
     @include media-breakpoint-down(sm) {
@@ -195,13 +200,13 @@ header {
         -webkit-user-select: none;
         
         @at-root .sidebar.tucked .sidebar-toggle:before {
-            @include icon('menu');
+            @include icon('\E5D2');
             padding: 0;
             color: white;
         }
         
         &:before {
-            @include icon('close');
+            @include icon('\E5CD');
             padding: 0;
             color: white;
         }
@@ -238,32 +243,43 @@ header {
                 }
                 
                 &:before {
-                    @include icon("personal_video");
+                    @include icon("\E63B");
                 }
                 
                 &[href*=live-view]:before {
-                    @include icon("remove_red_eye");
+                    @include icon("\E417");
                 }
                 &[href*=videos]:before {
-                    @include icon("cloud_circle");
+                    @include icon("\E2BE");
                 }
                 &[href*=playlists]:before {
-                    @include icon("list");
+                    @include icon("\E896");
                 }
                 &[href*=scheduler]:before {
-                    @include icon("date_range");
+                    @include icon("\E916");
                 }
                 &[href*=grids]:before {
-                    @include icon("border_clear");
+                    @include icon("\E22A");
                 }
                 &[href*=download-automator]:before {
-                    @include icon("cloud_download");
+                    @include icon("\E2C0");
                 }
                 &[href*=atem]:before {
-                    @include icon("keyboard_hide");
+                    @include icon("\E31A");
                 }
                 &[href*=log]:before {
-                    @include icon("fingerprint");
+                    @include icon("\E90D");
+                }
+                
+                &[href*=live-view]:before,
+                &[href*=videos]:before,
+                &[href*=playlists]:before,
+                &[href*=scheduler]:before,
+                &[href*=grids]:before,
+                &[href*=download-automator]:before,
+                &[href*=atem]:before,
+                &[href*=log]:before {
+                    padding: 0 1.1rem 0 .3rem;
                 }
             }
         }
@@ -314,9 +330,13 @@ main {
     }
     
     table {
+        /* Tables have are set to 'fixed' by default. This means they should achieve full 100% width by giving the th elements a % of width */
         @extend .table;
         @extend .table-hover;
         @extend .table-responsive;
+        th {
+            border-top: 0;
+        }
         td {
             vertical-align: middle;
             & .btn-group {
@@ -335,6 +355,9 @@ form {
     input[type=submit], 
     input[type=button] {
         @extend button;
+    }
+    input[type=file] {
+        width: 13rem;
     }
     
     textarea,
