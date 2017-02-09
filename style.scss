@@ -57,10 +57,6 @@ html {
 
 body {
     padding-top: $header-height + $primary-spacer;
-    
-    @include media-breakpoint-down(sm) {
-        padding-top: $header-height * 3;
-    }
 }
 
 h1,h2,h3,h4 {
@@ -111,12 +107,7 @@ header {
     height: $header-height;
     background-color: black;
     color: white;
-    
-    @include media-breakpoint-down(sm) {
-        min-height: $header-height * 2;
-    }
-
-    
+        
     > div {
         display: inline-block;
         float: left;
@@ -141,30 +132,6 @@ header {
         }
     }
     
-    .user-info {
-        float: right;
-        text-align: right;
-        font-size: .8rem;
-        padding: $primary-spacer;
-        text-transform: uppercase;
-        
-        > div > a {
-            color: white;
-            margin-left: $primary-spacer;
-            
-            &:hover {
-                text-decoration: none;
-            }
-            
-            &[href*=logout] {
-                color: $primary-color;
-                &:after {
-                    @include icon("\E7FD");
-                    color: gray;
-                }
-            }
-        }
-    }
 }
 
 .sidebar {
@@ -178,10 +145,6 @@ header {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     transition: width $primary-speed $primary-timing-function;
-    
-    @include media-breakpoint-down(sm) {
-        top: $header-height * 2;
-    }
     
     &.tucked {
         width: 3rem; 
@@ -280,6 +243,30 @@ header {
                 &[href*=atem]:before,
                 &[href*=log]:before {
                     padding: 0 1.1rem 0 .3rem;
+                }
+            }
+        }
+    }
+    
+    .user-info {
+        font-size: .8rem;
+        padding: $primary-spacer;
+        text-transform: uppercase;
+        min-width: 16rem;
+        
+        > div > a {
+            color: white;
+            margin-left: $primary-spacer /2;
+            
+            &:hover {
+                text-decoration: none;
+            }
+            
+            &[href*=logout] {
+                color: $primary-color;
+                &:after {
+                    @include icon("\E7FD");
+                    color: gray;
                 }
             }
         }

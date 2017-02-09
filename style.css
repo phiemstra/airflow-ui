@@ -6444,9 +6444,6 @@ html {
 
 body {
   padding-top: 6rem; }
-  @media (max-width: 767px) {
-    body {
-      padding-top: 15rem; } }
 
 h1, h2, h3, h4 {
   margin-bottom: 1rem; }
@@ -6500,9 +6497,6 @@ header {
     display: block;
     content: "";
     clear: both; }
-  @media (max-width: 767px) {
-    header {
-      min-height: 10rem; } }
   header > div {
     display: inline-block;
     float: left; }
@@ -6520,28 +6514,6 @@ header {
     @media (max-width: 767px) {
       header .server-time {
         display: none; } }
-  header .user-info {
-    float: right;
-    text-align: right;
-    font-size: .8rem;
-    padding: 1rem;
-    text-transform: uppercase; }
-    header .user-info > div > a {
-      color: white;
-      margin-left: 1rem; }
-      header .user-info > div > a:hover {
-        text-decoration: none; }
-      header .user-info > div > a[href*=logout] {
-        color: #FFFD38; }
-        header .user-info > div > a[href*=logout]:after {
-          display: inline-block;
-          font-family: 'Material Icons';
-          text-transform: none;
-          content: "";
-          padding: 0 1rem 0 .3rem;
-          transform: translate(0, 5px);
-          font-size: 1.4rem;
-          color: gray; }
 
 .sidebar {
   position: fixed;
@@ -6554,9 +6526,6 @@ header {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   transition: width 160ms ease; }
-  @media (max-width: 767px) {
-    .sidebar {
-      top: 10rem; } }
   .sidebar.tucked {
     width: 3rem; }
   .sidebar hr {
@@ -6685,6 +6654,27 @@ header {
         font-size: 1.4rem; }
       .sidebar > nav > ul > li > a[href*=live-view]:before, .sidebar > nav > ul > li > a[href*=videos]:before, .sidebar > nav > ul > li > a[href*=playlists]:before, .sidebar > nav > ul > li > a[href*=scheduler]:before, .sidebar > nav > ul > li > a[href*=grids]:before, .sidebar > nav > ul > li > a[href*=download-automator]:before, .sidebar > nav > ul > li > a[href*=atem]:before, .sidebar > nav > ul > li > a[href*=log]:before {
         padding: 0 1.1rem 0 .3rem; }
+  .sidebar .user-info {
+    font-size: .8rem;
+    padding: 1rem;
+    text-transform: uppercase;
+    min-width: 16rem; }
+    .sidebar .user-info > div > a {
+      color: white;
+      margin-left: 0.5rem; }
+      .sidebar .user-info > div > a:hover {
+        text-decoration: none; }
+      .sidebar .user-info > div > a[href*=logout] {
+        color: #FFFD38; }
+        .sidebar .user-info > div > a[href*=logout]:after {
+          display: inline-block;
+          font-family: 'Material Icons';
+          text-transform: none;
+          content: "";
+          padding: 0 1rem 0 .3rem;
+          transform: translate(0, 5px);
+          font-size: 1.4rem;
+          color: gray; }
 
 main {
   padding: 1rem;
