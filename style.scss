@@ -55,7 +55,6 @@ $enable-print-styles:       false;
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem;
-        
     }
 }
 
@@ -137,6 +136,12 @@ a.btn {
     }
     &.btn-add:before {
         @include icon('\e147');
+    }
+    &.btn-plus-box:before {
+        @include icon('\e146');
+    }
+    &.btn-minus-box:before {
+        @include icon('\e909');
     }
     
     > .i {

@@ -6345,6 +6345,26 @@ a.btn {
     content: "";
     transform: translate(0, 2px);
     font-size: 1em; }
+  button.btn-plus-box:before, form input.btn-plus-box[type=file]:before,
+  form input.btn-plus-box[type=submit]:before,
+  form input.btn-plus-box[type=button]:before,
+  a.btn.btn-plus-box:before {
+    display: inline-block;
+    font-family: 'Material Icons';
+    text-transform: none;
+    content: "";
+    transform: translate(0, 2px);
+    font-size: 1em; }
+  button.btn-minus-box:before, form input.btn-minus-box[type=file]:before,
+  form input.btn-minus-box[type=submit]:before,
+  form input.btn-minus-box[type=button]:before,
+  a.btn.btn-minus-box:before {
+    display: inline-block;
+    font-family: 'Material Icons';
+    text-transform: none;
+    content: "";
+    transform: translate(0, 2px);
+    font-size: 1em; }
   button > .i, form input[type=file] > .i,
   form input[type=submit] > .i,
   form input[type=button] > .i,

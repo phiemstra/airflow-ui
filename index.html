@@ -141,7 +141,7 @@
                                 <button class="btn-add"> Batch upload</button>
                             </div>
                         </div>
-                        <div class="col-sm">
+                        <div class="col-sm text-right">
                             <form action="#">
                                 <input type="text" placeholder="Search">
                                 <i class="i">search</i>
@@ -151,8 +151,13 @@
                     </div>
                     
                     <div class="card">
-                        <div class="card-header">Filter</div>
-                        <div class="card-block">
+                        <div class="card-header">
+                            Filter
+                            <div class="float-right">
+                                <button id="filter-toggle" class="btn-secondary btn-plus-box"></button>
+                            </div>
+                        </div>
+                        <div id="filter-block" class="card-block"  style="display:none">
                             <div class="row">
                                 <div class="col-sm-2">
                                     <strong>Filter op type: </strong>
@@ -506,6 +511,12 @@
             $('.nav-tabs a').click(function(event) {
                 event.preventDefault()
                 $(this).tab('show')
+            })
+            
+            $('#filter-toggle').click(function() {
+                $(this).toggleClass('btn-plus-box')
+                $(this).toggleClass('btn-minus-box')
+                $('#filter-block').toggle()
             })
         })()
     </script>
