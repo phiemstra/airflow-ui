@@ -6761,3 +6761,26 @@ form input[type=date] {
 form input[type=radio] + label,
 form input[type=checkbox] + label {
   margin-left: .5rem; }
+
+date-input-polyfill {
+  padding: 1rem !important; }
+  date-input-polyfill [data-selected] {
+    background-color: #FFFD38 !important; }
+  date-input-polyfill button, date-input-polyfill form input[type=file], form date-input-polyfill input[type=file],
+  date-input-polyfill form input[type=submit],
+  form date-input-polyfill input[type=submit],
+  date-input-polyfill form input[type=button],
+  form date-input-polyfill input[type=button] {
+    color: black !important;
+    background-color: #FFFD38 !important;
+    border-color: #FFFD38 !important;
+    padding: 1% !important;
+    width: 24% !important; }
+  date-input-polyfill select:first-of-type {
+    width: 27% !important;
+    margin-right: 1% !important; }
+  date-input-polyfill select {
+    width: 47% !important;
+    margin-right: 1% !important; }
+  date-input-polyfill table {
+    margin-top: 0.5rem !important; }

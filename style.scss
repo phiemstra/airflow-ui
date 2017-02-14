@@ -403,3 +403,31 @@ form {
     }
 
 }
+
+date-input-polyfill {
+    padding: 1rem!important;
+    
+    [data-selected] {
+        background-color: $primary-color!important;
+    }
+    
+    button {
+        color: black!important;
+        background-color: #FFFD38!important;
+        border-color: #FFFD38!important;
+        padding: 1%!important;
+        width: 24%!important;
+    }
+    
+    select:first-of-type {
+        width: 27%!important;
+        margin-right: 1%!important;
+    }
+    select {
+        width: 47%!important;
+        margin-right: 1%!important;
+    }
+    table {
+        margin-top: $primary-spacer / 2!important;
+    }
+}
