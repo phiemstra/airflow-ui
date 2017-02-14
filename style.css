@@ -6658,7 +6658,8 @@ main {
       padding-left: 3.6rem; } }
   main .card,
   main .block {
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+    position: relative; }
     main .card .card-header,
     main .block .card-header {
       font-weight: normal;
@@ -6687,8 +6688,6 @@ main {
       main table td .btn-group {
         float: right; }
 
-form label + input {
-  margin-left: 1rem; }
 form input[type=file] {
   width: 13rem; }
   @media (max-width: 767px) {
@@ -6701,33 +6700,35 @@ form input[type=text],
 form input[type=number],
 form input[type=date] {
   padding: .5rem .4rem .5rem;
-  border: 0px;
+  border: 0;
   border-bottom: 1px solid gray;
   font-family: "Ubuntu", sans-serif; }
-  .placeholder, form textarea::placeholder,
-  form input[type=name]::placeholder,
-  form input[type=password]::placeholder,
-  form input[type=text]::placeholder,
-  form input[type=number]::placeholder,
-  form input[type=date]::placeholder {
-    color: gray;
-    transition: all 160ms ease; }
-  form textarea:focus,
+  form textarea:focus, form textarea.has-content,
   form input[type=name]:focus,
+  form input[type=name].has-content,
   form input[type=password]:focus,
+  form input[type=password].has-content,
   form input[type=text]:focus,
+  form input[type=text].has-content,
   form input[type=number]:focus,
-  form input[type=date]:focus {
+  form input[type=number].has-content,
+  form input[type=date]:focus,
+  form input[type=date].has-content {
     outline: none; }
-    form textarea:focus::placeholder,
-    form input[type=name]:focus::placeholder,
-    form input[type=password]:focus::placeholder,
-    form input[type=text]:focus::placeholder,
-    form input[type=number]:focus::placeholder,
-    form input[type=date]:focus::placeholder {
-      color: #2c2c2c;
-      transform: translateY(-1.5rem);
-      font-size: .8rem; }
+    form textarea:focus + label, form textarea.has-content + label,
+    form input[type=name]:focus + label,
+    form input[type=name].has-content + label,
+    form input[type=password]:focus + label,
+    form input[type=password].has-content + label,
+    form input[type=text]:focus + label,
+    form input[type=text].has-content + label,
+    form input[type=number]:focus + label,
+    form input[type=number].has-content + label,
+    form input[type=date]:focus + label,
+    form input[type=date].has-content + label {
+      color: black;
+      font-size: .9em;
+      top: -1em; }
   @media (max-width: 767px) {
     form textarea,
     form input[type=name],
@@ -6740,6 +6741,17 @@ form input[type=date] {
 form input[type=radio] + label,
 form input[type=checkbox] + label {
   margin-left: .5rem; }
+form textarea + label,
+form input[type=name] + label,
+form input[type=password] + label,
+form input[type=text] + label,
+form input[type=number] + label,
+form input[type=date] + label {
+  color: #aaa;
+  position: absolute;
+  left: .5em;
+  top: .5em;
+  transition: all 160ms ease; }
 
 date-input-polyfill {
   padding: 1rem !important; }

@@ -402,6 +402,8 @@ main {
     .card,
     .block {
         margin-bottom: $primary-spacer;
+        position: relative;
+        
         .card-header {
             font-weight: normal;
             border: 0;
@@ -451,10 +453,6 @@ main {
 }
 
 form {
-    label + input {
-        margin-left: $primary-spacer
-    }
-    
     input[type=file],
     input[type=submit], 
     input[type=button] {
@@ -475,23 +473,18 @@ form {
     input[type=number],
     input[type=date] {
         padding: .5rem .4rem .5rem;
-        border: 0px;
+        border: 0;
         border-bottom: 1px solid gray;
         font-family: $primary-font;
         
-        @at-root .placeholder {
-            color: gray;
-            transition: all $primary-speed $primary-timing-function;
-        }
-        &::placeholder {
-            @extend .placeholder;
-        }
-        &:focus {
+        &:focus,
+        &.has-content {
             outline: none;
-            &::placeholder {
-                color: #2c2c2c;
-                transform: translateY(-1.5rem);
-                font-size: .8rem;
+            
+            & + label {
+                color: black;
+                font-size: .9em;
+                top: -1em;
             }
         }
         @include media-breakpoint-down(sm) {
@@ -506,7 +499,20 @@ form {
         }
     }
     
-    input[type=date]:after {
+    textarea + label,
+    input[type=name] + label,
+    input[type=password] + label,
+    input[type=text] + label,
+    input[type=number] + label,
+    input[type=date] + label {
+        color: #aaa;
+        position: absolute;
+        left: .5em;
+        top: .5em;
+        transition: all $primary-speed $primary-timing-function;
+    }
+    
+    label + input[type=date]:after {
 //        @include icon("\E916");
 //        WIP calendar icon to indicate date field
     }

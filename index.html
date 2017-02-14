@@ -272,34 +272,44 @@
                             </select>
                         </div>
                         <div class="block">
-                            <input type="name" placeholder="username">
+                            <input id="name" type="name">
+                            <label for="name">Name</label>
                         </div>
                         <div class="block">
-                            <input type="password" placeholder="Password">
+                            <input id="password" type="password">
+                            <label for="password">Password</label>
                         </div>
                         <div class="block">
-                            <input type="range">
+                            <input id="range" type="range">
+                            <label for="range">Range</label>
                         </div>
                         <div class="block">
-                            <input type="text" placeholder="Text testing">
+                            <input id="text" type="text">
+                            <label for="text">Textfield</label>
                         </div>
                         <div class="block">
-                            <input type="radio" value="true" id="radio1"><label for="radio1">Testradio</label>
+                            <input id="radio" type="radio" value="true" id="radio1">
+                            <label for="radio1">Testradio</label>
                         </div>
                         <div class="block">
-                            <input type="checkbox" value="true" id="checbox1"><label for="checbox1">Testradio</label>
+                            <input id="checkbox1" type="checkbox" value="true">
+                            <label for="checkbox1">Testradio</label>
                         </div>
                         <div class="block">
-                            <input type="number" placeholder="Number testing">
+                            <input id="number" type="number">
+                            <label for="number">Number</label>
                         </div>
                         <div class="block">
-                            <input type="date" placeholder="Date testing">
+                            <input id="date" type="date">
+                            <label for="date">Date</label>
                         </div>
                         <div class="block">
-                            <textarea maxlength="20" rows="10" placeholder="Textarea testing"></textarea>
+                            <textarea id="textarea" maxlength="20" rows="10"></textarea>
+                            <label for="textarea">Textarea</label>
                         </div>
                         <div class="block">
-                            <input type="submit" value="Submit">
+                            <input id="submit" type="submit" value="Submit">
+                            <label for="submit">Submit</label>
                         </div>
                         
                     </form>
@@ -497,6 +507,15 @@
             $('.nav-tabs a').click(function(event) {
                 event.preventDefault()
                 $(this).tab('show')
+            })
+            
+            $('textarea, input[type=name], input[type=password], input[type=text], input[type=number], input[type=date]').on('keyup change', function() {
+                if(this.value) {
+                    $(this).addClass('has-content')
+                }
+                else {
+                    $(this).removeClass('has-content')
+                }
             })
         })()
     </script>
