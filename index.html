@@ -17,6 +17,17 @@
         </div>
         
         <div class="server-time">10:41:32</div>
+        
+        <div class="admin-menu">
+            <div class="admin-menu-toggle"></div>
+            <ul class="admin-menu-content">
+                <li><a href="#admin">Airflow (Admin)</a></li>
+                <li><a href="#profile">Your Profile</a></li>
+                <li><a href="#users">Assign Users</a></li>
+                <li><a href="#settings">System Settings</a></li>
+                <li><a href="#logout">Logout</a></li>
+            </ul>
+        </div>
     </header>
     
     <aside class="sidebar">
@@ -38,15 +49,6 @@
             </ul>
         </nav>
         
-        <div class="user-info">
-            <div><a href="#">Airflow (Admin)</a><a href="#logout">Logout</a></div>
-            <div>
-                <a href="#">Your Profile</a>
-                <a href="#">Assign Users</a>
-                <a href="#">System Settings</a>
-            </div>
-        </div>
-
     </aside>
     
     <main>
@@ -54,7 +56,7 @@
           
             <div id="live-preview" class="card">
                 <div class="card-block">
-                    <h4 class="card-title" data-toggle="collapse" data-parent="#main-container">Live Preview</h4>
+                    <h4 class="card-title">Live Preview</h4>
                     <p class="text-muted">The current item highlights automatically. The page will refresh as soon as the clock has ended.</p>
                     <div class="row">
                         <div class="col-sm-3">
@@ -126,11 +128,11 @@
            
             <div id="videos" class="card">
                 <div class="card-block">
-                <h4 class="card-title" data-toggle="collapse" data-parent="#main-container">Videos</h4>
+                <h4 class="card-title">Videos</h4>
                     
                     <div class="row block">
                        
-                        <div class="col-sm-7 d-flex align-items-end">
+                        <div class="col-sm-7">
                             <div class="btn-toolbar">
                                 <button class="btn-secondary"><i class="i">&#xE147</i> Add</button>
                                 <button class="btn-secondary"><i class="i">&#xE147</i> Batch upload</button>
@@ -257,7 +259,7 @@
             </div>
            
             <div id="elements" class="card">
-                <div class="card-header" data-toggle="collapse" data-parent="#main-container">
+                <div class="card-header">
                     <ul class="nav nav-tabs card-header-tabs">
                         <li class="nav-item">
                             <a href="#nav-tab1" class="nav-link active">Forms</a>
@@ -360,7 +362,7 @@
            
             <div id="clocks" class="card">
                 <div class="card-block">
-                    <h4 class="card-title" data-toggle="collapse" data-parent="#main-container">Clocks</h4>
+                    <h4 class="card-title">Clocks</h4>
                     
                     <table>
                         <thead>
@@ -501,6 +503,10 @@
             
             $('#sidebar-toggle').click(function() {
                 $('.sidebar').toggleClass('tucked')
+            })
+            
+            $('.admin-menu-toggle').click(function() {
+                $('.admin-menu-content').toggle()
             })
             
             $('.nav-tabs a').click(function(event) {

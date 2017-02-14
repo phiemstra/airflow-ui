@@ -6307,6 +6307,75 @@ header {
     @media (max-width: 767px) {
       header .server-time {
         display: none; } }
+  header .admin-menu {
+    float: right;
+    padding: 1.25rem; }
+    header .admin-menu .admin-menu-toggle {
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none; }
+      header .admin-menu .admin-menu-toggle:before {
+        display: inline-block;
+        font-family: 'Material Icons';
+        text-transform: none;
+        content: "";
+        padding: 0 1rem 0 .3rem;
+        transform: translate(0, 5px);
+        font-size: 1.4rem; }
+    header .admin-menu .admin-menu-content {
+      display: none;
+      min-width: 16rem;
+      position: absolute;
+      right: 1rem;
+      top: 5rem;
+      z-index: 12;
+      padding: 1rem;
+      list-style: none;
+      float: none;
+      font-size: .8rem;
+      background-color: black;
+      text-transform: uppercase; }
+      header .admin-menu .admin-menu-content a {
+        display: block;
+        color: white;
+        margin-left: 0.5rem; }
+        header .admin-menu .admin-menu-content a:hover {
+          text-decoration: none; }
+        header .admin-menu .admin-menu-content a[href*=profile]:before {
+          display: inline-block;
+          font-family: 'Material Icons';
+          text-transform: none;
+          content: "";
+          padding: 0 1rem 0 .3rem;
+          transform: translate(0, 5px);
+          font-size: 1.4rem; }
+        header .admin-menu .admin-menu-content a[href*=users]:before {
+          display: inline-block;
+          font-family: 'Material Icons';
+          text-transform: none;
+          content: "";
+          padding: 0 1rem 0 .3rem;
+          transform: translate(0, 5px);
+          font-size: 1.4rem; }
+        header .admin-menu .admin-menu-content a[href*=settings]:before {
+          display: inline-block;
+          font-family: 'Material Icons';
+          text-transform: none;
+          content: "";
+          padding: 0 1rem 0 .3rem;
+          transform: translate(0, 5px);
+          font-size: 1.4rem; }
+        header .admin-menu .admin-menu-content a[href*=logout] {
+          color: #FFFD38; }
+          header .admin-menu .admin-menu-content a[href*=logout]:before {
+            display: inline-block;
+            font-family: 'Material Icons';
+            text-transform: none;
+            content: "";
+            padding: 0 1rem 0 .3rem;
+            transform: translate(0, 5px);
+            font-size: 1.4rem;
+            color: gray; }
 
 .sidebar {
   position: fixed;
@@ -6447,27 +6516,6 @@ header {
         font-size: 1.4rem; }
       .sidebar > nav > ul > li > a[href*=live-view]:before, .sidebar > nav > ul > li > a[href*=videos]:before, .sidebar > nav > ul > li > a[href*=playlists]:before, .sidebar > nav > ul > li > a[href*=scheduler]:before, .sidebar > nav > ul > li > a[href*=grids]:before, .sidebar > nav > ul > li > a[href*=download-automator]:before, .sidebar > nav > ul > li > a[href*=atem]:before, .sidebar > nav > ul > li > a[href*=log]:before {
         padding: 0 1.1rem 0 .3rem; }
-  .sidebar .user-info {
-    font-size: .8rem;
-    padding: 1rem;
-    text-transform: uppercase;
-    min-width: 16rem; }
-    .sidebar .user-info > div > a {
-      color: white;
-      margin-left: 0.5rem; }
-      .sidebar .user-info > div > a:hover {
-        text-decoration: none; }
-      .sidebar .user-info > div > a[href*=logout] {
-        color: #FFFD38; }
-        .sidebar .user-info > div > a[href*=logout]:after {
-          display: inline-block;
-          font-family: 'Material Icons';
-          text-transform: none;
-          content: "";
-          padding: 0 1rem 0 .3rem;
-          transform: translate(0, 5px);
-          font-size: 1.4rem;
-          color: gray; }
 
 main {
   padding: 1rem;
@@ -6519,7 +6567,7 @@ form input[type=password],
 form input[type=text],
 form input[type=number],
 form input[type=date] {
-  padding: 1.5rem .4rem .5rem;
+  padding: .5rem .4rem .5rem;
   border: 0px;
   border-bottom: 1px solid gray;
   font-family: "Ubuntu", sans-serif; }

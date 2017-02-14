@@ -166,6 +166,73 @@ header {
         }
     }
     
+    .admin-menu {
+        float: right;
+        padding: $header-height / 4;
+
+        .admin-menu-toggle {
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+            
+            &:before {
+                @include icon("\E5D4");
+            }
+        }
+        
+        .admin-menu-content {
+            display: none;
+            min-width: 16rem;
+            position: absolute;
+            right: 1rem;
+            top: 5rem;
+            z-index: 12;
+            padding: $primary-spacer;
+            list-style: none;
+            float: none;
+            font-size: .8rem;
+            background-color: black;
+            text-transform: uppercase;
+
+            a {
+                display: block;
+                color: white;
+                margin-left: $primary-spacer / 2;
+
+                &:hover {
+                    text-decoration: none;
+                }
+
+                &[href*=admin] {
+                    &:before {
+//                        @include icon("\E7FD");
+                    }
+                }
+                &[href*=profile] {
+                    &:before {
+                        @include icon("\e853");
+                    }
+                }
+                &[href*=users] {
+                    &:before {
+                        @include icon("\E8D3");
+                    }
+                }
+                &[href*=settings] {
+                    &:before {
+                        @include icon("\E8B8");
+                    }
+                }
+                &[href*=logout] {
+                    color: $primary-color;
+                    &:before {
+                        @include icon("\E7FD");
+                        color: gray;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .sidebar {
@@ -279,30 +346,6 @@ header {
             }
         }
     }
-    
-    .user-info {
-        font-size: .8rem;
-        padding: $primary-spacer;
-        text-transform: uppercase;
-        min-width: 16rem;
-        
-        > div > a {
-            color: white;
-            margin-left: $primary-spacer /2;
-            
-            &:hover {
-                text-decoration: none;
-            }
-            
-            &[href*=logout] {
-                color: $primary-color;
-                &:after {
-                    @include icon("\E7FD");
-                    color: gray;
-                }
-            }
-        }
-    }
 }
 
 main {
@@ -389,7 +432,7 @@ form {
     input[type=text],
     input[type=number],
     input[type=date] {
-        padding: 1.5rem .4rem .5rem;
+        padding: .5rem .4rem .5rem;
         border: 0px;
         border-bottom: 1px solid gray;
         font-family: $primary-font;
