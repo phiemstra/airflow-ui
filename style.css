@@ -6631,7 +6631,7 @@ header {
         display: inline-block;
         font-family: 'Material Icons';
         text-transform: none;
-        content: "";
+        content: "";
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
