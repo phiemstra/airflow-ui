@@ -1921,7 +1921,8 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .btn, button, form input[type=file],
 form input[type=submit],
-form input[type=button] {
+form input[type=button],
+a.btn {
   display: inline-block;
   font-weight: normal;
   line-height: 1.25;
@@ -1965,36 +1966,45 @@ fieldset[disabled] a.btn {
 
 .btn-primary, button, form input[type=file],
 form input[type=submit],
-form input[type=button] {
+form input[type=button],
+a.btn {
   color: black;
   background-color: #FFFD38;
   border-color: #FFFD38; }
   .btn-primary:hover, button:hover, form input[type=file]:hover,
   form input[type=submit]:hover,
-  form input[type=button]:hover {
+  form input[type=button]:hover,
+  a.btn:hover {
     color: black;
     background-color: #fffc05;
     border-color: #faf700; }
   .btn-primary:focus, button:focus, form input[type=file]:focus,
   form input[type=submit]:focus,
-  form input[type=button]:focus, .btn-primary.focus, button.focus, form input.focus[type=file],
+  form input[type=button]:focus,
+  a.btn:focus, .btn-primary.focus, button.focus, form input.focus[type=file],
   form input.focus[type=submit],
-  form input.focus[type=button] {
+  form input.focus[type=button],
+  a.focus.btn {
     box-shadow: 0 0 0 2px rgba(255, 253, 56, 0.5); }
   .btn-primary.disabled, button.disabled, form input.disabled[type=file],
   form input.disabled[type=submit],
-  form input.disabled[type=button], .btn-primary:disabled, button:disabled, form input[type=file]:disabled,
+  form input.disabled[type=button],
+  a.disabled.btn, .btn-primary:disabled, button:disabled, form input[type=file]:disabled,
   form input[type=submit]:disabled,
-  form input[type=button]:disabled {
+  form input[type=button]:disabled,
+  a.btn:disabled {
     background-color: #FFFD38;
     border-color: #FFFD38; }
   .btn-primary:active, button:active, form input[type=file]:active,
   form input[type=submit]:active,
-  form input[type=button]:active, .btn-primary.active, button.active, form input.active[type=file],
+  form input[type=button]:active,
+  a.btn:active, .btn-primary.active, button.active, form input.active[type=file],
   form input.active[type=submit],
-  form input.active[type=button], .show > .btn-primary.dropdown-toggle, .show > button.dropdown-toggle, form .show > input.dropdown-toggle[type=file],
+  form input.active[type=button],
+  a.active.btn, .show > .btn-primary.dropdown-toggle, .show > button.dropdown-toggle, form .show > input.dropdown-toggle[type=file],
   form .show > input.dropdown-toggle[type=submit],
-  form .show > input.dropdown-toggle[type=button] {
+  form .show > input.dropdown-toggle[type=button],
+  .show > a.dropdown-toggle.btn {
     color: black;
     background-color: #fffc05;
     background-image: none;
@@ -2004,7 +2014,8 @@ form input[type=button] {
 .btn-toolbar form input[type=submit],
 form .btn-toolbar input[type=submit],
 .btn-toolbar form input[type=button],
-form .btn-toolbar input[type=button] {
+form .btn-toolbar input[type=button], .btn-toolbar
+a.btn {
   color: #292b2c;
   background-color: #fff;
   border-color: #ccc; }
@@ -2012,7 +2023,8 @@ form .btn-toolbar input[type=button] {
   .btn-toolbar form input[type=submit]:hover,
   form .btn-toolbar input[type=submit]:hover,
   .btn-toolbar form input[type=button]:hover,
-  form .btn-toolbar input[type=button]:hover {
+  form .btn-toolbar input[type=button]:hover, .btn-toolbar
+  a.btn:hover {
     color: #292b2c;
     background-color: #e6e6e6;
     border-color: #adadad; }
@@ -2020,36 +2032,42 @@ form .btn-toolbar input[type=button] {
   .btn-toolbar form input[type=submit]:focus,
   form .btn-toolbar input[type=submit]:focus,
   .btn-toolbar form input[type=button]:focus,
-  form .btn-toolbar input[type=button]:focus, .btn-secondary.focus, .btn-toolbar button.focus, .btn-toolbar form input.focus[type=file], form .btn-toolbar input.focus[type=file],
+  form .btn-toolbar input[type=button]:focus, .btn-toolbar
+  a.btn:focus, .btn-secondary.focus, .btn-toolbar button.focus, .btn-toolbar form input.focus[type=file], form .btn-toolbar input.focus[type=file],
   .btn-toolbar form input.focus[type=submit],
   form .btn-toolbar input.focus[type=submit],
   .btn-toolbar form input.focus[type=button],
-  form .btn-toolbar input.focus[type=button] {
+  form .btn-toolbar input.focus[type=button], .btn-toolbar
+  a.focus.btn {
     box-shadow: 0 0 0 2px rgba(204, 204, 204, 0.5); }
   .btn-secondary.disabled, .btn-toolbar button.disabled, .btn-toolbar form input.disabled[type=file], form .btn-toolbar input.disabled[type=file],
   .btn-toolbar form input.disabled[type=submit],
   form .btn-toolbar input.disabled[type=submit],
   .btn-toolbar form input.disabled[type=button],
-  form .btn-toolbar input.disabled[type=button], .btn-secondary:disabled, .btn-toolbar button:disabled, .btn-toolbar form input[type=file]:disabled, form .btn-toolbar input[type=file]:disabled,
+  form .btn-toolbar input.disabled[type=button], .btn-toolbar
+  a.disabled.btn, .btn-secondary:disabled, .btn-toolbar button:disabled, .btn-toolbar form input[type=file]:disabled, form .btn-toolbar input[type=file]:disabled,
   .btn-toolbar form input[type=submit]:disabled,
   form .btn-toolbar input[type=submit]:disabled,
   .btn-toolbar form input[type=button]:disabled,
-  form .btn-toolbar input[type=button]:disabled {
+  form .btn-toolbar input[type=button]:disabled, .btn-toolbar
+  a.btn:disabled {
     background-color: #fff;
     border-color: #ccc; }
   .btn-secondary:active, .btn-toolbar button:active, .btn-toolbar form input[type=file]:active, form .btn-toolbar input[type=file]:active,
   .btn-toolbar form input[type=submit]:active,
   form .btn-toolbar input[type=submit]:active,
   .btn-toolbar form input[type=button]:active,
-  form .btn-toolbar input[type=button]:active, .btn-secondary.active, .btn-toolbar button.active, .btn-toolbar form input.active[type=file], form .btn-toolbar input.active[type=file],
+  form .btn-toolbar input[type=button]:active, .btn-toolbar
+  a.btn:active, .btn-secondary.active, .btn-toolbar button.active, .btn-toolbar form input.active[type=file], form .btn-toolbar input.active[type=file],
   .btn-toolbar form input.active[type=submit],
   form .btn-toolbar input.active[type=submit],
   .btn-toolbar form input.active[type=button],
-  form .btn-toolbar input.active[type=button], .show > .btn-secondary.dropdown-toggle, .btn-toolbar .show > button.dropdown-toggle, .btn-toolbar form .show > input.dropdown-toggle[type=file], form .btn-toolbar .show > input.dropdown-toggle[type=file],
+  form .btn-toolbar input.active[type=button], .btn-toolbar
+  a.active.btn, .show > .btn-secondary.dropdown-toggle, .btn-toolbar .show > button.dropdown-toggle, .btn-toolbar form .show > input.dropdown-toggle[type=file], form .btn-toolbar .show > input.dropdown-toggle[type=file],
   .btn-toolbar form .show > input.dropdown-toggle[type=submit],
   form .btn-toolbar .show > input.dropdown-toggle[type=submit],
   .btn-toolbar form .show > input.dropdown-toggle[type=button],
-  form .btn-toolbar .show > input.dropdown-toggle[type=button] {
+  form .btn-toolbar .show > input.dropdown-toggle[type=button], .btn-toolbar .show > a.dropdown-toggle.btn {
     color: #292b2c;
     background-color: #e6e6e6;
     background-image: none;
@@ -2274,7 +2292,8 @@ form .btn-group-lg > input[type=button] {
 form .btn-group-sm > input[type=submit],
 form .btn-group-sm > input[type=button], button, form input[type=file],
 form input[type=submit],
-form input[type=button] {
+form input[type=button],
+a.btn {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem; }
 
@@ -2345,7 +2364,8 @@ input[type="button"].btn-block {
   .btn-group form input[type=submit] + button,
   form .btn-group input[type=submit] + button,
   .btn-group form input[type=button] + button,
-  form .btn-group input[type=button] + button, .btn-group form .btn + input[type=file], form .btn-group .btn + input[type=file], .btn-group form button + input[type=file], form .btn-group button + input[type=file], .btn-group form input[type=file] + input[type=file], form .btn-group input[type=file] + input[type=file],
+  form .btn-group input[type=button] + button,
+  .btn-group a.btn + button, .btn-group form .btn + input[type=file], form .btn-group .btn + input[type=file], .btn-group form button + input[type=file], form .btn-group button + input[type=file], .btn-group form input[type=file] + input[type=file], form .btn-group input[type=file] + input[type=file],
   .btn-group form input[type=submit] + input[type=file],
   form .btn-group input[type=submit] + input[type=file],
   .btn-group form input[type=button] + input[type=file],
@@ -2370,6 +2390,7 @@ input[type="button"].btn-block {
   form .btn-group input[type=submit] + input[type=button],
   .btn-group form input[type=button] + input[type=button],
   form .btn-group input[type=button] + input[type=button],
+  .btn-group button + a.btn,
   .btn-group .btn + .btn-group,
   .btn-group button + .btn-group,
   .btn-group form input[type=file] + .btn-group,
@@ -2403,6 +2424,7 @@ input[type="button"].btn-block {
   form .btn-group-vertical input[type=submit] + button,
   .btn-group-vertical form input[type=button] + button,
   form .btn-group-vertical input[type=button] + button,
+  .btn-group-vertical a.btn + button,
   .btn-group-vertical form .btn + input[type=file],
   form .btn-group-vertical .btn + input[type=file],
   .btn-group-vertical form button + input[type=file],
@@ -2433,6 +2455,7 @@ input[type="button"].btn-block {
   form .btn-group-vertical input[type=submit] + input[type=button],
   .btn-group-vertical form input[type=button] + input[type=button],
   form .btn-group-vertical input[type=button] + input[type=button],
+  .btn-group-vertical button + a.btn,
   .btn-group-vertical .btn + .btn-group,
   .btn-group-vertical button + .btn-group,
   .btn-group-vertical form input[type=file] + .btn-group,
@@ -2494,7 +2517,8 @@ form input[type=button] + .dropdown-toggle-split {
 form .btn-group-sm > input[type=submit] + .dropdown-toggle-split,
 form .btn-group-sm > input[type=button] + .dropdown-toggle-split, button + .dropdown-toggle-split, form input[type=file] + .dropdown-toggle-split,
 form input[type=submit] + .dropdown-toggle-split,
-form input[type=button] + .dropdown-toggle-split {
+form input[type=button] + .dropdown-toggle-split,
+a.btn + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem; }
 
@@ -2520,7 +2544,8 @@ form .btn-group-lg > input[type=button] + .dropdown-toggle-split {
   form .btn-group-vertical > input[type=submit] + .btn,
   form .btn-group-vertical > input[type=button] + .btn, .btn-group-vertical > .btn + button, .btn-group-vertical > button + button, form .btn-group-vertical > input[type=file] + button,
   form .btn-group-vertical > input[type=submit] + button,
-  form .btn-group-vertical > input[type=button] + button, form .btn-group-vertical > .btn + input[type=file], form .btn-group-vertical > button + input[type=file], form .btn-group-vertical > input[type=file] + input[type=file],
+  form .btn-group-vertical > input[type=button] + button,
+  .btn-group-vertical > a.btn + button, form .btn-group-vertical > .btn + input[type=file], form .btn-group-vertical > button + input[type=file], form .btn-group-vertical > input[type=file] + input[type=file],
   form .btn-group-vertical > input[type=submit] + input[type=file],
   form .btn-group-vertical > input[type=button] + input[type=file],
   form .btn-group-vertical > .btn + input[type=submit],
@@ -2533,6 +2558,7 @@ form .btn-group-lg > input[type=button] + .dropdown-toggle-split {
   form .btn-group-vertical > input[type=file] + input[type=button],
   form .btn-group-vertical > input[type=submit] + input[type=button],
   form .btn-group-vertical > input[type=button] + input[type=button],
+  .btn-group-vertical > button + a.btn,
   .btn-group-vertical > .btn + .btn-group,
   .btn-group-vertical > button + .btn-group,
   form .btn-group-vertical > input[type=file] + .btn-group,
@@ -2655,7 +2681,8 @@ form [data-toggle="buttons"] > .btn-group > input[type=button] input[type="check
     form .input-group-btn > input[type=submit] + .btn,
     form .input-group-btn > input[type=button] + .btn, .input-group-btn > .btn + button, .input-group-btn > button + button, form .input-group-btn > input[type=file] + button,
     form .input-group-btn > input[type=submit] + button,
-    form .input-group-btn > input[type=button] + button, form .input-group-btn > .btn + input[type=file], form .input-group-btn > button + input[type=file], form .input-group-btn > input[type=file] + input[type=file],
+    form .input-group-btn > input[type=button] + button,
+    .input-group-btn > a.btn + button, form .input-group-btn > .btn + input[type=file], form .input-group-btn > button + input[type=file], form .input-group-btn > input[type=file] + input[type=file],
     form .input-group-btn > input[type=submit] + input[type=file],
     form .input-group-btn > input[type=button] + input[type=file],
     form .input-group-btn > .btn + input[type=submit],
@@ -2667,7 +2694,8 @@ form [data-toggle="buttons"] > .btn-group > input[type=button] input[type="check
     form .input-group-btn > button + input[type=button],
     form .input-group-btn > input[type=file] + input[type=button],
     form .input-group-btn > input[type=submit] + input[type=button],
-    form .input-group-btn > input[type=button] + input[type=button] {
+    form .input-group-btn > input[type=button] + input[type=button],
+    .input-group-btn > button + a.btn {
       margin-left: -1px; }
     .input-group-btn > .btn:focus, .input-group-btn > button:focus, form .input-group-btn > input[type=file]:focus,
     form .input-group-btn > input[type=submit]:focus,
@@ -6243,7 +6271,8 @@ img {
 
 button, form input[type=file],
 form input[type=submit],
-form input[type=button] {
+form input[type=button],
+a.btn {
   cursor: pointer;
   transition: none;
   font-weight: normal;
@@ -6252,30 +6281,97 @@ form input[type=button] {
   .btn-toolbar form input[type=submit],
   form .btn-toolbar input[type=submit],
   .btn-toolbar form input[type=button],
-  form .btn-toolbar input[type=button] {
+  form .btn-toolbar input[type=button], .btn-toolbar
+  a.btn {
     padding: 0.5rem 1rem;
     font-size: 1.25rem; }
+  button.btn-preview:before, form input.btn-preview[type=file]:before,
+  form input.btn-preview[type=submit]:before,
+  form input.btn-preview[type=button]:before,
+  a.btn.btn-preview:before {
+    display: inline-block;
+    font-family: 'Material Icons';
+    text-transform: none;
+    content: "";
+    transform: translate(0, 2px);
+    font-size: 1em; }
+  button.btn-remove:before, form input.btn-remove[type=file]:before,
+  form input.btn-remove[type=submit]:before,
+  form input.btn-remove[type=button]:before,
+  a.btn.btn-remove:before {
+    display: inline-block;
+    font-family: 'Material Icons';
+    text-transform: none;
+    content: "";
+    transform: translate(0, 2px);
+    font-size: 1em; }
+  button.btn-edit:before, form input.btn-edit[type=file]:before,
+  form input.btn-edit[type=submit]:before,
+  form input.btn-edit[type=button]:before,
+  a.btn.btn-edit:before {
+    display: inline-block;
+    font-family: 'Material Icons';
+    text-transform: none;
+    content: "";
+    transform: translate(0, 2px);
+    font-size: 1em; }
+  button.btn-playlist:before, form input.btn-playlist[type=file]:before,
+  form input.btn-playlist[type=submit]:before,
+  form input.btn-playlist[type=button]:before,
+  a.btn.btn-playlist:before {
+    display: inline-block;
+    font-family: 'Material Icons';
+    text-transform: none;
+    content: "";
+    transform: translate(0, 2px);
+    font-size: 1em; }
+  button.btn-shrink:before, form input.btn-shrink[type=file]:before,
+  form input.btn-shrink[type=submit]:before,
+  form input.btn-shrink[type=button]:before,
+  a.btn.btn-shrink:before {
+    display: inline-block;
+    font-family: 'Material Icons';
+    text-transform: none;
+    content: "";
+    transform: translate(0, 2px);
+    font-size: 1em; }
+  button.btn-add:before, form input.btn-add[type=file]:before,
+  form input.btn-add[type=submit]:before,
+  form input.btn-add[type=button]:before,
+  a.btn.btn-add:before {
+    display: inline-block;
+    font-family: 'Material Icons';
+    text-transform: none;
+    content: "";
+    transform: translate(0, 2px);
+    font-size: 1em; }
   button > .i, form input[type=file] > .i,
   form input[type=submit] > .i,
-  form input[type=button] > .i {
-    transform: translate(0, 0.075rem);
+  form input[type=button] > .i,
+  a.btn > .i {
+    transform: translate(0, 1px);
     font-size: inherit; }
   button:hover, form input[type=file]:hover,
   form input[type=submit]:hover,
-  form input[type=button]:hover {
+  form input[type=button]:hover,
+  a.btn:hover {
     background-color: #fffe9e;
     border-color: #fffe9e; }
   button:active, form input[type=file]:active,
   form input[type=submit]:active,
   form input[type=button]:active, button:focus, form input[type=file]:focus,
   form input[type=submit]:focus,
-  form input[type=button]:focus {
+  form input[type=button]:focus,
+  a.btn:active,
+  a.btn:focus {
     background-color: #f0ed00; }
   button.btn-outline-primary, form input.btn-outline-primary[type=file],
   form input.btn-outline-primary[type=submit],
   form input.btn-outline-primary[type=button], button.btn-outline-primary:hover, form input.btn-outline-primary[type=file]:hover,
   form input.btn-outline-primary[type=submit]:hover,
-  form input.btn-outline-primary[type=button]:hover {
+  form input.btn-outline-primary[type=button]:hover,
+  a.btn.btn-outline-primary,
+  a.btn.btn-outline-primary:hover {
     color: black; }
 
 header {
@@ -6309,8 +6405,11 @@ header {
         display: none; } }
   header .admin-menu {
     float: right;
-    padding: 1.25rem; }
+    padding: 1.25rem;
+    line-height: 2.5em; }
     header .admin-menu .admin-menu-toggle {
+      font-size: 1.5em;
+      float: right;
       cursor: pointer;
       user-select: none;
       -webkit-user-select: none; }
@@ -6319,9 +6418,8 @@ header {
         font-family: 'Material Icons';
         text-transform: none;
         content: "";
-        padding: 0 1rem 0 .3rem;
-        transform: translate(0, 5px);
-        font-size: 1.4rem; }
+        transform: translate(0, 2px);
+        font-size: 1em; }
     header .admin-menu .admin-menu-content {
       display: none;
       min-width: 16rem;
@@ -6346,6 +6444,8 @@ header {
           font-family: 'Material Icons';
           text-transform: none;
           content: "";
+          transform: translate(0, 2px);
+          font-size: 1em;
           padding: 0 1rem 0 .3rem;
           transform: translate(0, 5px);
           font-size: 1.4rem; }
@@ -6354,6 +6454,8 @@ header {
           font-family: 'Material Icons';
           text-transform: none;
           content: "";
+          transform: translate(0, 2px);
+          font-size: 1em;
           padding: 0 1rem 0 .3rem;
           transform: translate(0, 5px);
           font-size: 1.4rem; }
@@ -6362,6 +6464,8 @@ header {
           font-family: 'Material Icons';
           text-transform: none;
           content: "";
+          transform: translate(0, 2px);
+          font-size: 1em;
           padding: 0 1rem 0 .3rem;
           transform: translate(0, 5px);
           font-size: 1.4rem; }
@@ -6372,6 +6476,8 @@ header {
             font-family: 'Material Icons';
             text-transform: none;
             content: "";
+            transform: translate(0, 2px);
+            font-size: 1em;
             padding: 0 1rem 0 .3rem;
             transform: translate(0, 5px);
             font-size: 1.4rem;
@@ -6407,6 +6513,8 @@ header {
       font-family: 'Material Icons';
       text-transform: none;
       content: "";
+      transform: translate(0, 2px);
+      font-size: 1em;
       padding: 0 1rem 0 .3rem;
       transform: translate(0, 5px);
       font-size: 1.4rem;
@@ -6417,6 +6525,8 @@ header {
       font-family: 'Material Icons';
       text-transform: none;
       content: "";
+      transform: translate(0, 2px);
+      font-size: 1em;
       padding: 0 1rem 0 .3rem;
       transform: translate(0, 5px);
       font-size: 1.4rem;
@@ -6447,14 +6557,15 @@ header {
         font-family: 'Material Icons';
         text-transform: none;
         content: "";
-        padding: 0 1rem 0 .3rem;
-        transform: translate(0, 5px);
-        font-size: 1.4rem; }
+        transform: translate(0, 2px);
+        font-size: 1em; }
       .sidebar > nav > ul > li > a[href*=live-view]:before {
         display: inline-block;
         font-family: 'Material Icons';
         text-transform: none;
         content: "";
+        transform: translate(0, 2px);
+        font-size: 1em;
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
@@ -6463,6 +6574,8 @@ header {
         font-family: 'Material Icons';
         text-transform: none;
         content: "";
+        transform: translate(0, 2px);
+        font-size: 1em;
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
@@ -6470,7 +6583,9 @@ header {
         display: inline-block;
         font-family: 'Material Icons';
         text-transform: none;
-        content: "";
+        content: "";
+        transform: translate(0, 2px);
+        font-size: 1em;
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
@@ -6479,6 +6594,8 @@ header {
         font-family: 'Material Icons';
         text-transform: none;
         content: "";
+        transform: translate(0, 2px);
+        font-size: 1em;
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
@@ -6487,6 +6604,8 @@ header {
         font-family: 'Material Icons';
         text-transform: none;
         content: "";
+        transform: translate(0, 2px);
+        font-size: 1em;
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
@@ -6495,6 +6614,8 @@ header {
         font-family: 'Material Icons';
         text-transform: none;
         content: "";
+        transform: translate(0, 2px);
+        font-size: 1em;
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
@@ -6503,6 +6624,8 @@ header {
         font-family: 'Material Icons';
         text-transform: none;
         content: "";
+        transform: translate(0, 2px);
+        font-size: 1em;
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
@@ -6511,6 +6634,8 @@ header {
         font-family: 'Material Icons';
         text-transform: none;
         content: "";
+        transform: translate(0, 2px);
+        font-size: 1em;
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }

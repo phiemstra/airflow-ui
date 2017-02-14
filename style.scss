@@ -43,14 +43,20 @@ $enable-print-styles:       false;
 @import "scss/bootstrap";
 @import "fonts/fonts";
 
-@mixin icon($icon) {
+@mixin icon($icon, $sidebar: false) {
     display: inline-block;
     font-family: 'Material Icons';
     text-transform: none;
     content: $icon;
-    padding: 0 1rem 0 .3rem;
-    transform: translate(0, 5px);
-    font-size: 1.4rem;
+    transform: translate(0, 2px);
+    font-size: 1em;
+    
+    @if($sidebar) {
+        padding: 0 1rem 0 .3rem;
+        transform: translate(0, 5px);
+        font-size: 1.4rem;
+        
+    }
 }
 
 body,
@@ -97,7 +103,8 @@ img {
     height: auto;
 }
 
-button {
+button,
+a.btn {
     @extend .btn;
     @extend .btn-primary;
     @extend .btn-sm;
@@ -113,10 +120,30 @@ button {
         font-size: 1.25rem;
     }
     
+    &.btn-preview:before {
+        @include icon('\e417');
+    }
+    &.btn-remove:before {
+        @include icon('\e872');
+    }
+    &.btn-edit:before {
+        @include icon('\e254');
+    }
+    &.btn-playlist:before {
+        @include icon('\e8ee');
+    }
+    &.btn-shrink:before {
+        @include icon('\e915');
+    }
+    &.btn-add:before {
+        @include icon('\e147');
+    }
+    
     > .i {
-        transform: translate(0, 0.075rem);
+        transform: translate(0, 1px);
         font-size: inherit;
     }
+    
     &:hover {
         background-color: lighten($primary-color, 20%);
         border-color: lighten($primary-color, 20%);
@@ -169,8 +196,11 @@ header {
     .admin-menu {
         float: right;
         padding: $header-height / 4;
+        line-height: 2.5em;
 
         .admin-menu-toggle {
+            font-size: 1.5em;
+            float: right;
             cursor: pointer;
             user-select: none;
             -webkit-user-select: none;
@@ -210,23 +240,23 @@ header {
                 }
                 &[href*=profile] {
                     &:before {
-                        @include icon("\e853");
+                        @include icon("\e853", $sidebar: true);
                     }
                 }
                 &[href*=users] {
                     &:before {
-                        @include icon("\E8D3");
+                        @include icon("\E8D3", $sidebar: true);
                     }
                 }
                 &[href*=settings] {
                     &:before {
-                        @include icon("\E8B8");
+                        @include icon("\E8B8", $sidebar: true);
                     }
                 }
                 &[href*=logout] {
                     color: $primary-color;
                     &:before {
-                        @include icon("\E7FD");
+                        @include icon("\E7FD", $sidebar: true);
                         color: gray;
                     }
                 }
@@ -264,13 +294,13 @@ header {
         -webkit-user-select: none;
         
         @at-root .sidebar.tucked .sidebar-toggle:before {
-            @include icon('\E5D2');
+            @include icon('\E5D2', $sidebar: true);
             padding: 0;
             color: white;
         }
         
         &:before {
-            @include icon('\E5CD');
+            @include icon('\E5CD', $sidebar: true);
             padding: 0;
             color: white;
         }
@@ -310,28 +340,28 @@ header {
             }
 
             &[href*=live-view]:before {
-                @include icon("\E417");
+                @include icon("\E417", $sidebar: true);
             }
             &[href*=videos]:before {
-                @include icon("\E2BE");
+                @include icon("\E2BE", $sidebar: true);
             }
             &[href*=playlists]:before {
-                @include icon("\E896");
+                @include icon("\E8EF", $sidebar: true);
             }
             &[href*=scheduler]:before {
-                @include icon("\E916");
+                @include icon("\E916", $sidebar: true);
             }
             &[href*=grids]:before {
-                @include icon("\E3EC");
+                @include icon("\E3EC", $sidebar: true);
             }
             &[href*=download-automator]:before {
-                @include icon("\E2C0");
+                @include icon("\E2C0", $sidebar: true);
             }
             &[href*=atem]:before {
-                @include icon("\E31A");
+                @include icon("\E31A", $sidebar: true);
             }
             &[href*=log]:before {
-                @include icon("\E90D");
+                @include icon("\E90D", $sidebar: true);
             }
 
             &[href*=live-view]:before,

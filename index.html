@@ -19,6 +19,7 @@
         <div class="server-time">10:41:32</div>
         
         <div class="admin-menu">
+            Welcome, username
             <div class="admin-menu-toggle"></div>
             <ul class="admin-menu-content">
                 <li><a href="#admin">Airflow (Admin)</a></li>
@@ -71,9 +72,11 @@
                             <div class="row card-block">
                                 <div class="col-sm-3"><strong>Current clock:</strong></div>
                                 <div class="col-sm-6">Mainplaylist - 09-02-2017 15:00</div>
-                                <div class="col-sm-3"><div class="btn-toolbar">
-                                    <button class="btn-secondary"><i class="i">list</i></button>
-                                </div></div>
+                                <div class="col-sm-3">
+                                   <div class="btn-toolbar">
+                                    <button class="btn-playlist"></button>
+                                    </div>
+                                </div>
                             </div>
                             <div class="row card-block">
                                 <div class="col-sm-3"><strong>Next clock:</strong></div>
@@ -134,8 +137,8 @@
                        
                         <div class="col-sm-7">
                             <div class="btn-toolbar">
-                                <button class="btn-secondary"><i class="i">&#xE147</i> Add</button>
-                                <button class="btn-secondary"><i class="i">&#xE147</i> Batch upload</button>
+                                <button class="btn-add"> Add</button>
+                                <button class="btn-add"> Batch upload</button>
                             </div>
                         </div>
                         <div class="col-sm">
@@ -194,15 +197,9 @@
                                 <td>New, Pop, Auto</td>
                                 <td>
                                     <div class="btn-toolbar">
-                                        <button class="btn btn-secondary">
-                                            <i class="i">&#xe417</i>
-                                        </button>
-                                        <button class="btn btn-secondary">
-                                            <i class="i">&#xe872</i>
-                                        </button>
-                                        <button class="btn btn-secondary">
-                                            <i class="i">&#xe254</i>
-                                        </button>
+                                        <button class="btn-preview"></button>
+                                        <button class="btn-remove"></button>
+                                        <button class="btn-edit"></button>
                                     </div>
                                 </td>
                             </tr>
@@ -217,15 +214,9 @@
                                 <td>New, Pop, Auto</td>
                                 <td>
                                     <div class="btn-toolbar">
-                                        <button class="btn btn-secondary">
-                                            <i class="i">&#xe417</i>
-                                        </button>
-                                        <button class="btn btn-secondary">
-                                            <i class="i">&#xe872</i>
-                                        </button>
-                                        <button class="btn btn-secondary">
-                                            <i class="i">&#xe254</i>
-                                        </button>
+                                        <button class="btn-preview"></button>
+                                        <button class="btn-remove"></button>
+                                        <button class="btn-edit"></button>
                                     </div>
                                 </td>
                             </tr>
@@ -240,15 +231,9 @@
                                 <td>New, Pop, Auto</td>
                                 <td>
                                     <div class="btn-toolbar">
-                                        <button class="btn btn-secondary">
-                                            <i class="i">&#xe417</i>
-                                        </button>
-                                        <button class="btn btn-secondary">
-                                            <i class="i">&#xe872</i>
-                                        </button>
-                                        <button class="btn btn-secondary">
-                                            <i class="i">&#xe254</i>
-                                        </button>
+                                        <button class="btn-preview"></button>
+                                        <button class="btn-remove"></button>
+                                        <button class="btn-edit"></button>
                                     </div>
                                 </td>
                             </tr>
@@ -410,10 +395,10 @@
                                 </td>
                                 <td>
                                     <div class="btn-toolbar">
-                                        <button class="btn-lg"><i class="i">&#xE915</i></button>
-                                        <button class="btn-lg"><i class="i">&#xE8EE</i></button>
-                                        <button class="btn-lg"><i class="i">&#xE872</i></button>
-                                        <button class="btn-lg"><i class="i">&#xE254</i></button>
+                                        <button class="btn-shrink"></button>
+                                        <button class="btn-playlist"></button>
+                                        <button class="btn-remove"></button>
+                                        <button class="btn-edit"></button>
                                     </div>
                                 </td>
                             </tr>
@@ -430,10 +415,10 @@
                                 </td>
                                 <td>
                                     <div class="btn-toolbar">
-                                        <button class="btn-lg"><i class="i">&#xE915</i></button>
-                                        <button class="btn-lg"><i class="i">&#xE8EE</i></button>
-                                        <button class="btn-lg"><i class="i">&#xE872</i></button>
-                                        <button class="btn-lg"><i class="i">&#xE254</i></button>
+                                        <button class="btn-shrink"></button>
+                                        <button class="btn-playlist"></button>
+                                        <button class="btn-remove"></button>
+                                        <button class="btn-edit"></button>
                                     </div>
                                 </td>
                             </tr>
@@ -450,10 +435,10 @@
                                 </td>
                                 <td>
                                     <div class="btn-toolbar">
-                                        <button class="btn-lg"><i class="i">&#xE915</i></button>
-                                        <button class="btn-lg"><i class="i">&#xE8EE</i></button>
-                                        <button class="btn-lg"><i class="i">&#xE872</i></button>
-                                        <button class="btn-lg"><i class="i">&#xE254</i></button>
+                                        <button class="btn-shrink"></button>
+                                        <button class="btn-playlist"></button>
+                                        <button class="btn-remove"></button>
+                                        <button class="btn-edit"></button>
                                     </div>
                                 </td>
                             </tr>
@@ -470,10 +455,10 @@
                                 </td>
                                 <td>
                                     <div class="btn-toolbar">
-                                        <button class="btn-lg"><i class="i">&#xE915</i></button>
-                                        <button class="btn-lg"><i class="i">&#xE8EE</i></button>
-                                        <button class="btn-lg"><i class="i">&#xE872</i></button>
-                                        <button class="btn-lg"><i class="i">&#xE254</i></button>
+                                        <button class="btn-shrink"></button>
+                                        <button class="btn-playlist"></button>
+                                        <button class="btn-remove"></button>
+                                        <button class="btn-edit"></button>
                                     </div>
                                 </td>
                             </tr>
