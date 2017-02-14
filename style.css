@@ -6688,6 +6688,8 @@ main {
       main table td .btn-group {
         float: right; }
 
+form label {
+  min-width: 6rem; }
 form input[type=file] {
   width: 13rem; }
   @media (max-width: 767px) {

@@ -272,20 +272,20 @@
                             </select>
                         </div>
                         <div class="block">
-                            <input id="name" type="name">
                             <label for="name">Name</label>
+                            <input id="name" type="name">
                         </div>
                         <div class="block">
-                            <input id="password" type="password">
                             <label for="password">Password</label>
+                            <input id="password" type="password">
                         </div>
                         <div class="block">
-                            <input id="range" type="range">
                             <label for="range">Range</label>
+                            <input id="range" type="range">
                         </div>
                         <div class="block">
-                            <input id="text" type="text">
                             <label for="text">Textfield</label>
+                            <input id="text" type="text">
                         </div>
                         <div class="block">
                             <input id="radio" type="radio" value="true" id="radio1">
@@ -296,20 +296,19 @@
                             <label for="checkbox1">Testradio</label>
                         </div>
                         <div class="block">
-                            <input id="number" type="number">
                             <label for="number">Number</label>
+                            <input id="number" type="number">
                         </div>
                         <div class="block">
-                            <input id="date" type="date">
                             <label for="date">Date</label>
+                            <input id="date" type="date">
                         </div>
                         <div class="block">
-                            <textarea id="textarea" maxlength="20" rows="10"></textarea>
                             <label for="textarea">Textarea</label>
+                            <textarea id="textarea" maxlength="20" rows="10"></textarea>
                         </div>
                         <div class="block">
                             <input id="submit" type="submit" value="Submit">
-                            <label for="submit">Submit</label>
                         </div>
                         
                     </form>
@@ -507,15 +506,6 @@
             $('.nav-tabs a').click(function(event) {
                 event.preventDefault()
                 $(this).tab('show')
-            })
-            
-            $('textarea, input[type=name], input[type=password], input[type=text], input[type=number], input[type=date]').on('keyup change', function() {
-                if(this.value) {
-                    $(this).addClass('has-content')
-                }
-                else {
-                    $(this).removeClass('has-content')
-                }
             })
         })()
     </script>
