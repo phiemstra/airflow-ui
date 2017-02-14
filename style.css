@@ -6559,7 +6559,7 @@ header {
         content: "";
         transform: translate(0, 2px);
         font-size: 1em; }
-      .sidebar > nav > ul > li > a[href*=live-view]:before {
+      .sidebar > nav > ul > li > a[href*=live]:before {
         display: inline-block;
         font-family: 'Material Icons';
         text-transform: none;
@@ -6569,7 +6569,7 @@ header {
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
-      .sidebar > nav > ul > li > a[href*=videos]:before {
+      .sidebar > nav > ul > li > a[href*=clips]:before {
         display: inline-block;
         font-family: 'Material Icons';
         text-transform: none;
@@ -6579,7 +6579,7 @@ header {
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
-      .sidebar > nav > ul > li > a[href*=playlists]:before {
+      .sidebar > nav > ul > li > a[href*=clocks]:before {
         display: inline-block;
         font-family: 'Material Icons';
         text-transform: none;
@@ -6589,7 +6589,7 @@ header {
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
-      .sidebar > nav > ul > li > a[href*=scheduler]:before {
+      .sidebar > nav > ul > li > a[href*=planner]:before {
         display: inline-block;
         font-family: 'Material Icons';
         text-transform: none;
@@ -6599,7 +6599,7 @@ header {
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
-      .sidebar > nav > ul > li > a[href*=grids]:before {
+      .sidebar > nav > ul > li > a[href*=weekgrid]:before {
         display: inline-block;
         font-family: 'Material Icons';
         text-transform: none;
@@ -6609,7 +6609,7 @@ header {
         padding: 0 1rem 0 .3rem;
         transform: translate(0, 5px);
         font-size: 1.4rem; }
-      .sidebar > nav > ul > li > a[href*=download-automator]:before {
+      .sidebar > nav > ul > li > a[href*=automator]:before {
         display: inline-block;
         font-family: 'Material Icons';
         text-transform: none;

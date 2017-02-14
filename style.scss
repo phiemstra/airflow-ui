@@ -339,22 +339,22 @@ header {
                 @include icon("\E63B");
             }
 
-            &[href*=live-view]:before {
+            &[href*=live]:before {
                 @include icon("\E417", $sidebar: true);
             }
-            &[href*=videos]:before {
+            &[href*=clips]:before {
                 @include icon("\E2BE", $sidebar: true);
             }
-            &[href*=playlists]:before {
+            &[href*=clocks]:before {
                 @include icon("\E8EF", $sidebar: true);
             }
-            &[href*=scheduler]:before {
+            &[href*=planner]:before {
                 @include icon("\E916", $sidebar: true);
             }
-            &[href*=grids]:before {
+            &[href*=weekgrid]:before {
                 @include icon("\E3EC", $sidebar: true);
             }
-            &[href*=download-automator]:before {
+            &[href*=automator]:before {
                 @include icon("\E2C0", $sidebar: true);
             }
             &[href*=atem]:before {
