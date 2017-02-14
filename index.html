@@ -50,34 +50,36 @@
     </aside>
     
     <main>
-        <div class="container" style="max-width: 1400px;">
+        <div id="main-container" class="container" style="max-width: 1400px;">
           
-            <div class="card">
-                <h4 class="card-header">Live Preview</h4>
+            <div id="live-preview" class="card">
                 <div class="card-block">
+                    <h4 class="card-title" data-toggle="collapse" data-parent="#main-container">Live Preview</h4>
                     <p class="text-muted">The current item highlights automatically. The page will refresh as soon as the clock has ended.</p>
                     <div class="row">
-                            <div class="col-3">
-                                <figure class="live-preview">
-                                    <img src="screen.png" alt="">
-                                    <figcaption>
-                                        <button>Refresh</button>
-                                    </figcaption>
-                                </figure>
-                            </div>                    
-                            <div class="col-9">
-                                <div class="row card-block">
-                                    <div class="col-3"><strong>Current clock:</strong></div>
-                                    <div class="col-6">Mainplaylist - 09-02-2017 15:00</div>
-                                    <div class="col-3"><button class="btn-secondary"><i class="i">list</i></button></div>
-                                </div>
-                                <div class="row card-block">
-                                    <div class="col-3"><strong>Next clock:</strong></div>
-                                    <div class="col-6">Mainplaylist - 09-02-2017 16:00</div>
-                                    <div class="col-3"></div>
-                                </div>
+                        <div class="col-sm-3">
+                            <figure class="live-preview">
+                                <img src="screen.png" alt="">
+                                <figcaption>
+                                    <button>Refresh</button>
+                                </figcaption>
+                            </figure>
+                        </div>                    
+                        <div class="col-sm-9">
+                            <div class="row card-block">
+                                <div class="col-sm-3"><strong>Current clock:</strong></div>
+                                <div class="col-sm-6">Mainplaylist - 09-02-2017 15:00</div>
+                                <div class="col-sm-3"><div class="btn-group">
+                                    <button class="btn-secondary"><i class="i">list</i></button>
+                                </div></div>
+                            </div>
+                            <div class="row card-block">
+                                <div class="col-sm-3"><strong>Next clock:</strong></div>
+                                <div class="col-sm-6">Mainplaylist - 09-02-2017 16:00</div>
+                                <div class="col-sm-3"></div>
                             </div>
                         </div>
+                    </div>
                     <table>
                         <thead>
                             <th style="width: 15%">Template</th>
@@ -122,17 +124,19 @@
                 </div>
             </div>
            
-            <div class="card">
+            <div id="videos" class="card">
                 <div class="card-block">
-                <h4 class="card-title">Videos</h4>
+                <h4 class="card-title" data-toggle="collapse" data-parent="#main-container">Videos</h4>
                     
-                    <div class="row card-block">
+                    <div class="row block">
                        
-                        <div class="col-7 d-flex align-items-end">
-                            <button class="btn-secondary"><i class="i">&#xE147</i> Add</button>
-                            <button class="btn-secondary"><i class="i">&#xE147</i> Batch upload</button>
+                        <div class="col-sm-7 d-flex align-items-end">
+                            <div class="btn-group">
+                                <button class="btn-secondary"><i class="i">&#xE147</i> Add</button>
+                                <button class="btn-secondary"><i class="i">&#xE147</i> Batch upload</button>
+                            </div>
                         </div>
-                        <div class="col">
+                        <div class="col-sm">
                             <form action="#">
                                 <input type="text" placeholder="Search">
                                 <i class="i">search</i>
@@ -145,20 +149,20 @@
                         <div class="card-header">Filter</div>
                         <div class="card-block">
                             <div class="row">
-                                <div class="col-2">
+                                <div class="col-sm-2">
                                     <strong>Filter op type: </strong>
                                 </div>
-                                <div class="col">
+                                <div class="col-sm">
                                     <label><input type="checkbox"> Videoclips</label> 
                                     <label><input type="checkbox"> Programma's</label> 
                                     <label><input type="checkbox"> Filler</label> 
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-2">
+                                <div class="col-sm2">
                                     <strong>Filter op tag: </strong>
                                 </div>
-                                <div class="col">
+                                <div class="col-sm">
                                     <label><input type="checkbox"> Auto</label> <br>
                                     <label><input type="checkbox"> Pop</label> <br>
                                     <label><input type="checkbox"> New</label> <br>
@@ -252,9 +256,8 @@
                 </div>
             </div>
            
-            <div class="card">
-                <h4 class="card-header">Elements Preview</h4>
-                <div class="card-header">
+            <div id="elements" class="card">
+                <div class="card-header" data-toggle="collapse" data-parent="#main-container">
                     <ul class="nav nav-tabs card-header-tabs">
                         <li class="nav-item">
                             <a href="#nav-tab1" class="nav-link active">Forms</a>
@@ -355,9 +358,9 @@
                 <div id="nav-tab3" class="card-block tab-block">3</div>
             </div>
            
-            <div class="card">
-                <h4 class="card-header">Clocks</h4>
+            <div id="clocks" class="card">
                 <div class="card-block">
+                    <h4 class="card-title" data-toggle="collapse" data-parent="#main-container">Clocks</h4>
                     
                     <table>
                         <thead>

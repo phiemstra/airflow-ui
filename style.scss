@@ -31,6 +31,15 @@ $header-height:             5rem;
 $sidebar-width:             16rem;
 $sidebar-width-sm:          2.6rem;
 
+$enable-rounded:            false;
+$enable-shadows:            false;
+$enable-gradients:          false;
+$enable-transitions:        false;
+$enable-hover-media-query:  false;
+$enable-grid-classes:       true;
+$enable-print-styles:       false;
+
+
 @import "scss/bootstrap";
 @import "fonts/fonts";
 
@@ -55,6 +64,10 @@ html {
     height: 100%;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
+    
+    @include media-breakpoint-down(xs) {
+        font-size: .9rem;
+    }
 }
 
 body {
@@ -200,71 +213,69 @@ header {
         list-style: none;
         padding: 0;
         
-        > li {
-            > a {
-                display: block;
-                text-transform: uppercase;
-                line-height: 1rem;
-                min-width: $sidebar-width;
-                color: white;
-                padding: ($primary-spacer) 0 ($primary-spacer * 1.2) 0;
-                padding-left: ($primary-spacer / 2);
-                
-                @include media-breakpoint-down(sm) {
-                    padding-left: ($primary-spacer / 4);
-                }
-                
-                &:hover {
-                    text-decoration: none;
-                    background-color: rgba(255,255,255,0.4);
-                }
-                
-                &:focus,
-                &:active,
-                &.active {
-                    background-color: $primary-color;
-                    color: black;
-                }
-                
-                &:before {
-                    @include icon("\E63B");
-                }
-                
-                &[href*=live-view]:before {
-                    @include icon("\E417");
-                }
-                &[href*=videos]:before {
-                    @include icon("\E2BE");
-                }
-                &[href*=playlists]:before {
-                    @include icon("\E896");
-                }
-                &[href*=scheduler]:before {
-                    @include icon("\E916");
-                }
-                &[href*=grids]:before {
-                    @include icon("\E3EC");
-                }
-                &[href*=download-automator]:before {
-                    @include icon("\E2C0");
-                }
-                &[href*=atem]:before {
-                    @include icon("\E31A");
-                }
-                &[href*=log]:before {
-                    @include icon("\E90D");
-                }
-                
-                &[href*=live-view]:before,
-                &[href*=videos]:before,
-                &[href*=playlists]:before,
-                &[href*=scheduler]:before,
-                &[href*=grids]:before,
-                &[href*=download-automator]:before,
-                &[href*=atem]:before,
-                &[href*=log]:before {
-                    padding: 0 1.1rem 0 .3rem;
-                }
+        > li > a {
+            display: block;
+            text-transform: uppercase;
+            line-height: 1rem;
+            min-width: $sidebar-width;
+            color: white;
+            padding: ($primary-spacer) 0 ($primary-spacer * 1.2) 0;
+            padding-left: ($primary-spacer / 2);
+
+            @include media-breakpoint-down(sm) {
+                padding-left: ($primary-spacer / 4);
+            }
+
+            &:hover {
+                text-decoration: none;
+                background-color: rgba(255,255,255,0.4);
+            }
+
+            &:focus,
+            &:active,
+            &.active {
+                background-color: $primary-color;
+                color: black;
+            }
+
+            &:before {
+                @include icon("\E63B");
+            }
+
+            &[href*=live-view]:before {
+                @include icon("\E417");
+            }
+            &[href*=videos]:before {
+                @include icon("\E2BE");
+            }
+            &[href*=playlists]:before {
+                @include icon("\E896");
+            }
+            &[href*=scheduler]:before {
+                @include icon("\E916");
+            }
+            &[href*=grids]:before {
+                @include icon("\E3EC");
+            }
+            &[href*=download-automator]:before {
+                @include icon("\E2C0");
+            }
+            &[href*=atem]:before {
+                @include icon("\E31A");
+            }
+            &[href*=log]:before {
+                @include icon("\E90D");
+            }
+
+            &[href*=live-view]:before,
+            &[href*=videos]:before,
+            &[href*=playlists]:before,
+            &[href*=scheduler]:before,
+            &[href*=grids]:before,
+            &[href*=download-automator]:before,
+            &[href*=atem]:before,
+            &[href*=log]:before {
+                padding: 0 1.1rem 0 .3rem;
             }
         }
     }
@@ -366,6 +377,10 @@ form {
     }
     input[type=file] {
         width: 13rem;
+        
+        @include media-breakpoint-down(sm) {
+            width: 12rem;
+        }
     }
     
     textarea,
@@ -393,6 +408,10 @@ form {
                 transform: translateY(-1.5rem);
                 font-size: .8rem;
             }
+        }
+        @include media-breakpoint-down(sm) {
+            padding: 1rem 0rem .5rem;
+            width: 10rem;
         }
     }
     input[type=radio],
