@@ -450,6 +450,11 @@ main {
         }
         td {
             vertical-align: middle;
+            
+            > figure {
+                margin: 0;
+            }
+            
             & .btn-group {
                 float: right;
             }

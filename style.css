@@ -6705,6 +6705,8 @@ main {
         color: initial; }
     main table td {
       vertical-align: middle; }
+      main table td > figure {
+        margin: 0; }
       main table td .btn-group {
         float: right; }
 
