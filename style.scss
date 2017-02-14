@@ -107,7 +107,7 @@ button {
     font-weight: normal;
     text-transform: uppercase;
     
-    @at-root .btn-group & {
+    @at-root .btn-toolbar & {
         @extend .btn-secondary;
         padding: 0.5rem 1rem;
         font-size: 1.25rem;
