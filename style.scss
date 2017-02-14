@@ -197,6 +197,14 @@ header {
         float: right;
         padding: $header-height / 4;
         line-height: 2.5em;
+        
+        .admin-menu-welcome {
+            float: left;
+            
+            @include media-breakpoint-down(xs) {
+                display: none;
+            }
+        }
 
         .admin-menu-toggle {
             font-size: 1.5em;
@@ -428,6 +436,10 @@ main {
         @extend .table-responsive;
         th {
             border-top: 0;
+            a,
+            a:hover {
+                color: initial;
+            }
         }
         td {
             vertical-align: middle;

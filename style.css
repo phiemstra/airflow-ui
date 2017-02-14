@@ -6407,6 +6407,11 @@ header {
     float: right;
     padding: 1.25rem;
     line-height: 2.5em; }
+    header .admin-menu .admin-menu-welcome {
+      float: left; }
+      @media (max-width: 575px) {
+        header .admin-menu .admin-menu-welcome {
+          display: none; } }
     header .admin-menu .admin-menu-toggle {
       font-size: 1.5em;
       float: right;
@@ -6674,6 +6679,9 @@ main {
     /* Tables have are set to 'fixed' by default. This means they should achieve full 100% width by giving the th elements a % of width */ }
     main table th {
       border-top: 0; }
+      main table th a,
+      main table th a:hover {
+        color: initial; }
     main table td {
       vertical-align: middle; }
       main table td .btn-group {
