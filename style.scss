@@ -86,66 +86,6 @@ img {
     max-width: 100%;
     height: auto;
 }
-
-/*
- * Custom classes
- */
-.modal {
-    @extend .fade;
-    
-    &.fade .modal-container {
-        @include transition($modal-transition);
-        transform: translate(0, -25%);
-    }
-    &.show .modal-container { transform: translate(0, 0); }
-    
-    > .modal-container {
-        @extend .modal-dialog;
-        @extend .modal-lg;
-        @extend .modal-content;
-    }
-}
-
-/*
- * Icons and Buttons
- */
-@mixin icon($icon, $sidebar: false) {
-    display: inline-block;
-    font-family: 'Material Icons';
-    text-transform: none;
-    content: $icon;
-    transform: translate(0, 2px);
-    font-size: 1em;
-    
-    @if($sidebar) {
-        padding: 0 1rem 0 .3rem;
-        transform: translate(0, 5px);
-        font-size: 1.4rem;
-    }
-}
-$icons: (
-    "preview": '\e417', 
-    "remove": '\e872', 
-    "edit": '\e254', 
-    "playlist": '\e8ee', 
-    "shrink": '\e915', 
-    "add": '\e147', 
-    "plus-box": '\e146', 
-    "minus-box": '\e909', 
-    "copy": '\e14D',
-    "next": '\e409',
-    "previous": '\e408',
-    "close": '\e5cd'
-);
-@each $key, $val in $icons {
-    .btn-#{$key}:before {
-        @include icon($val);
-    }
-    i.i-#{$key}:before {
-        @include icon($val);
-    }
-}
-
 button,
 a.btn {
     @extend .btn;
@@ -180,6 +120,79 @@ a.btn {
     &.btn-outline-primary,
     &.btn-outline-primary:hover {
         color: if(lightness($primary-color) > 50, black, $primary-color);
+    }
+}
+
+/*
+ * Custom classes
+ */
+.modal {
+    @extend .fade;
+    
+    > .modal-container {
+        @extend .modal-dialog;
+        @extend .modal-lg;
+        @extend .modal-content;
+        
+        @at-root .modal.fade .modal-container {
+            @include transition($modal-transition);
+            transform: translate(0, -25%);
+        }
+        @at-root .modal.show .modal-container {
+            transform: translate(0, 0);
+        }
+        
+        &.modal-alert {
+            max-width: 25rem;
+            margin: 25% auto;
+        }
+    }
+}
+
+/*
+ * Icons and Buttons
+ */
+@mixin icon($icon, $sidebar: false) {
+    display: inline-block;
+    font-family: 'Material Icons';
+    text-transform: none;
+    content: $icon;
+    transform: translate(0, 2px);
+    font-size: 1em;
+    
+    @if($sidebar) {
+        padding: 0 1rem 0 .3rem;
+        transform: translate(0, 5px);
+        font-size: 1.4rem;
+    }
+}
+$icons: ("preview": '\e417', 
+    "remove": '\e872', 
+    "delete": '\e92b', 
+    "edit": '\e254', 
+    "playlist": '\e8ee', 
+    "shrink": '\e915', 
+    "add": '\e147', 
+    "plus-box": '\e146', 
+    "minus-box": '\e909', 
+    "copy": '\e14D',
+    "next": '\e409',
+    "previous": '\e408',
+    "close": '\e5cd'
+);
+@each $key, $val in $icons {
+    
+    .btn-#{$key}{
+        @extend .btn;
+        @extend .btn-primary;
+        @extend .btn-sm;
+
+        &:before {
+            @include icon($val);
+        }
+    }
+    i.i-#{$key}:before {
+        @include icon($val);
     }
 }
 
