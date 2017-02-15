@@ -186,9 +186,16 @@
                             Alert modal
                         </button>
                     </form>
+                    
                     <hr>
+                    
                     <!-- Link alert -->
-                    <a href="https://google.com?q=color+red" class="btn-delete" data-alert>Delete</a>
+                    <a href="https://google.com?q=color+red" class="btn-delete" data-alert>Delete 1</a>
+                    
+                    <hr>
+                    
+                    <!-- Link alert -->
+                    <a href="https://google.com?q=color+red" class="btn-delete" data-alert>Delete 2</a>
                     
                 </div>
             </div>
@@ -597,36 +604,42 @@
             $('[data-alert]').on('click', function(e) {
                 e.preventDefault()
                 
-                that = this
+                currentActionTrigger = this
                 
+                // Create the modal element if it doesn't exist
                 if($('#alert-modal').length < 1) {
                     $('body').append(alertModal)
                 }
                 
+                // Set focuss on the dismiss button
                 $('#alert-modal').on('show.bs.modal', function(e) {
-                    console.log(that)
-                    
                     $('[data-dismiss]').focus()
                     
                 })
                 
+                // Trigger modal
                 $('#alert-modal').modal({
                     keyboard: true
                 })
                 
+                // Remove handlers on modal hide
                 $('#alert-modal').on('hidden.bs.modal', function(e) {
-                    console.log('hidden')
                     $('#alert-modal').off('show.bs.modal')
+                    $('#alert-modal').off('hidden.bs.modal')
+                    $('[data-confirm]').off('click')
+                })
+                
+                // User confirms action
+                $('[data-confirm]').on('click', function(e) {
+                    console.log(currentActionTrigger)
+                    
+                    $(currentActionTrigger).off('click')
+                    currentActionTrigger.click()
+                    
                 })
             })
             
             
-            $('[data-confirm]').on(function(e) {
-                // remove event handler on data-alert button/link, trigger original action
-                console.log(this)
-//                $().off('click')
-//                $().click()
-            })
             
         })()
     </script>
