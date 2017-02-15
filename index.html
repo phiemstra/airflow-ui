@@ -609,6 +609,7 @@
             
             $('#sidebar-toggle').click(function() {
                 $('.sidebar').toggleClass('tucked')
+                $(window).off('resize')
             })
             
             $('.admin-menu-toggle').click(function() {
