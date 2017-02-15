@@ -148,6 +148,31 @@ a.btn {
         }
     }
 }
+$badges: (default primary success info warning danger);
+@each $badge in $badges{
+    .badge-#{$badge} {
+        @extend .badge;
+    }
+//    @debug #{$badge};
+}
+.badge-primary {
+    color: black;
+}
+.alert {
+    border: 0;
+}
+$alerts: (success info warning danger);
+@each $alert in $alerts{
+    .alert-#{$alert} {
+        @extend .alert;
+    }
+}
+.close {
+    &:hover {
+        background-color: transparent;
+    }
+    text-shadow: none;
+}
 
 /*
  * Icons and Buttons
@@ -193,6 +218,7 @@ $icons: ("preview": '\e417',
     }
     i.i-#{$key}:before {
         @include icon($val);
+        font-style: normal;
     }
 }
 

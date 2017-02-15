@@ -4560,7 +4560,7 @@ form [data-toggle="buttons"] > .btn-group > input[type=button] input[type="check
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem; }
 
-.badge {
+.badge, .badge-default, .badge-primary, .badge-success, .badge-info, .badge-warning, .badge-danger {
   display: inline-block;
   padding: 0.25em 0.4em;
   font-size: 75%;
@@ -4570,16 +4570,35 @@ form [data-toggle="buttons"] > .btn-group > input[type=button] input[type="check
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline; }
-  .badge:empty {
+  .badge:empty, .badge-default:empty, .badge-primary:empty, .badge-success:empty, .badge-info:empty, .badge-warning:empty, .badge-danger:empty {
     display: none; }
 
 .btn .badge, button .badge, form input[type=file] .badge,
 form input[type=submit] .badge,
-form input[type=button] .badge, .btn-preview .badge, .btn-remove .badge, .btn-delete .badge, .btn-edit .badge, .btn-playlist .badge, .btn-shrink .badge, .btn-add .badge, .btn-plus-box .badge, .btn-minus-box .badge, .btn-copy .badge, .btn-next .badge, .btn-previous .badge, .btn-close .badge {
+form input[type=button] .badge,
+a.btn .badge, .btn-preview .badge, .btn-remove .badge, .btn-delete .badge, .btn-edit .badge, .btn-playlist .badge, .btn-shrink .badge, .btn-add .badge, .btn-plus-box .badge, .btn-minus-box .badge, .btn-copy .badge, .btn-next .badge, .btn-previous .badge, .btn-close .badge, .btn .badge-default, button .badge-default, form input[type=file] .badge-default,
+form input[type=submit] .badge-default,
+form input[type=button] .badge-default,
+a.btn .badge-default, .btn-preview .badge-default, .btn-remove .badge-default, .btn-delete .badge-default, .btn-edit .badge-default, .btn-playlist .badge-default, .btn-shrink .badge-default, .btn-add .badge-default, .btn-plus-box .badge-default, .btn-minus-box .badge-default, .btn-copy .badge-default, .btn-next .badge-default, .btn-previous .badge-default, .btn-close .badge-default, .btn .badge-primary, button .badge-primary, form input[type=file] .badge-primary,
+form input[type=submit] .badge-primary,
+form input[type=button] .badge-primary,
+a.btn .badge-primary, .btn-preview .badge-primary, .btn-remove .badge-primary, .btn-delete .badge-primary, .btn-edit .badge-primary, .btn-playlist .badge-primary, .btn-shrink .badge-primary, .btn-add .badge-primary, .btn-plus-box .badge-primary, .btn-minus-box .badge-primary, .btn-copy .badge-primary, .btn-next .badge-primary, .btn-previous .badge-primary, .btn-close .badge-primary, .btn .badge-success, button .badge-success, form input[type=file] .badge-success,
+form input[type=submit] .badge-success,
+form input[type=button] .badge-success,
+a.btn .badge-success, .btn-preview .badge-success, .btn-remove .badge-success, .btn-delete .badge-success, .btn-edit .badge-success, .btn-playlist .badge-success, .btn-shrink .badge-success, .btn-add .badge-success, .btn-plus-box .badge-success, .btn-minus-box .badge-success, .btn-copy .badge-success, .btn-next .badge-success, .btn-previous .badge-success, .btn-close .badge-success, .btn .badge-info, button .badge-info, form input[type=file] .badge-info,
+form input[type=submit] .badge-info,
+form input[type=button] .badge-info,
+a.btn .badge-info, .btn-preview .badge-info, .btn-remove .badge-info, .btn-delete .badge-info, .btn-edit .badge-info, .btn-playlist .badge-info, .btn-shrink .badge-info, .btn-add .badge-info, .btn-plus-box .badge-info, .btn-minus-box .badge-info, .btn-copy .badge-info, .btn-next .badge-info, .btn-previous .badge-info, .btn-close .badge-info, .btn .badge-warning, button .badge-warning, form input[type=file] .badge-warning,
+form input[type=submit] .badge-warning,
+form input[type=button] .badge-warning,
+a.btn .badge-warning, .btn-preview .badge-warning, .btn-remove .badge-warning, .btn-delete .badge-warning, .btn-edit .badge-warning, .btn-playlist .badge-warning, .btn-shrink .badge-warning, .btn-add .badge-warning, .btn-plus-box .badge-warning, .btn-minus-box .badge-warning, .btn-copy .badge-warning, .btn-next .badge-warning, .btn-previous .badge-warning, .btn-close .badge-warning, .btn .badge-danger, button .badge-danger, form input[type=file] .badge-danger,
+form input[type=submit] .badge-danger,
+form input[type=button] .badge-danger,
+a.btn .badge-danger, .btn-preview .badge-danger, .btn-remove .badge-danger, .btn-delete .badge-danger, .btn-edit .badge-danger, .btn-playlist .badge-danger, .btn-shrink .badge-danger, .btn-add .badge-danger, .btn-plus-box .badge-danger, .btn-minus-box .badge-danger, .btn-copy .badge-danger, .btn-next .badge-danger, .btn-previous .badge-danger, .btn-close .badge-danger {
   position: relative;
   top: -1px; }
 
-a.badge:focus, a.badge:hover {
+a.badge:focus, a.badge-default:focus, a.badge-primary:focus, a.badge-success:focus, a.badge-info:focus, a.badge-warning:focus, a.badge-danger:focus, a.badge:hover, a.badge-default:hover, a.badge-primary:hover, a.badge-success:hover, a.badge-info:hover, a.badge-warning:hover, a.badge-danger:hover {
   color: #fff;
   text-decoration: none;
   cursor: pointer; }
@@ -4618,7 +4637,7 @@ a.badge:focus, a.badge:hover {
   .badge-danger[href]:focus, .badge-danger[href]:hover {
     background-color: #ad2525; }
 
-.alert {
+.alert, .alert-success, .alert-info, .alert-warning, .alert-danger {
   padding: 0.75rem 1.25rem;
   margin-bottom: 1rem;
   border: 1px solid transparent; }
@@ -7914,6 +7933,17 @@ a.btn-close {
   max-width: 25rem;
   margin: 25% auto; }
 
+.badge-primary {
+  color: black; }
+
+.alert, .alert-success, .alert-info, .alert-warning, .alert-danger {
+  border: 0; }
+
+.close {
+  text-shadow: none; }
+  .close:hover {
+    background-color: transparent; }
+
 /*
  * Icons and Buttons
  */
@@ -7931,7 +7961,8 @@ i.i-preview:before {
   text-transform: none;
   content: "";
   transform: translate(0, 2px);
-  font-size: 1em; }
+  font-size: 1em;
+  font-style: normal; }
 
 .btn-remove:before {
   display: inline-block;
@@ -7947,7 +7978,8 @@ i.i-remove:before {
   text-transform: none;
   content: "";
   transform: translate(0, 2px);
-  font-size: 1em; }
+  font-size: 1em;
+  font-style: normal; }
 
 .btn-delete:before {
   display: inline-block;
@@ -7963,7 +7995,8 @@ i.i-delete:before {
   text-transform: none;
   content: "";
   transform: translate(0, 2px);
-  font-size: 1em; }
+  font-size: 1em;
+  font-style: normal; }
 
 .btn-edit:before {
   display: inline-block;
@@ -7979,7 +8012,8 @@ i.i-edit:before {
   text-transform: none;
   content: "";
   transform: translate(0, 2px);
-  font-size: 1em; }
+  font-size: 1em;
+  font-style: normal; }
 
 .btn-playlist:before {
   display: inline-block;
@@ -7995,7 +8029,8 @@ i.i-playlist:before {
   text-transform: none;
   content: "";
   transform: translate(0, 2px);
-  font-size: 1em; }
+  font-size: 1em;
+  font-style: normal; }
 
 .btn-shrink:before {
   display: inline-block;
@@ -8011,7 +8046,8 @@ i.i-shrink:before {
   text-transform: none;
   content: "";
   transform: translate(0, 2px);
-  font-size: 1em; }
+  font-size: 1em;
+  font-style: normal; }
 
 .btn-add:before {
   display: inline-block;
@@ -8027,7 +8063,8 @@ i.i-add:before {
   text-transform: none;
   content: "";
   transform: translate(0, 2px);
-  font-size: 1em; }
+  font-size: 1em;
+  font-style: normal; }
 
 .btn-plus-box:before {
   display: inline-block;
@@ -8043,7 +8080,8 @@ i.i-plus-box:before {
   text-transform: none;
   content: "";
   transform: translate(0, 2px);
-  font-size: 1em; }
+  font-size: 1em;
+  font-style: normal; }
 
 .btn-minus-box:before {
   display: inline-block;
@@ -8059,7 +8097,8 @@ i.i-minus-box:before {
   text-transform: none;
   content: "";
   transform: translate(0, 2px);
-  font-size: 1em; }
+  font-size: 1em;
+  font-style: normal; }
 
 .btn-copy:before {
   display: inline-block;
@@ -8075,7 +8114,8 @@ i.i-copy:before {
   text-transform: none;
   content: "";
   transform: translate(0, 2px);
-  font-size: 1em; }
+  font-size: 1em;
+  font-style: normal; }
 
 .btn-next:before {
   display: inline-block;
@@ -8091,7 +8131,8 @@ i.i-next:before {
   text-transform: none;
   content: "";
   transform: translate(0, 2px);
-  font-size: 1em; }
+  font-size: 1em;
+  font-style: normal; }
 
 .btn-previous:before {
   display: inline-block;
@@ -8107,7 +8148,8 @@ i.i-previous:before {
   text-transform: none;
   content: "";
   transform: translate(0, 2px);
-  font-size: 1em; }
+  font-size: 1em;
+  font-style: normal; }
 
 .btn-close:before {
   display: inline-block;
@@ -8123,7 +8165,8 @@ i.i-close:before {
   text-transform: none;
   content: "";
   transform: translate(0, 2px);
-  font-size: 1em; }
+  font-size: 1em;
+  font-style: normal; }
 
 /*
  * Form fields and related
