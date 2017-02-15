@@ -8735,7 +8735,8 @@ i.i-close:before {
  * Form fields and related
  */
 form label {
-  min-width: 6rem; }
+  min-width: 6rem;
+  line-height: 2rem; }
 form input[type=file] {
   width: 13rem; }
   @media (max-width: 767px) {
