@@ -173,6 +173,20 @@ $alerts: (success info warning danger);
     }
     text-shadow: none;
 }
+.block {
+    margin-bottom: $primary-spacer;
+    position: relative;
+
+    .card-header {
+        font-weight: normal;
+        border: 0;
+        text-transform: uppercase;
+
+        @at-root h4.card-header {
+            font-size: 1.25rem;
+        }
+    }
+}
 
 /*
  * Icons and Buttons
@@ -565,20 +579,6 @@ main {
     }
     
     .card,
-    .block {
-        margin-bottom: $primary-spacer;
-        position: relative;
-        
-        .card-header {
-            font-weight: normal;
-            border: 0;
-            text-transform: uppercase;
-            
-            @at-root h4.card-header {
-                font-size: 1.25rem;
-            }
-        }
-    }
     
     .nav-link {
         color: black;

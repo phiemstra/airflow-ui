@@ -7944,6 +7944,16 @@ a.btn-close {
   .close:hover {
     background-color: transparent; }
 
+.block {
+  margin-bottom: 1rem;
+  position: relative; }
+  .block .card-header {
+    font-weight: normal;
+    border: 0;
+    text-transform: uppercase; }
+    h4.card-header {
+      font-size: 1.25rem; }
+
 /*
  * Icons and Buttons
  */
@@ -8547,16 +8557,6 @@ main {
     main {
       padding-left: 3.6rem; } }
   main .card,
-  main .block {
-    margin-bottom: 1rem;
-    position: relative; }
-    main .card .card-header,
-    main .block .card-header {
-      font-weight: normal;
-      border: 0;
-      text-transform: uppercase; }
-      h4.card-header {
-        font-size: 1.25rem; }
   main .nav-link {
     color: black;
     border: 0 !important; }
