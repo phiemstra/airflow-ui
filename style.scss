@@ -158,6 +158,7 @@ $badges: (default primary success info warning danger);
 .badge-primary {
     color: black;
 }
+
 .alert {
     border: 0;
 }
@@ -173,7 +174,9 @@ $alerts: (success info warning danger);
     }
     text-shadow: none;
 }
-.block {
+
+.block,
+.card {
     margin-bottom: $primary-spacer;
     position: relative;
 
@@ -186,6 +189,12 @@ $alerts: (success info warning danger);
             font-size: 1.25rem;
         }
     }
+}
+
+.center-y {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /*
@@ -232,6 +241,9 @@ $icons: ("preview": '\e417',
 
         &:before {
             @include icon($val);
+        }
+        &.no-border {
+            border: 0;
         }
     }
     i.i-#{$key}:before {
@@ -581,8 +593,6 @@ main {
     @include media-breakpoint-down(sm) {
         padding-left: $sidebar-width-sm + $primary-spacer;
     }
-    
-    .card,
     
     .nav-link {
         color: black;

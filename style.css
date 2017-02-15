@@ -8388,15 +8388,22 @@ a.btn-close {
   .close:hover {
     background-color: transparent; }
 
-.block {
+.block,
+.card {
   margin-bottom: 1rem;
   position: relative; }
-  .block .card-header {
+  .block .card-header,
+  .card .card-header {
     font-weight: normal;
     border: 0;
     text-transform: uppercase; }
     h4.card-header {
       font-size: 1.25rem; }
+
+.center-y {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); }
 
 /*
  * Icons and Buttons
@@ -8408,6 +8415,8 @@ a.btn-close {
   content: "";
   transform: translate(0, 2px);
   font-size: 1em; }
+.btn-preview.no-border {
+  border: 0; }
 
 i.i-preview:before {
   display: inline-block;
@@ -8425,6 +8434,8 @@ i.i-preview:before {
   content: "";
   transform: translate(0, 2px);
   font-size: 1em; }
+.btn-remove.no-border {
+  border: 0; }
 
 i.i-remove:before {
   display: inline-block;
@@ -8442,6 +8453,8 @@ i.i-remove:before {
   content: "";
   transform: translate(0, 2px);
   font-size: 1em; }
+.btn-delete.no-border {
+  border: 0; }
 
 i.i-delete:before {
   display: inline-block;
@@ -8459,6 +8472,8 @@ i.i-delete:before {
   content: "";
   transform: translate(0, 2px);
   font-size: 1em; }
+.btn-edit.no-border {
+  border: 0; }
 
 i.i-edit:before {
   display: inline-block;
@@ -8476,6 +8491,8 @@ i.i-edit:before {
   content: "";
   transform: translate(0, 2px);
   font-size: 1em; }
+.btn-playlist.no-border {
+  border: 0; }
 
 i.i-playlist:before {
   display: inline-block;
@@ -8493,6 +8510,8 @@ i.i-playlist:before {
   content: "";
   transform: translate(0, 2px);
   font-size: 1em; }
+.btn-playlist-add.no-border {
+  border: 0; }
 
 i.i-playlist-add:before {
   display: inline-block;
@@ -8510,6 +8529,8 @@ i.i-playlist-add:before {
   content: "";
   transform: translate(0, 2px);
   font-size: 1em; }
+.btn-playlist-check.no-border {
+  border: 0; }
 
 i.i-playlist-check:before {
   display: inline-block;
@@ -8527,6 +8548,8 @@ i.i-playlist-check:before {
   content: "";
   transform: translate(0, 2px);
   font-size: 1em; }
+.btn-playlist-play.no-border {
+  border: 0; }
 
 i.i-playlist-play:before {
   display: inline-block;
@@ -8544,6 +8567,8 @@ i.i-playlist-play:before {
   content: "";
   transform: translate(0, 2px);
   font-size: 1em; }
+.btn-search.no-border {
+  border: 0; }
 
 i.i-search:before {
   display: inline-block;
@@ -8561,6 +8586,8 @@ i.i-search:before {
   content: "";
   transform: translate(0, 2px);
   font-size: 1em; }
+.btn-shrink.no-border {
+  border: 0; }
 
 i.i-shrink:before {
   display: inline-block;
@@ -8578,6 +8605,8 @@ i.i-shrink:before {
   content: "";
   transform: translate(0, 2px);
   font-size: 1em; }
+.btn-add.no-border {
+  border: 0; }
 
 i.i-add:before {
   display: inline-block;
@@ -8595,6 +8624,8 @@ i.i-add:before {
   content: "";
   transform: translate(0, 2px);
   font-size: 1em; }
+.btn-plus-box.no-border {
+  border: 0; }
 
 i.i-plus-box:before {
   display: inline-block;
@@ -8612,6 +8643,8 @@ i.i-plus-box:before {
   content: "";
   transform: translate(0, 2px);
   font-size: 1em; }
+.btn-minus-box.no-border {
+  border: 0; }
 
 i.i-minus-box:before {
   display: inline-block;
@@ -8629,6 +8662,8 @@ i.i-minus-box:before {
   content: "";
   transform: translate(0, 2px);
   font-size: 1em; }
+.btn-copy.no-border {
+  border: 0; }
 
 i.i-copy:before {
   display: inline-block;
@@ -8646,6 +8681,8 @@ i.i-copy:before {
   content: "";
   transform: translate(0, 2px);
   font-size: 1em; }
+.btn-next.no-border {
+  border: 0; }
 
 i.i-next:before {
   display: inline-block;
@@ -8663,6 +8700,8 @@ i.i-next:before {
   content: "";
   transform: translate(0, 2px);
   font-size: 1em; }
+.btn-previous.no-border {
+  border: 0; }
 
 i.i-previous:before {
   display: inline-block;
@@ -8680,6 +8719,8 @@ i.i-previous:before {
   content: "";
   transform: translate(0, 2px);
   font-size: 1em; }
+.btn-close.no-border {
+  border: 0; }
 
 i.i-close:before {
   display: inline-block;
@@ -9068,7 +9109,6 @@ main {
   @media (max-width: 767px) {
     main {
       padding-left: 3.6rem; } }
-  main .card,
   main .nav-link {
     color: black;
     border: 0 !important; }
