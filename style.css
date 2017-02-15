@@ -2312,10 +2312,10 @@ input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%; }
 
-.fade {
+.fade, .modal {
   opacity: 0;
   transition: opacity 0.15s linear; }
-  .fade.show {
+  .fade.show, .show.modal {
     opacity: 1; }
 
 .collapse {
@@ -3773,22 +3773,22 @@ form input.close[type=button] {
   display: none;
   overflow: hidden;
   outline: 0; }
-  .modal.fade .modal-dialog {
-    transition: transform 0.3s ease-out;
+  .modal.fade .modal-dialog, .modal .modal-dialog, .modal.fade .modal > .modal-container, .modal > .modal-container {
+    transition: transform 160ms ease;
     transform: translate(0, -25%); }
-  .modal.show .modal-dialog {
+  .modal.show .modal-dialog, .modal.show .modal > .modal-container {
     transform: translate(0, 0); }
 
 .modal-open .modal {
   overflow-x: hidden;
   overflow-y: auto; }
 
-.modal-dialog {
+.modal-dialog, .modal > .modal-container {
   position: relative;
   width: auto;
   margin: 10px; }
 
-.modal-content {
+.modal-content, .modal > .modal-container {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -3805,7 +3805,7 @@ form input.close[type=button] {
   left: 0;
   z-index: 1040;
   background-color: #000; }
-  .modal-backdrop.fade {
+  .modal-backdrop.fade, .modal-backdrop.modal {
     opacity: 0; }
   .modal-backdrop.show {
     opacity: 0.5; }
@@ -3845,14 +3845,14 @@ form input.close[type=button] {
   overflow: scroll; }
 
 @media (min-width: 576px) {
-  .modal-dialog {
+  .modal-dialog, .modal > .modal-container {
     max-width: 500px;
     margin: 30px auto; }
 
   .modal-sm {
     max-width: 300px; } }
 @media (min-width: 992px) {
-  .modal-lg {
+  .modal-lg, .modal > .modal-container {
     max-width: 800px; } }
 .align-baseline {
   vertical-align: baseline !important; }
@@ -6360,6 +6360,9 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased; }
 
+/*
+ * Styling for default HTML elements
+ */
 body,
 html {
   font-family: "Ubuntu", sans-serif;
@@ -6389,6 +6392,18 @@ img {
   max-width: 100%;
   height: auto; }
 
+/*
+ * Custom classes
+ */
+.modal.fade .modal-container, .modal .modal-container {
+  transition: transform 160ms ease;
+  transform: translate(0, -25%); }
+.modal.show .modal-container {
+  transform: translate(0, 0); }
+
+/*
+ * Icons and Buttons
+ */
 button, form input[type=file],
 form input[type=submit],
 form input[type=button],
@@ -6524,6 +6539,102 @@ a.btn {
   a.btn.btn-outline-primary:hover {
     color: black; }
 
+/*
+ * Form fields and related
+ */
+form label {
+  min-width: 6rem; }
+form input[type=file] {
+  width: 13rem; }
+  @media (max-width: 767px) {
+    form input[type=file] {
+      width: 12rem; } }
+form textarea,
+form input[type=name],
+form input[type=password],
+form input[type=text],
+form input[type=number],
+form input[type=date] {
+  padding: .5rem .4rem .5rem;
+  border: 0;
+  border-bottom: 1px solid gray;
+  font-family: "Ubuntu", sans-serif; }
+  form textarea:focus, form textarea.has-content,
+  form input[type=name]:focus,
+  form input[type=name].has-content,
+  form input[type=password]:focus,
+  form input[type=password].has-content,
+  form input[type=text]:focus,
+  form input[type=text].has-content,
+  form input[type=number]:focus,
+  form input[type=number].has-content,
+  form input[type=date]:focus,
+  form input[type=date].has-content {
+    outline: none; }
+    form textarea:focus + label, form textarea.has-content + label,
+    form input[type=name]:focus + label,
+    form input[type=name].has-content + label,
+    form input[type=password]:focus + label,
+    form input[type=password].has-content + label,
+    form input[type=text]:focus + label,
+    form input[type=text].has-content + label,
+    form input[type=number]:focus + label,
+    form input[type=number].has-content + label,
+    form input[type=date]:focus + label,
+    form input[type=date].has-content + label {
+      color: black;
+      font-size: .9em;
+      top: -1em; }
+  @media (max-width: 767px) {
+    form textarea,
+    form input[type=name],
+    form input[type=password],
+    form input[type=text],
+    form input[type=number],
+    form input[type=date] {
+      padding: 1rem 0rem .5rem;
+      width: 10rem; } }
+form input[type=radio] + label,
+form input[type=checkbox] + label {
+  margin-left: .5rem; }
+form textarea + label,
+form input[type=name] + label,
+form input[type=password] + label,
+form input[type=text] + label,
+form input[type=number] + label,
+form input[type=date] + label {
+  color: #aaa;
+  position: absolute;
+  left: .5em;
+  top: .5em;
+  transition: all 160ms ease; }
+
+date-input-polyfill {
+  padding: 1rem !important; }
+  date-input-polyfill [data-selected] {
+    background-color: #FFFD38 !important; }
+  date-input-polyfill button, date-input-polyfill form input[type=file], form date-input-polyfill input[type=file],
+  date-input-polyfill form input[type=submit],
+  form date-input-polyfill input[type=submit],
+  date-input-polyfill form input[type=button],
+  form date-input-polyfill input[type=button] {
+    color: black !important;
+    background-color: #FFFD38 !important;
+    border-color: #FFFD38 !important;
+    padding: 1% !important;
+    width: 24% !important; }
+  date-input-polyfill select:first-of-type {
+    width: 27% !important;
+    margin-right: 1% !important; }
+  date-input-polyfill select {
+    width: 47% !important;
+    margin-right: 1% !important; }
+  date-input-polyfill table {
+    margin-top: 0.5rem !important; }
+
+/*
+ * Main scaffolding
+ */
 header {
   position: fixed;
   top: 0;
@@ -6839,93 +6950,3 @@ main {
         margin: 0; }
       main table td .btn-group {
         float: right; }
-
-form label {
-  min-width: 6rem; }
-form input[type=file] {
-  width: 13rem; }
-  @media (max-width: 767px) {
-    form input[type=file] {
-      width: 12rem; } }
-form textarea,
-form input[type=name],
-form input[type=password],
-form input[type=text],
-form input[type=number],
-form input[type=date] {
-  padding: .5rem .4rem .5rem;
-  border: 0;
-  border-bottom: 1px solid gray;
-  font-family: "Ubuntu", sans-serif; }
-  form textarea:focus, form textarea.has-content,
-  form input[type=name]:focus,
-  form input[type=name].has-content,
-  form input[type=password]:focus,
-  form input[type=password].has-content,
-  form input[type=text]:focus,
-  form input[type=text].has-content,
-  form input[type=number]:focus,
-  form input[type=number].has-content,
-  form input[type=date]:focus,
-  form input[type=date].has-content {
-    outline: none; }
-    form textarea:focus + label, form textarea.has-content + label,
-    form input[type=name]:focus + label,
-    form input[type=name].has-content + label,
-    form input[type=password]:focus + label,
-    form input[type=password].has-content + label,
-    form input[type=text]:focus + label,
-    form input[type=text].has-content + label,
-    form input[type=number]:focus + label,
-    form input[type=number].has-content + label,
-    form input[type=date]:focus + label,
-    form input[type=date].has-content + label {
-      color: black;
-      font-size: .9em;
-      top: -1em; }
-  @media (max-width: 767px) {
-    form textarea,
-    form input[type=name],
-    form input[type=password],
-    form input[type=text],
-    form input[type=number],
-    form input[type=date] {
-      padding: 1rem 0rem .5rem;
-      width: 10rem; } }
-form input[type=radio] + label,
-form input[type=checkbox] + label {
-  margin-left: .5rem; }
-form textarea + label,
-form input[type=name] + label,
-form input[type=password] + label,
-form input[type=text] + label,
-form input[type=number] + label,
-form input[type=date] + label {
-  color: #aaa;
-  position: absolute;
-  left: .5em;
-  top: .5em;
-  transition: all 160ms ease; }
-
-date-input-polyfill {
-  padding: 1rem !important; }
-  date-input-polyfill [data-selected] {
-    background-color: #FFFD38 !important; }
-  date-input-polyfill button, date-input-polyfill form input[type=file], form date-input-polyfill input[type=file],
-  date-input-polyfill form input[type=submit],
-  form date-input-polyfill input[type=submit],
-  date-input-polyfill form input[type=button],
-  form date-input-polyfill input[type=button] {
-    color: black !important;
-    background-color: #FFFD38 !important;
-    border-color: #FFFD38 !important;
-    padding: 1% !important;
-    width: 24% !important; }
-  date-input-polyfill select:first-of-type {
-    width: 27% !important;
-    margin-right: 1% !important; }
-  date-input-polyfill select {
-    width: 47% !important;
-    margin-right: 1% !important; }
-  date-input-polyfill table {
-    margin-top: 0.5rem !important; }

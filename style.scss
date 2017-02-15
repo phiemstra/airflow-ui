@@ -25,6 +25,7 @@ $brand-success:             #22dd3f;
 $brand-info:                #21edf5;
 $link-color:                $secondary-color;
 $btn-primary-color:         black;
+$modal-transition:          transform $primary-speed $primary-timing-function;
 
 $primary-spacer:            1rem;
 $header-height:             5rem;
@@ -43,21 +44,9 @@ $enable-print-styles:       false;
 @import "scss/bootstrap";
 @import "fonts/fonts";
 
-@mixin icon($icon, $sidebar: false) {
-    display: inline-block;
-    font-family: 'Material Icons';
-    text-transform: none;
-    content: $icon;
-    transform: translate(0, 2px);
-    font-size: 1em;
-    
-    @if($sidebar) {
-        padding: 0 1rem 0 .3rem;
-        transform: translate(0, 5px);
-        font-size: 1.4rem;
-    }
-}
-
+/*
+ * Styling for default HTML elements
+ */
 body,
 html {
     font-family: $primary-font;
@@ -74,15 +63,12 @@ html {
         font-size: .9rem;
     }
 }
-
 body {
     padding-top: $header-height + $primary-spacer;
 }
-
 h1,h2,h3,h4 {
     margin-bottom: $primary-spacer;
 }
-
 figure {
     @extend .figure;
     
@@ -96,12 +82,47 @@ figure {
         text-align: center;
     }
 }
-
 img {
     max-width: 100%;
     height: auto;
 }
 
+/*
+ * Custom classes
+ */
+.modal {
+    @extend .fade;
+    
+    &.fade .modal-container {
+        @include transition($modal-transition);
+        transform: translate(0, -25%);
+    }
+    &.show .modal-container { transform: translate(0, 0); }
+    
+    > .modal-container {
+        @extend .modal-dialog;
+        @extend .modal-lg;
+        @extend .modal-content;
+    }
+}
+
+/*
+ * Icons and Buttons
+ */
+@mixin icon($icon, $sidebar: false) {
+    display: inline-block;
+    font-family: 'Material Icons';
+    text-transform: none;
+    content: $icon;
+    transform: translate(0, 2px);
+    font-size: 1em;
+    
+    @if($sidebar) {
+        padding: 0 1rem 0 .3rem;
+        transform: translate(0, 5px);
+        font-size: 1.4rem;
+    }
+}
 button,
 a.btn {
     @extend .btn;
@@ -167,6 +188,110 @@ a.btn {
     }
 }
 
+/*
+ * Form fields and related
+ */
+form {
+    label {
+        min-width: 6rem;
+    }
+    
+    input[type=file],
+    input[type=submit], 
+    input[type=button] {
+        @extend button;
+    }
+    input[type=file] {
+        width: 13rem;
+        
+        @include media-breakpoint-down(sm) {
+            width: 12rem;
+        }
+    }
+    
+    textarea,
+    input[type=name],
+    input[type=password],
+    input[type=text],
+    input[type=number],
+    input[type=date] {
+        padding: .5rem .4rem .5rem;
+        border: 0;
+        border-bottom: 1px solid gray;
+        font-family: $primary-font;
+        
+        &:focus,
+        &.has-content {
+            outline: none;
+            
+            & + label {
+                color: black;
+                font-size: .9em;
+                top: -1em;
+            }
+        }
+        @include media-breakpoint-down(sm) {
+            padding: 1rem 0rem .5rem;
+            width: 10rem;
+        }
+    }
+    input[type=radio],
+    input[type=checkbox] {
+        & + label {
+            margin-left: .5rem;
+        }
+    }
+    
+    textarea + label,
+    input[type=name] + label,
+    input[type=password] + label,
+    input[type=text] + label,
+    input[type=number] + label,
+    input[type=date] + label {
+        color: #aaa;
+        position: absolute;
+        left: .5em;
+        top: .5em;
+        transition: all $primary-speed $primary-timing-function;
+    }
+    
+    label + input[type=date]:after {
+//        @include icon("\E916");
+//        WIP calendar icon to indicate date field
+    }
+
+}
+date-input-polyfill {
+    padding: 1rem!important;
+    
+    [data-selected] {
+        background-color: $primary-color!important;
+    }
+    
+    button {
+        color: black!important;
+        background-color: #FFFD38!important;
+        border-color: #FFFD38!important;
+        padding: 1%!important;
+        width: 24%!important;
+    }
+    
+    select:first-of-type {
+        width: 27%!important;
+        margin-right: 1%!important;
+    }
+    select {
+        width: 47%!important;
+        margin-right: 1%!important;
+    }
+    table {
+        margin-top: $primary-spacer / 2!important;
+    }
+}
+
+/*
+ * Main scaffolding
+ */
 header {
     @include clearfix;
     position: fixed;
@@ -280,7 +405,6 @@ header {
         }
     }
 }
-
 .sidebar {
     position: fixed;
     top: $header-height;
@@ -393,7 +517,6 @@ header {
         }
     }
 }
-
 main {
     padding: $primary-spacer;
     padding-left: $sidebar-width + $primary-spacer;
@@ -462,104 +585,5 @@ main {
                 float: right;
             }
         }
-    }
-}
-
-form {
-    label {
-        min-width: 6rem;
-    }
-    
-    input[type=file],
-    input[type=submit], 
-    input[type=button] {
-        @extend button;
-    }
-    input[type=file] {
-        width: 13rem;
-        
-        @include media-breakpoint-down(sm) {
-            width: 12rem;
-        }
-    }
-    
-    textarea,
-    input[type=name],
-    input[type=password],
-    input[type=text],
-    input[type=number],
-    input[type=date] {
-        padding: .5rem .4rem .5rem;
-        border: 0;
-        border-bottom: 1px solid gray;
-        font-family: $primary-font;
-        
-        &:focus,
-        &.has-content {
-            outline: none;
-            
-            & + label {
-                color: black;
-                font-size: .9em;
-                top: -1em;
-            }
-        }
-        @include media-breakpoint-down(sm) {
-            padding: 1rem 0rem .5rem;
-            width: 10rem;
-        }
-    }
-    input[type=radio],
-    input[type=checkbox] {
-        & + label {
-            margin-left: .5rem;
-        }
-    }
-    
-    textarea + label,
-    input[type=name] + label,
-    input[type=password] + label,
-    input[type=text] + label,
-    input[type=number] + label,
-    input[type=date] + label {
-        color: #aaa;
-        position: absolute;
-        left: .5em;
-        top: .5em;
-        transition: all $primary-speed $primary-timing-function;
-    }
-    
-    label + input[type=date]:after {
-//        @include icon("\E916");
-//        WIP calendar icon to indicate date field
-    }
-
-}
-
-date-input-polyfill {
-    padding: 1rem!important;
-    
-    [data-selected] {
-        background-color: $primary-color!important;
-    }
-    
-    button {
-        color: black!important;
-        background-color: #FFFD38!important;
-        border-color: #FFFD38!important;
-        padding: 1%!important;
-        width: 24%!important;
-    }
-    
-    select:first-of-type {
-        width: 27%!important;
-        margin-right: 1%!important;
-    }
-    select {
-        width: 47%!important;
-        margin-right: 1%!important;
-    }
-    table {
-        margin-top: $primary-spacer / 2!important;
     }
 }
