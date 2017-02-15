@@ -6404,6 +6404,198 @@ img {
 /*
  * Icons and Buttons
  */
+.btn-preview:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+i.i-preview:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+.btn-remove:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+i.i-remove:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+.btn-edit:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+i.i-edit:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+.btn-playlist:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+i.i-playlist:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+.btn-shrink:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+i.i-shrink:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+.btn-add:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+i.i-add:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+.btn-plus-box:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+i.i-plus-box:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+.btn-minus-box:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+i.i-minus-box:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+.btn-copy:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+i.i-copy:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+.btn-next:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+i.i-next:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+.btn-previous:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+i.i-previous:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+.btn-close:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "๜";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
+i.i-close:before {
+  display: inline-block;
+  font-family: 'Material Icons';
+  text-transform: none;
+  content: "๜";
+  transform: translate(0, 2px);
+  font-size: 1em; }
+
 button, form input[type=file],
 form input[type=submit],
 form input[type=button],
@@ -6420,96 +6612,6 @@ a.btn {
   a.btn {
     padding: 0.5rem 1rem;
     font-size: 1.25rem; }
-  button.btn-preview:before, form input.btn-preview[type=file]:before,
-  form input.btn-preview[type=submit]:before,
-  form input.btn-preview[type=button]:before,
-  a.btn.btn-preview:before {
-    display: inline-block;
-    font-family: 'Material Icons';
-    text-transform: none;
-    content: "";
-    transform: translate(0, 2px);
-    font-size: 1em; }
-  button.btn-remove:before, form input.btn-remove[type=file]:before,
-  form input.btn-remove[type=submit]:before,
-  form input.btn-remove[type=button]:before,
-  a.btn.btn-remove:before {
-    display: inline-block;
-    font-family: 'Material Icons';
-    text-transform: none;
-    content: "";
-    transform: translate(0, 2px);
-    font-size: 1em; }
-  button.btn-edit:before, form input.btn-edit[type=file]:before,
-  form input.btn-edit[type=submit]:before,
-  form input.btn-edit[type=button]:before,
-  a.btn.btn-edit:before {
-    display: inline-block;
-    font-family: 'Material Icons';
-    text-transform: none;
-    content: "";
-    transform: translate(0, 2px);
-    font-size: 1em; }
-  button.btn-playlist:before, form input.btn-playlist[type=file]:before,
-  form input.btn-playlist[type=submit]:before,
-  form input.btn-playlist[type=button]:before,
-  a.btn.btn-playlist:before {
-    display: inline-block;
-    font-family: 'Material Icons';
-    text-transform: none;
-    content: "";
-    transform: translate(0, 2px);
-    font-size: 1em; }
-  button.btn-shrink:before, form input.btn-shrink[type=file]:before,
-  form input.btn-shrink[type=submit]:before,
-  form input.btn-shrink[type=button]:before,
-  a.btn.btn-shrink:before {
-    display: inline-block;
-    font-family: 'Material Icons';
-    text-transform: none;
-    content: "";
-    transform: translate(0, 2px);
-    font-size: 1em; }
-  button.btn-add:before, form input.btn-add[type=file]:before,
-  form input.btn-add[type=submit]:before,
-  form input.btn-add[type=button]:before,
-  a.btn.btn-add:before {
-    display: inline-block;
-    font-family: 'Material Icons';
-    text-transform: none;
-    content: "";
-    transform: translate(0, 2px);
-    font-size: 1em; }
-  button.btn-plus-box:before, form input.btn-plus-box[type=file]:before,
-  form input.btn-plus-box[type=submit]:before,
-  form input.btn-plus-box[type=button]:before,
-  a.btn.btn-plus-box:before {
-    display: inline-block;
-    font-family: 'Material Icons';
-    text-transform: none;
-    content: "";
-    transform: translate(0, 2px);
-    font-size: 1em; }
-  button.btn-minus-box:before, form input.btn-minus-box[type=file]:before,
-  form input.btn-minus-box[type=submit]:before,
-  form input.btn-minus-box[type=button]:before,
-  a.btn.btn-minus-box:before {
-    display: inline-block;
-    font-family: 'Material Icons';
-    text-transform: none;
-    content: "";
-    transform: translate(0, 2px);
-    font-size: 1em; }
-  button.btn-copy:before, form input.btn-copy[type=file]:before,
-  form input.btn-copy[type=submit]:before,
-  form input.btn-copy[type=button]:before,
-  a.btn.btn-copy:before {
-    display: inline-block;
-    font-family: 'Material Icons';
-    text-transform: none;
-    content: "";
-    transform: translate(0, 2px);
-    font-size: 1em; }
   button > .i, form input[type=file] > .i,
   form input[type=submit] > .i,
   form input[type=button] > .i,

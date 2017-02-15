@@ -123,6 +123,29 @@ img {
         font-size: 1.4rem;
     }
 }
+$icons: (
+    "preview": '\e417', 
+    "remove": '\e872', 
+    "edit": '\e254', 
+    "playlist": '\e8ee', 
+    "shrink": '\e915', 
+    "add": '\e147', 
+    "plus-box": '\e146', 
+    "minus-box": '\e909', 
+    "copy": '\e14D',
+    "next": '\e409',
+    "previous": '\e408',
+    "close": '\e5cd'
+);
+@each $key, $val in $icons {
+    .btn-#{$key}:before {
+        @include icon($val);
+    }
+    i.i-#{$key}:before {
+        @include icon($val);
+    }
+}
+
 button,
 a.btn {
     @extend .btn;
@@ -138,34 +161,6 @@ a.btn {
         @extend .btn-secondary;
         padding: 0.5rem 1rem;
         font-size: 1.25rem;
-    }
-    
-    &.btn-preview:before {
-        @include icon('\e417');
-    }
-    &.btn-remove:before {
-        @include icon('\e872');
-    }
-    &.btn-edit:before {
-        @include icon('\e254');
-    }
-    &.btn-playlist:before {
-        @include icon('\e8ee');
-    }
-    &.btn-shrink:before {
-        @include icon('\e915');
-    }
-    &.btn-add:before {
-        @include icon('\e147');
-    }
-    &.btn-plus-box:before {
-        @include icon('\e146');
-    }
-    &.btn-minus-box:before {
-        @include icon('\e909');
-    }
-    &.btn-copy:before {
-        @include icon('\e14D');
     }
     
     > .i {
