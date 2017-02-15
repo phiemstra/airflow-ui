@@ -513,6 +513,7 @@ mark,
   padding: 0.25rem;
   background-color: #fff;
   border: 1px solid #ddd;
+  transition: all 0.2s ease-in-out;
   max-width: 100%;
   height: auto; }
 
@@ -1671,7 +1672,8 @@ pre {
   background-image: none;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0; }
+  border-radius: 0;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
   .form-control::-ms-expand {
     background-color: transparent;
     border: 0; }
@@ -1932,7 +1934,8 @@ a.btn {
   user-select: none;
   border: 1px solid transparent;
   padding: 0.5rem 1rem;
-  font-size: 1rem; }
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out; }
   .btn:focus, button:focus, form input[type=file]:focus,
   form input[type=submit]:focus,
   form input[type=button]:focus, .btn:hover, button:hover, form input[type=file]:hover,
@@ -2308,6 +2311,29 @@ input[type="submit"].btn-block,
 input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%; }
+
+.fade {
+  opacity: 0;
+  transition: opacity 0.15s linear; }
+  .fade.show {
+    opacity: 1; }
+
+.collapse {
+  display: none; }
+  .collapse.show {
+    display: block; }
+
+tr.collapse.show {
+  display: table-row; }
+
+tbody.collapse.show {
+  display: table-row-group; }
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease; }
 
 .btn-group,
 .btn-group-vertical {
@@ -3734,6 +3760,100 @@ form input.close[type=button] {
   border: 0;
   -webkit-appearance: none; }
 
+.modal-open {
+  overflow: hidden; }
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  outline: 0; }
+  .modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+    transform: translate(0, -25%); }
+  .modal.show .modal-dialog {
+    transform: translate(0, 0); }
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px; }
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  outline: 0; }
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000; }
+  .modal-backdrop.fade {
+    opacity: 0; }
+  .modal-backdrop.show {
+    opacity: 0.5; }
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #eceeef; }
+
+.modal-title {
+  margin-bottom: 0;
+  line-height: 1.5; }
+
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 15px; }
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 15px;
+  border-top: 1px solid #eceeef; }
+  .modal-footer > :not(:first-child) {
+    margin-left: .25rem; }
+  .modal-footer > :not(:last-child) {
+    margin-right: .25rem; }
+
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll; }
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 500px;
+    margin: 30px auto; }
+
+  .modal-sm {
+    max-width: 300px; } }
+@media (min-width: 992px) {
+  .modal-lg {
+    max-width: 800px; } }
 .align-baseline {
   vertical-align: baseline !important; }
 
@@ -6363,6 +6483,16 @@ a.btn {
     font-family: 'Material Icons';
     text-transform: none;
     content: "";
+    transform: translate(0, 2px);
+    font-size: 1em; }
+  button.btn-copy:before, form input.btn-copy[type=file]:before,
+  form input.btn-copy[type=submit]:before,
+  form input.btn-copy[type=button]:before,
+  a.btn.btn-copy:before {
+    display: inline-block;
+    font-family: 'Material Icons';
+    text-transform: none;
+    content: "";
     transform: translate(0, 2px);
     font-size: 1em; }
   button > .i, form input[type=file] > .i,

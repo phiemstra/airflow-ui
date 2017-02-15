@@ -5,7 +5,7 @@
  * You can easily watch files using: sass --watch style.scss:style.css --sourcemap=none
  */
 
-$primary-font:              'Ubuntu', sans-serif;
+$primary-font:              "Ubuntu", sans-serif;
 $primary-font-size:         16px;
 $primary-color:             #FFFD38;
 $primary-speed:             160ms;
@@ -34,7 +34,7 @@ $sidebar-width-sm:          2.6rem;
 $enable-rounded:            false;
 $enable-shadows:            false;
 $enable-gradients:          false;
-$enable-transitions:        false;
+$enable-transitions:        true;
 $enable-hover-media-query:  false;
 $enable-grid-classes:       true;
 $enable-print-styles:       false;
@@ -142,6 +142,9 @@ a.btn {
     }
     &.btn-minus-box:before {
         @include icon('\e909');
+    }
+    &.btn-copy:before {
+        @include icon('\e14D');
     }
     
     > .i {
