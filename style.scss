@@ -607,6 +607,11 @@ main {
         }
     }
     
+    > #main-container {
+        @extend .container-fluid;
+        max-width: 1200px;
+    }
+    
     .progress-bar {
         background-color: $secondary-color;
     }
